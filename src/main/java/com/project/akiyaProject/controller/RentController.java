@@ -1,11 +1,11 @@
 package com.project.akiyaProject.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.project.akiyaProject.model.HouseRegForm;
 import com.project.akiyaProject.service.RentService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,12 +19,10 @@ public class RentController {
 
     private final RentService rentService;
 
-    @Value("${file.upload.path}")
-    private String uploadPath;
 
-    @GetMapping("write")
-    public String writeForm(Model model) {
-
+    @GetMapping("registration")
+    public String registrationForm(Model model) {
+    	model.addAttribute("writeForm", new HouseRegForm());
         return "board/write";
     }
 
