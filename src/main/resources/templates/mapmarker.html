@@ -145,8 +145,8 @@
         }
 
         .property.highlight .icon {
-          width: 50px;
-          height: 50px;
+          width: 0px;
+          height: 0px;
         }
 
         .property .structure {
@@ -163,19 +163,19 @@
 
 
 
-        .property .secondfloor {
+        .property .over2f {
           color: brown;
         }
 
-        .property .parkinglot {
+        .property .parking {
           color: red;
         }
 
-        .property .washingmachin {
+        .property .washer {
           color: #388E3C;
         }
 
-        .property .airconditioner {
+        .property .aircon {
           color: skyblue;
         }
 
@@ -197,8 +197,9 @@
         /*
          * buy icon colors.
          */
-        .property.highlight:has(.buy) .fa-icon {
-          color: var(--buy-color);
+        .property.highlight:has(.buy) .icon {
+          display: none;
+                   
         }
 
         .property:not(.highlight):has(.buy) {
@@ -213,7 +214,7 @@
          * rent icon colors.
          */
         .property.highlight:has(.rent) .icon {
-          color: var(--rent-color);
+          display: none;
         }
 
         .property:not(.highlight):has(.rent) {
@@ -243,9 +244,10 @@
     <script>
         function initMap() {
   const center = {
-    lat: 37.43238031167444,
-    lng: -122.16795397128632,
+    lat: 35.6812,
+    lng: 139.7671,
   };
+  
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 11,
     center,
@@ -348,13 +350,11 @@ function makeMarkers(map){
 
 function highlight(markerView, property) {
   markerView.content.classList.add("highlight");
-  markerView.content.style
   markerView.element.style.zIndex = 1;
 }
 
 function unhighlight(markerView, property) {
   markerView.content.classList.remove("highlight");
-  markerView.content.
   markerView.element.style.zIndex = "";
 }
 
@@ -366,11 +366,18 @@ function buildContent(property) {
   const content = document.createElement("div");
   content.classList.add("property");
   let pinHtml = `
-    <div class="icon">
-        <i aria-hidden="true" class="fa fa-icon fa-dollar-sign buy" title="${property.type}"></i>
-        <span class="fa-sr-only">${property.type}</span>
-    </div>
-    <div class="details">
+    <div class="icon">`;
+  if(property.type == "buy"){
+    pinHtml += 
+      `<i aria-hidden="true" class="fa fa-icon fa-yen-sign buy" title="${property.type}"></i>
+      <span class="fa-sr-only">${property.type}</span>
+    </div>`;
+  } else{
+    pinHtml += `<i aria-hidden="true" class="fa fa-icon fa-calendar-days rent" title="${property.type}"></i>
+      <span class="fa-sr-only">${property.type}</span>
+    </div>`;
+  }
+  pinHtml +=  `<div class="details">
         <div class="price">${property.price}</div>
         <div class="address">${property.address}</div>
         <div class="features">
@@ -391,43 +398,43 @@ function buildContent(property) {
   if (property.bathroom == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-bath fa-lg bathroom" title="bathroom"></i>
+                <i aria-hidden="true" class="fa fa-bath fa-lg bathroom" title="Separated baths"></i>
                 <span class="fa-sr-only">bathroom</span>
             </div>            
     `;
   }
 
-  if (property.secondfloor == true){
+  if (property.over2f == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-square-2 fa-lg secondfloor" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-square-2 fa-lg over2f" title="Second floor or higher"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
   }
 
-  if (property.parkinglot == true){
+  if (property.parking == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-car fa-lg parkinglot" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-car fa-lg parking" title="Parking available"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
   }
 
-  if (property.washingmachin == true){
+  if (property.washer == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-washer fa-lg washingmachin" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-washer fa-lg washer" title="Washing machine in house"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
   }
 
-  if (property.airconditioner == true){
+  if (property.aircon == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-air-conditioner fa-lg airconditioner" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-air-conditioner fa-lg aircon" title="Air conditioner in house"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
@@ -436,7 +443,7 @@ function buildContent(property) {
   if (property.pet == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-dog fa-lg pet" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-dog fa-lg pet" title="Can breed pets"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
@@ -445,15 +452,13 @@ function buildContent(property) {
   if (property.autolock == true){
     pinHtml += `
             <div id='condition'>
-                <i aria-hidden="true" class="fa fa-lock-a fa-lg autolock" title="over 2nd floor"></i>
+                <i aria-hidden="true" class="fa fa-lock-a fa-lg autolock" title="Includes a digital door lock"></i>
                 <span class="fa-sr-only">2ndfloor</span>
             </div>             
     `;
   }
 
   pinHtml += `</div></div>`;
-
-  console.log(pinHtml);
   content.innerHTML = pinHtml;
   return content;
 }
@@ -461,116 +466,116 @@ function buildContent(property) {
 const properties = [
   {
     address: "大阪市中央区南船場4-4-21",
-    description: "Single family house with modern design",
-    price: "¥50000",
+    description: "¥250000 N2",
+    price: "CAL CO,.LTD",
     type: "buy",
     structure: "1LDK",
     size: 300,
     bathroom: true,
-    secondfloor: true,
-    parkinglot: true,
-    washingmachin: true,
-    airconditioner: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
     autolock:true,
     position: {
-      lat: 37.50024109655184,
-      lng: -122.28528451834352,
+      lat: 34.6758264,
+      lng: 135.4998947,
     },
   },
   {
-    address: "108 Squirrel Ln &#128063;, Menlo Park, CA",
-    description: "Townhouse with friendly neighbors",
-    price: "$ 3,050,000",
+    address: "東京都 千代田区 神田富山町22",
+    description: "¥250000",
+    price: "株式会社ネクスチャ",
     type: "rent",
     structure: "2LDK",
     size: 200,
-    bathroom: false,
-    secondfloor: true,
-    parkinglot: false,
-    washingmachin: true,
-    airconditioner: false,
+    bathroom: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
-    autolock:false,
+    autolock:true,
     position: {
-      lat: 37.44440882321596,
-      lng: -122.2160620727,
+      lat: 35.6935207,
+      lng: 139.7730301,
     },
   },
   {
-    address: "2117 Su St, MountainView, CA",
-    description: "Single family house near golf club",
-    price: "$ 1,700,000",
+    address: "東京都千代田区神田小川町2-12 小川町進興ビル",
+    description: "¥320000 N1 정처기",
+    price: "チームラボ",
     type: "buy",
     structure: "1LDK",
     size: 200,
     bathroom: true,
-    secondfloor: true,
-    parkinglot: true,
-    washingmachin: true,
-    airconditioner: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
     autolock:true,
     position: {
-      lat: 37.40578635332598,
-      lng: -122.15043378466069,
+      lat: 35.6951588,
+      lng: 139.76481,
     },
   },
   {
-    address: "700 Jose Ave, Sunnyvale, CA",
-    description: "3 storey townhouse with 2 car garage",
-    price: "$ 3,850,000",
+    address: "中央区日本橋堀留町２－３－１４",
+    description: "¥250000 N2 정처기",
+    price: "株式会社SoftBay",
     type: "rent",
     structure: "2LDK",
     size: 600,
     bathroom: true,
-    secondfloor: true,
-    parkinglot: true,
-    washingmachin: true,
-    airconditioner: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
     autolock:true,
     position: {
-      lat: 37.38343706184458,
-      lng: -122.02340436985183,
+      lat: 35.688747,
+      lng: 139.7808054,
     },
   },
   {
-    address: "868 Will Ct, Cupertino, CA",
-    description: "Single family house in great school zone",
-    price: "$ 2,500,000",
+    address: "東京都新宿区新宿1-36-7",
+    description: "¥250000",
+    price: "株式会社シースクェア",
     type: "buy",
     structure: "2LDK",
     size: 100,
     bathroom: true,
-    secondfloor: true,
-    parkinglot: true,
-    washingmachin: true,
-    airconditioner: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
     autolock:true,
     position: {
-      lat: 37.34576403052,
-      lng: -122.04455090047453,
+      lat: 35.6907471,
+      lng: 139.7102648,
     },
   },
   {
-    address: "2019 Natasha Dr, San Jose, CA",
-    description: "Single family house",
-    price: "$ 2,325,000",
+    address: "東京都港区南青山3-1-30",
+    description: "¥235000 N2 정처기",
+    price: "株式会社パソナテック",
     type: "buy",
     structure: "1LDK",
     size: 500,
     bathroom: true,
-    secondfloor: true,
-    parkinglot: true,
-    washingmachin: true,
-    airconditioner: true,
+    over2f: true,
+    parking: true,
+    washer: true,
+    aircon: true,
     pet: true,
     autolock:true,
     position: {
-      lat: 37.41391636421949,
-      lng: -121.94592071575907,
+      lat: 35.6677398,
+      lng: 139.7157978,
     },
   },
 ];
