@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="https://kit.fontawesome.com/73c0987e19.js" crossorigin="anonymous"></script> -->
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+ 
+        #search-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #FFFFFF;
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+            padding: left 10px;
+        }
+
+        :root {
+            --rent-color: #FF9800;
+            --buy-color: #0288D1;
+        }
+
+        /*
+         * Property styles in unhighlighted state.
+         */
+        .property {
+          align-items: center;
+          background-color: #FFFFFF;
+          border-radius: 50%;
+          color: #263238;
+          display: flex;
+          font-size: 14px;
+          gap: 15px;
+          height: 30px;
+          justify-content: center;
+          padding: 4px;
+          position: relative;
+          position: relative;
+          transition: all 0.3s ease-out;
+          width: 30px;
+        }
+
+        .property::after {
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 9px solid #FFFFFF;
+          content: "";
+          height: 0;
+          left: 50%;
+          position: absolute;
+          top: 95%;
+          transform: translate(-50%, 0);
+          transition: all 0.3s ease-out;
+          width: 0;
+          z-index: 1;
+        }
+
+        .property .icon {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          color: #FFFFFF;
+        }
+
+        .property .icon svg {
+          height: 20px;
+          width: auto;
+        }
+
+        .property .details {
+          display: none;
+          flex-direction: column;
+          flex: 1;
+        }
+
+        .property .address {
+          color: #9E9E9E;
+          font-size: 10px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+        }
+
+        .property .features {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+        }
+
+        .property .features > div {
+          align-items: center;
+          background: #F5F5F5;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          display: flex;
+          font-size: 10px;
+          gap: 5px;
+          padding: 5px;
+        }
+
+        
+        .property .condition {
+          align-items: center;
+          display: flex;
+          justify-content: left;
+          color: #FFFFFF;
+          margin-top: 5px;
+        }
+
+
+
+
+
+        /*
+         * Property styles in highlighted state.
+         */
+        .property.highlight {
+          background-color: #FFFFFF;
+          border-radius: 8px;
+          box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+          height: 100px;
+          padding: 8px 15px;
+          width: auto;
+        }
+
+        .property.highlight::after {
+          border-top: 9px solid #FFFFFF;
+        }
+
+        .property.highlight .details {
+          display: flex;
+        }
+
+        .property.highlight .icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .property .structure {
+          color: #FFA000;
+        }
+
+        .property .size {
+          color: #388E3C;
+        }
+
+        .property .bathroom {
+          color: #03A9F4;
+        }
+
+
+
+        .property .secondfloor {
+          color: brown;
+        }
+
+        .property .parkinglot {
+          color: red;
+        }
+
+        .property .washingmachin {
+          color: #388E3C;
+        }
+
+        .property .airconditioner {
+          color: skyblue;
+        }
+
+        .property .pet {
+          color: burlywood;
+        }
+
+        .property .autolock {
+          color: grey;
+        }
+
+        #condition {
+          margin-top: 5px;
+          margin-left: 5px;
+        }
+
+
+
+        /*
+         * buy icon colors.
+         */
+        .property.highlight:has(.buy) .fa-icon {
+          color: var(--buy-color);
+        }
+
+        .property:not(.highlight):has(.buy) {
+          background-color: var(--buy-color);
+        }
+
+        .property:not(.highlight):has(.buy)::after {
+          border-top: 9px solid var(--buy-color);
+        }
+
+        /*
+         * rent icon colors.
+         */
+        .property.highlight:has(.rent) .icon {
+          color: var(--rent-color);
+        }
+
+        .property:not(.highlight):has(.rent) {
+          background-color: var(--rent-color);
+        }
+
+        .property:not(.highlight):has(.rent)::after {
+          border-top: 9px solid var(--rent-color);
+        }
+
+    </style>
+    <title></title>
+</head>
+<body>
+    <div id="search-panel">
+        <input id="address" type="text" placeholder="주소 입력" />
+        <button id="submit" type="button" value="Geocode">지도 검색</button>
+    </div>
+    <div id="map">
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Google Map API -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwox5DsRd4pzJg_bDQbRISMi_1J5inSI0&v=beta&libraries=marker&callback=initMap">
+    </script>
+    <script>
+        function initMap() {
+  const center = {
+    lat: 37.43238031167444,
+    lng: -122.16795397128632,
+  };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center,
+    mapId: "DEMO_MAP_ID",
+  });
+
+  /**
+             * Google Geocoding. Google Map API에 포함되어 있다.
+             */
+             var geocoder = new google.maps.Geocoder();
+ 
+ // submit 버튼 클릭 이벤트 실행
+ document.getElementById('submit').addEventListener('click', function() {
+     console.log('submit 버튼 클릭 이벤트 실행');
+
+     // 여기서 실행
+     geocodeAddress(geocoder, map);
+ });
+ document.getElementById('address').addEventListener('keypress', function(e) {
+     if (e.key === 'Enter') {
+     console.log('submit 버튼 클릭 이벤트 실행');
+
+     // 여기서 실행
+     geocodeAddress(geocoder, map);
+     }
+ });
+    makeMarkers(map);
+}
+ /**
+  * geocodeAddress
+  * 
+  * 입력한 주소로 맵의 좌표를 바꾼다.
+  */
+  function geocodeAddress(geocoder, resultMap) {
+     console.log('geocodeAddress 함수 실행');
+
+     // 주소 설정
+     var address = document.getElementById('address').value;
+
+     /**
+      * 입력받은 주소로 좌표에 맵 마커를 찍는다.
+      * 1번째 파라미터 : 주소 등 여러가지. 
+      *      ㄴ 참고 : https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingRequests
+      * 
+      * 2번째 파라미터의 함수
+      *      ㄴ result : 결과값
+      *      ㄴ status : 상태. OK가 나오면 정상.
+      */
+     geocoder.geocode({'address': address}, function(result, status) {
+         console.log(result);
+         console.log(status);
+
+         if (status === 'OK') {
+             // 맵의 중심 좌표를 설정한다.
+             resultMap.setCenter(result[0].geometry.location);
+             // 맵의 확대 정도를 설정한다.
+             resultMap.setZoom(18);
+             // 맵 마커
+             var marker = new google.maps.Marker({
+                 map: resultMap,
+                 position: result[0].geometry.location
+             });
+
+             // 위도
+             console.log('위도(latitude) : ' + marker.position.lat());
+             // 경도
+             console.log('경도(longitude) : ' + marker.position.lng());
+             makeMarkers(map);
+         } else {
+             alert('지오코드가 다음의 이유로 성공하지 못했습니다 : ' + status);
+         }
+     });
+ }
+
+function makeMarkers(map){
+    for (const property of properties) {
+    const advancedMarkerView = new google.maps.marker.AdvancedMarkerView({
+      map,
+      content: buildContent(property),
+      position: property.position,
+      title: property.description,
+    });
+    const element = advancedMarkerView.element;
+
+    ["focus", "pointerenter"].forEach((event) => {
+      element.addEventListener(event, () => {
+        highlight(advancedMarkerView, property);
+      });
+    });
+    ["blur", "pointerleave"].forEach((event) => {
+      element.addEventListener(event, () => {
+        unhighlight(advancedMarkerView, property);
+      });
+    });
+    advancedMarkerView.addListener("click", (event) => {
+      clickhouse();
+    });
+  }
+}
+
+function highlight(markerView, property) {
+  markerView.content.classList.add("highlight");
+  markerView.content.style
+  markerView.element.style.zIndex = 1;
+}
+
+function unhighlight(markerView, property) {
+  markerView.content.classList.remove("highlight");
+  markerView.content.
+  markerView.element.style.zIndex = "";
+}
+
+function clickhouse() {
+    location.href='https://www.naver.com/';
+}
+
+function buildContent(property) {
+  const content = document.createElement("div");
+  content.classList.add("property");
+  let pinHtml = `
+    <div class="icon">
+        <i aria-hidden="true" class="fa fa-icon fa-dollar-sign buy" title="${property.type}"></i>
+        <span class="fa-sr-only">${property.type}</span>
+    </div>
+    <div class="details">
+        <div class="price">${property.price}</div>
+        <div class="address">${property.address}</div>
+        <div class="features">
+        <div>
+            <i aria-hidden="true" class="fa fa-bed fa-lg structure" title="structure"></i>
+            <span class="fa-sr-only">structure</span>
+            <span>${property.structure}</span>
+        </div>
+        <div>
+        <i aria-hidden="true" class="fa fa-ruler fa-lg size" title="size"></i>
+        <span class="fa-sr-only">size</span>
+        <span>${property.size} m<sup>2</sup></span>
+          </div>
+        </div>
+        <div class='condition'>       
+  `;
+
+  if (property.bathroom == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-bath fa-lg bathroom" title="bathroom"></i>
+                <span class="fa-sr-only">bathroom</span>
+            </div>            
+    `;
+  }
+
+  if (property.secondfloor == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-square-2 fa-lg secondfloor" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  if (property.parkinglot == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-car fa-lg parkinglot" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  if (property.washingmachin == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-washer fa-lg washingmachin" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  if (property.airconditioner == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-air-conditioner fa-lg airconditioner" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  if (property.pet == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-dog fa-lg pet" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  if (property.autolock == true){
+    pinHtml += `
+            <div id='condition'>
+                <i aria-hidden="true" class="fa fa-lock-a fa-lg autolock" title="over 2nd floor"></i>
+                <span class="fa-sr-only">2ndfloor</span>
+            </div>             
+    `;
+  }
+
+  pinHtml += `</div></div>`;
+
+  console.log(pinHtml);
+  content.innerHTML = pinHtml;
+  return content;
+}
+
+const properties = [
+  {
+    address: "大阪市中央区南船場4-4-21",
+    description: "Single family house with modern design",
+    price: "¥50000",
+    type: "buy",
+    structure: "1LDK",
+    size: 300,
+    bathroom: true,
+    secondfloor: true,
+    parkinglot: true,
+    washingmachin: true,
+    airconditioner: true,
+    pet: true,
+    autolock:true,
+    position: {
+      lat: 37.50024109655184,
+      lng: -122.28528451834352,
+    },
+  },
+  {
+    address: "108 Squirrel Ln &#128063;, Menlo Park, CA",
+    description: "Townhouse with friendly neighbors",
+    price: "$ 3,050,000",
+    type: "rent",
+    structure: "2LDK",
+    size: 200,
+    bathroom: false,
+    secondfloor: true,
+    parkinglot: false,
+    washingmachin: true,
+    airconditioner: false,
+    pet: true,
+    autolock:false,
+    position: {
+      lat: 37.44440882321596,
+      lng: -122.2160620727,
+    },
+  },
+  {
+    address: "2117 Su St, MountainView, CA",
+    description: "Single family house near golf club",
+    price: "$ 1,700,000",
+    type: "buy",
+    structure: "1LDK",
+    size: 200,
+    bathroom: true,
+    secondfloor: true,
+    parkinglot: true,
+    washingmachin: true,
+    airconditioner: true,
+    pet: true,
+    autolock:true,
+    position: {
+      lat: 37.40578635332598,
+      lng: -122.15043378466069,
+    },
+  },
+  {
+    address: "700 Jose Ave, Sunnyvale, CA",
+    description: "3 storey townhouse with 2 car garage",
+    price: "$ 3,850,000",
+    type: "rent",
+    structure: "2LDK",
+    size: 600,
+    bathroom: true,
+    secondfloor: true,
+    parkinglot: true,
+    washingmachin: true,
+    airconditioner: true,
+    pet: true,
+    autolock:true,
+    position: {
+      lat: 37.38343706184458,
+      lng: -122.02340436985183,
+    },
+  },
+  {
+    address: "868 Will Ct, Cupertino, CA",
+    description: "Single family house in great school zone",
+    price: "$ 2,500,000",
+    type: "buy",
+    structure: "2LDK",
+    size: 100,
+    bathroom: true,
+    secondfloor: true,
+    parkinglot: true,
+    washingmachin: true,
+    airconditioner: true,
+    pet: true,
+    autolock:true,
+    position: {
+      lat: 37.34576403052,
+      lng: -122.04455090047453,
+    },
+  },
+  {
+    address: "2019 Natasha Dr, San Jose, CA",
+    description: "Single family house",
+    price: "$ 2,325,000",
+    type: "buy",
+    structure: "1LDK",
+    size: 500,
+    bathroom: true,
+    secondfloor: true,
+    parkinglot: true,
+    washingmachin: true,
+    airconditioner: true,
+    pet: true,
+    autolock:true,
+    position: {
+      lat: 37.41391636421949,
+      lng: -121.94592071575907,
+    },
+  },
+];
+
+        
+    </script>
+</body>
+</html>
