@@ -20,10 +20,10 @@ public class RentController {
     private final RentService rentService;
 
 
-    @GetMapping("registration")
+    @GetMapping("register")
     public String registrationForm(Model model) {
     	model.addAttribute("writeForm", new HouseRegForm());
-        return "board/write";
+        return "houseregister";
     }
 
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.project.akiyaProject.repository.BoardMapper">
+	<insert id="mregister">
+		<selectKey keyProperty="house_id" resultType="long"
+			order="BEFORE">
+			select house_seq from dual
+		</selectKey>
+		insert into house(
+		house_id,
+		city,
+		address,
+		price,
+		completed,
+		floor,
+		housesize,
+		bus,
+		subway,
+		convini,
+		hospital,
+		aircon,
+		bathroom,
+		parking,
+		washer,
+		pet,
+		autolock
+		) values(
+		'm' || to_char(#{house_id}),
+		#{city},
+		#{address},
+		#{price},
+		#{completed},
+		#{floor},
+		#{housesize},
+		#{bus},
+		#{subway},
+		#{convini},
+		#{hospital},
+		#{aircon},
+		#{bathroom},
+		#{parking},
+		#{washer},
+		#{pet},
+		#{autolock}
+		)
+	</insert>
+</mapper>
