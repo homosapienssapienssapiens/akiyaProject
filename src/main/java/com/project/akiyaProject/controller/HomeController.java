@@ -22,9 +22,14 @@ public class HomeController {
     public String mapmarker() {
     	return "mapmarker";
     }
-    
-    @GetMapping("houseregister")
-    public String houseregister() {
-    	return "houseregister";
+    @GetMapping("buyhouse")
+    public String buyhouse() {
+    	return "buyhouse";
     }
+    @GetMapping("lentalhouse")
+    public String lentalhouse() {
+    	return "lentalhouse";
+    }
+    
+    
 }
