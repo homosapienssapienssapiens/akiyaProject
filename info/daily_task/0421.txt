@@ -6,7 +6,8 @@ templates.
 송명진
 
 전재현
-
+1차 houseFinder 삭제 -> 매매, 임대 페이지 분할 후 작성.
+FindHomeBuy, FindHomeLental.html 생성.
 오유정
 
 김도협
