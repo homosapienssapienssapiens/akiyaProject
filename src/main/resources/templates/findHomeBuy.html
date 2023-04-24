@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- magnific popup css link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <!-- font awesome file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- bootstrap file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 가격 슬라이드바를 위한 링크 -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <title>Responsive Architechture and Interior Design Website Tutorial</title>
+</head>
+  <!-- 슬라이드바 기능 "매매"-->
+<script>
+    $( function() {
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 5000,
+        values: [ 100, 1000 ],
+        slide: function( event, ui ) {
+          $( "#amount" ).val(ui.values[ 0 ] + "만원 ~~ " + ui.values[ 1 ] + "만원");
+        }
+      });
+      $( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) +
+        "만원 ~~ " + $( "#slider-range" ).slider( "values", 1 )+ "만원" );
+    } );
+    </script>
+
+    <!-- 이메일 체크 -->
+<script type="text/javascript">
+    function formCheck() {
+      /* 필수항목 체크(이메일) */
+          var email = document.getElementById("email");
+          if (email.value.length < 1) {
+              alert("이메일은 필수 입력 사항입니다.");
+              email.focus();
+              return false;
+          }
+    }
+
+  // 라벨 클릭시 색상 변경하는 이벤트 발생.
+  label.addEventListener('click', () => {
+  label.classList.toggle('active');
+  });
+
+
+  </script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/* 
+    네비바 아래에서 글이 나오게 하기 위해
+    body 부분에 padding 값을 준다. 
+*/
+body{
+  overflow-x: hidden;
+  padding: 15rem;
+  background-color: #FEF7DC;
+}
+
+.heading{
+  font-size: 4rem;
+  text-align: center;
+  letter-spacing: 1.7rem;
+  color:#444;
+  margin:2rem 0;
+  padding-top: 6rem;
+  text-decoration: underline;/*밑줄 생성*/
+  text-decoration-style: solid;
+  text-decoration-color: var(--orange);/*텍스트 색깔은 주황색으로*/
+  text-underline-offset:1.4rem;/*주황색 밑줄과 글자와의 간격*/
+}
+
+/* 루트에 적용된 속성들 헤더(상단바)로 모두 이동*/
+.header{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  transition:all .2s linear;
+  text-transform: capitalize;
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  background:#fff;
+  z-index: 100;
+  padding:1rem 2rem;
+  box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+}
+
+.header .logo img{
+  height: 10rem;
+}
+
+.header nav ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin:0; padding:0;
+}
+
+.header nav ul li{
+  margin: 0 1.5rem;
+}
+
+.header nav ul li a{
+  font-size: 2rem;
+  color:#666;
+}
+
+.header nav ul li a:hover{
+  color:#000;
+  text-decoration: none;
+}
+
+.header .fa-bars{
+  font-size: 2.5rem;
+  color:#666;
+  cursor: pointer;
+  display: none;
+}
+
+
+/* 테이블 CSS 정리 */
+table{
+                width: 80%;
+                margin-left:auto; 
+                margin-right:auto;
+            }
+            table,
+            td,
+            th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-size: 2rem;
+            }
+
+/* 타이틀 부분 설정. 하단 테두리만 빼고 다 숨겨서 좌상단에 고정되게 보이게 만듦.*/
+#title {
+    font-size: 5rem;
+		border-top: hidden;
+		border-left: hidden;
+		border-right: hidden;
+	}
+/* 체크박스 정렬 */
+label{ display:inline-block; width:120px; line-height:50px; }
+
+/* 슬라이드 설정 */
+.slidecontainer {
+    /* 슬라이드바 설정*/
+    width: 90%;
+    margin: 0 5% 5px 5%;
+    
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%; /* 슬라이더 길이 */
+    height: 15px; /* 슬라이더 두께 */
+    border-radius: 5px; /* 슬라이더 모서리를 약간 둥글게 */
+    background: #c30303; /* 슬라이더 색상 */
+    outline: none; /* 슬라이더 테두리 없이 */
+}
+
+/* 슬라이더 핸들(클릭해서 드래그하는 부분) 커스텀 
+(Chrome, Opera, Safari, Edge 브라우저를 위해서는 -webkit-을,
+Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+    appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+    width: 25px; /* 슬라이더 핸들 길이 */
+    height: 25px; /* 슬라이더 핸들 높이 */
+    border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
+    background: #00f; /* 슬라이더 핸들 색상 */
+    cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* 슬라이더 핸들 길이 */
+    height: 25px; /* 슬라이더 핸들 높이 */
+    border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
+    background: #00f; /* 슬라이더 핸들 색상 */
+    cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
+}
+
+/* 이메일 박스 디자인*/
+#email {
+  border-style: solid;
+  background-color: #FEF7DC;
+}
+#email:valid {
+  border-color: green;
+}
+#email:invalid {
+  border-color: red;
+}
+
+/* 라벨 클릭시 색상변경 */ 
+#checkevent {
+  background-color: #FEF7DC;
+  cursor: pointer;
+}
+
+.checkevent:checked + #checkevent {
+  background-color: aqua;
+}
+
+#last{
+  text-align: center;
+  border: hidden;
+}
+</style>
+<body>
+  
+<!-- header section starts  -->
+
+<header class="header fixed-top">
+
+<a href="#" class="logo"><img src="스크린샷_2023-04-18_053349-removebg-preview.png" alt=""></a>
+
+<nav>
+  <ul>
+    <li><a href="#home">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#service">services</a></li>
+    <li><a href="#project">projects</a></li>
+    <li><a href="#contact"><a class="nav-link" href="https://naver.com">buy</a></li>
+    <li><a href="#contact"><a class="nav-link" href="https://naver.com">lental</a></li>
+  </ul>
+</nav>
+
+<div class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- buy 버튼 클릭 시 표현해줄 페이지 -->
+<form>
+<table>
+    <tr>
+			<td colspan="2" id="title">매매</td>
+		</tr>
+    <tr>
+        <th>지 역</th>
+        <td>
+          
+          <input type="checkbox" name="location" id="tokyo" value="tokyo" class="checkevent" style="display: none;">
+          <label for="tokyo" id="checkevent">도쿄</label>
+          
+          <input type="checkbox" name="location" id="osaka" value="osaka" class="checkevent" style="display: none;">
+          <label for="osaka" id="checkevent">오사카</label>
+          
+          <input type="checkbox" name="location" id="nagoya" value="nagoya" class="checkevent" style="display: none;">
+          <label for="nagoya" id="checkevent">나고야</label>
+          
+          <input type="checkbox" name="location" id="fukuoka" value="fukuoka" class="checkevent" style="display: none;">
+          <label for="fukuoka" id="checkevent">후쿠오카</label>
+          
+          <input type="checkbox" name="location" id="sapporo" value="sapporo" class="checkevent" style="display: none;">
+          <label for="sapporo" id="checkevent">삿포로</label>
+        </td>
+    </tr>
+    <tr>
+        <th>가 격</th>
+        <td>
+        <label for="amount">매매 가격:</label>
+        <input type="text" id="amount" readonly style="border:0; background-color: #FEF7DC; color:#f6931f; font-weight:bold;" >
+        <div class="slidecontainer">
+          <div id="slider-range"></div>
+          </div>
+</td>
+    </tr>
+    <tr>
+        <th>조 건</th>
+        <td>
+         
+          <input type="checkbox" name="condition" id="bus_stop" value="bus_stop" class="checkevent" style="display: none;">
+          <label class="AA" for="bus_stop" id="checkevent">버스 정류소</label>
+          
+          <input type="checkbox" name="condition" id="subway_station" value="subway_station" class="checkevent" style="display: none;">
+          <label for="subway_station" id="checkevent">지하철역</label>
+          
+          <input type="checkbox" name="condition" id="convenience_store" value="convenience_store" class="checkevent" style="display: none;">
+          <label for="convenience_store" id="checkevent">편의점</label>
+         
+          <input type="checkbox" name="condition" id="hospital" value="hospital" class="checkevent" style="display: none;">
+          <label for="hospital" id="checkevent">병원</label><br>
+
+          
+          <input type="checkbox" name="condition" id="air_conditioner" value="air_conditioner" class="checkevent" style="display: none;">
+          <label for="air_conditioner" id="checkevent">에어컨</label>
+          
+          <input type="checkbox" name="condition" id="toilet_separation" value="toilet_separation" class="checkevent" style="display: none;">
+          <label for="toilet_separation" id="checkevent">화장실 별도</label>
+
+          <input type="checkbox" name="condition" id="second_floor" value="second_floor" class="checkevent" style="display: none;">
+          <label for="second_floor" id="checkevent">2층이상</label>
+         
+          <input type="checkbox" name="condition" id="parking_lot" value="parking_lot" class="checkevent" style="display: none;">
+          <label for="parking_lot" id="checkevent">주차장</label><br>
+          
+          <input type="checkbox" name="condition" id="washing_machine" value="washing_machine" class="checkevent" style="display: none;">
+          <label for="washing_machine" id="checkevent">세탁기</label>
+          
+          <input type="checkbox" name="condition" id="animal" value="animal" class="checkevent" style="display: none;">
+          <label for="animal" id="checkevent" class="checkevent">동물</label>
+          
+          <input type="checkbox" name="condition" id="door_lock" value="door_lock" class="checkevent" style="display: none;">
+          <label for="door_lock" id="checkevent">도어락</label>
+        </td>
+    </tr>
+    
+</table>
+
+<!-- 이메일 검증 -->
+<table>
+  <tr>
+    <td id="last">
+    <labal for="email">Gmail 주소를 입력하세요:
+      <input type="email"
+      id="email"
+      pattern=".+@gmail\.com"
+      placeholder="example@gmail.com"
+      required>
+    </labal>
+      <input type="submit" value="저장"> 
+      <input type="reset" value="불러오기">
+  </td>
+  </tr>
+  <td id="last">
+    <input type="submit" value="검색"> 
+    <input type="reset" value="리셋">
+  </td>
+</table>
+</form>
+
+<!-- magnific popup link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<!-- main/custom javascript file link  -->
+<script src="js/main.js"></script>
+
+<script>
+  $(document).ready(function(){
+
+$('.fa-bars').click(function(){
+  $(this).toggleClass('fa-times');
+  $('nav').toggleClass('nav-toggle');
+});
+
+$(window).on('scroll load',function(){
+  $('.fa-bars').removeClass('fa-times');
+  $('nav').removeClass('nav-toggle');
+});
+
+$('.count').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+  {
+    duration: 5000,
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum + '+');
+    }
+  });
+});
+
+$('.project').magnificPopup({
+  delegate:'a',
+  type:'image',
+  gallery:{
+    enabled:true
+  }
+});
+
+});
+</script>
+</body>
+</html>
