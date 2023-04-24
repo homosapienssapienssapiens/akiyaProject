@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- <script src="https://kit.fontawesome.com/73c0987e19.js" crossorigin="anonymous"></script> -->
+<link
+	href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="viewOnMap.css">
+<title></title>
+</head>
+<body>
+	<div id="search-panel">
+		<input id="address" type="text" placeholder="주소 입력" />
+		<button id="submit" type="button" value="Geocode">지도 검색</button>
+
+	</div>
+	<div id="map"></div>
+
+	<button id="toList" type="button" value="Geocode">목록으로 보기</button>
+
+	<div class="popup_layer" id="popup_layer" style="display: none;">
+		<div class="popup_box">
+			<!--팝업 버튼 영역-->
+			<img src="tutorial.png" class="tutorial">
+			<!--팝업 버튼 영역-->
+		</div>
+		<div class="popup_exit_btn">
+			<a href="javascript:closePop();">닫기</a> <a
+				href="javascript:closePopever();">다시 보지 않기</a>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Google Map API -->
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwox5DsRd4pzJg_bDQbRISMi_1J5inSI0&v=beta&libraries=marker&callback=initMap">
+    </script>
+	<script src="viewOnMap.js"></script>
+</body>
+</html>
