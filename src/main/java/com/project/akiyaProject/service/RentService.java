@@ -7,6 +7,7 @@ import com.project.akiyaProject.model.HouseInfo;
 import com.project.akiyaProject.model.HouseRegForm;
 import com.project.akiyaProject.repository.BoardMapper;
 
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +22,7 @@ public class RentService {
 	public static HouseInfo getHouseById(String house_id) {
 
 		return BoardMapper.getHouseById(house_id);
-	}
+
+
 
 }

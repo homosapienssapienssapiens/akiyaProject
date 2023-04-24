@@ -20,4 +20,5 @@ public class RegisterController {
     	model.addAttribute("writeForm", new HouseRegForm());
         return "houseregister";
     }
+
 }
