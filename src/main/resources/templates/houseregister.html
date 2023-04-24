@@ -15,29 +15,14 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $( function() {
-      $( "#slider-range" ).slider({
-        range: true,
-        min: 0,
-        max: 5000,
-        values: [ 100, 1000 ],
-        slide: function( event, ui ) {
-          $( "#amount" ).val(ui.values[ 0 ] + "만원 ~~ " + ui.values[ 1 ] + "만원");
-        }
-      });
-      $( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) +
-        "만원 ~~ " + $( "#slider-range" ).slider( "values", 1 )+ "만원" );
-    } );
-    </script>
+
   <title>AKIYAMAIN</title>
-</script>
 <script type="text/javascript">
   function formCheck() {
     /* 필수항목 체크(이메일) */
-		var email = document.getElementById("email");
-		if (email.value.length < 1) {
-			alert("이메일은 필수 입력 사항입니다.");
+		var address = document.getElementById("address");
+		if (address.value.length < 1) {
+			alert("주소는 필수 입력 사항입니다.");
 			email.focus();
 			return false;
 		}
@@ -163,49 +148,13 @@ body {
     width: 50%;
 }
 
-.slidecontainer {
-    width: 100%;
-    margin-top: 100px;
-}
-
-.slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%; /* 슬라이더 길이 */
-    height: 15px; /* 슬라이더 두께 */
-    border-radius: 5px; /* 슬라이더 모서리를 약간 둥글게 */
-    background: #c30303; /* 슬라이더 색상 */
-    outline: none; /* 슬라이더 테두리 없이 */
-}
-
-/* 슬라이더 핸들(클릭해서 드래그하는 부분) 커스텀 
-(Chrome, Opera, Safari, Edge 브라우저를 위해서는 -webkit-을,
-Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
-    appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
-    width: 25px; /* 슬라이더 핸들 길이 */
-    height: 25px; /* 슬라이더 핸들 높이 */
-    border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
-    background: #00f; /* 슬라이더 핸들 색상 */
-    cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
-}
-
-.slider::-moz-range-thumb {
-    width: 25px; /* 슬라이더 핸들 길이 */
-    height: 25px; /* 슬라이더 핸들 높이 */
-    border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
-    background: #00f; /* 슬라이더 핸들 색상 */
-    cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
-}
-
-#email {
+#address {
   border-style: solid;
 }
-#email:valid {
+#address:valid {
   border-color: green;
 }
-#email:invalid {
+#address:invalid {
   border-color: red;
 }
 
@@ -214,55 +163,36 @@ Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
 </head>
 <body>
 
- 
-  <!--header section starts-->
-  <header class="header fixed-top">
-
-  <a href="#" class="logo"><img src="스크린샷_2023-04-18_053349-removebg-preview.png" alt=""></a>   
-  <nav>
-    <ul class="nav justify-content-end">
-      <li class="nav-item"><a class="nav-link" href="#home">home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
-      <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
-      <li class="nav-item"><a class="nav-link" href="#project">project</a></li>
-      <li class="nav-item"><a class="nav-link" href="#buy">buy</a></li>
-      <li class="nav-item"><a class="nav-link" href="#lental">lental</a></li>
-    </ul>
-  </nav>
-    <div class="fas fa-bars"></div>
-  </header>
-
   <!-- buy 버튼 클릭 시 표현해줄 페이지 -->
   <table>
     <tr>
-			<td colspan="2" id="title">매매</td>
+			<td colspan="2" id="title">등록</td>
 		</tr>
     <tr>
         <th>지 역</th>
         <td>
           
-          <input type="checkbox" name="location" id="tokyo" value="tokyo">
+          <input type="radio" name="location" id="tokyo" value="tokyo">
           <label for="tokyo">도쿄</label>
           
-          <input type="checkbox" name="location" id="osaka" value="osaka">
+          <input type="radio" name="location" id="osaka" value="osaka">
           <label for="osaka">오사카</label>
           
-          <input type="checkbox" name="location" id="nagoya" value="nagoya">
+          <input type="radio" name="location" id="nagoya" value="nagoya">
           <label for="nagoya">나고야</label>
           
-          <input type="checkbox" name="location" id="fukuoka" value="fukuoka">
+          <input type="radio" name="location" id="fukuoka" value="fukuoka">
           <label for="fukuoka">후쿠오카</label>
           
-          <input type="checkbox" name="location" id="sapporo" value="sapporo">
+          <input type="radio" name="location" id="sapporo" value="sapporo">
           <label for="sapporo">삿포로</label>
         </td>
     </tr>
     <tr>
         <th>가 격</th>
         <td>
-        <label for="amount">구매 가격:</label>
-        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-        <div id="slider-range"></div>
+        <label for="amount">판매 가격:</label>
+        <input type="number" id="amount">￥/月
 </td>
     </tr>
     <tr>
@@ -310,11 +240,10 @@ Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
 <table>
   <tr>
     <td>
-    <labal for="email">Gmail 주소를 입력하세요:
-      <input type="email"
-      id="email"
-      pattern=".+@gmail\.com"
-      placeholder="example@gmail.com"
+    <labal for="text">Gmail 주소를 입력하세요:
+      <input type="text"
+      id="address"
+      placeholder="ㅇㅇ市ㅁㅁ區"
       required>
     </labal>
       <input type="submit" value="저장"> 

@@ -15,13 +15,14 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("board")
+@RequestMapping("rent")
 @Controller
 public class RentController {
 
     private final RentService rentService;
 
 
+<<<<<<< HEAD
     @GetMapping("registration")
     public String registrationForm(Model model) {
     	model.addAttribute("writeForm", new HouseRegForm());
@@ -39,4 +40,6 @@ public class RentController {
         }
     }
 
+=======
+>>>>>>> branch 'master' of https://github.com/homosapienssapienssapiens/akiyaProject.git
 }

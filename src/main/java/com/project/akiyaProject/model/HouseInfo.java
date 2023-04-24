@@ -1,14 +1,12 @@
 package com.project.akiyaProject.model;
 
 import com.project.akiyaProject.model.Enum.BooleanEnum;
-import com.project.akiyaProject.model.Enum.CityEnum;
 
 import lombok.Data;
-
 @Data
-public class HouseRegForm {
+public class HouseInfo {
 	private String house_id;
-	private CityEnum city;
+	private String city;
 	private String address;
 	private Long price;
 	private String completed;
@@ -24,5 +22,4 @@ public class HouseRegForm {
 	private BooleanEnum washer;
 	private BooleanEnum pet;
 	private BooleanEnum autolock;
-
 }
