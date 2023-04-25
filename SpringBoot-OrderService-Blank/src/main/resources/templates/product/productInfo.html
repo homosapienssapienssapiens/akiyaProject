@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세정보</title>
+    <link rel="stylesheet" href="/css/default.css">
+</head>
+<body>
+<div id="container">
+    <h1>상품 상세페이지</h1>
+    <form action="/order/orderProduct" method="post">
+        <table>
+            <tr>
+                <th>매뉴명</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>가격</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>재고</th>
+                <td></td>
+            </tr>
+        </table>
+        <p>
+        <label for="count">주문수량: </label>
+        <input type="number">
+        <input type="submit" value="주문하기">
+        <span class="error"></span>
+        <p>
+        <div class="center">
+            <input type="button" onclick="location.href='/'" value="메인으로">
+            <input type="button" onclick="location.href='/product/products'" value="목록으로">
+        </div>
+    </form>
+</div>
+</body>
+</html>
