@@ -4,7 +4,7 @@ BuyController, HomeController, RegisterController, RentController, SearchConditi
 mapmarker페이지 핀 생성
 templates.
 송명진
-메인페이지color 맞춤,한국어판 생성,국기 이미지 파일 첨부
+메인페이지color 맞춤,한국어판 생성,국기 이미지 파일 첨부.
 전재현
 1차 houseFinder 삭제 -> 매매, 임대 페이지 분할 후 작성.
 FindHomeBuy, FindHomeLental.html 생성
