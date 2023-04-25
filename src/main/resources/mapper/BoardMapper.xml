@@ -47,4 +47,7 @@
 		#{autolock}
 		)
 	</insert>
+	<select id="getHouseById" resultType="houseInfo">
+		select * from house where house_id = #{house_id}
+	</select>
 </mapper>

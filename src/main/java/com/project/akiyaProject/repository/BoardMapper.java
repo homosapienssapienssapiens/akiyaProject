@@ -7,5 +7,4 @@ public interface BoardMapper {
 	void mreigster();
 	HouseInfo getHouseById(String house_id);
 	
-	
 }

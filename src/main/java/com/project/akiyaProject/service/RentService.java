@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class RentService {
 
-	@Autowired
     private final BoardMapper boardMapper;
 	
 	public HouseInfo getHouseById(String house_id) {
