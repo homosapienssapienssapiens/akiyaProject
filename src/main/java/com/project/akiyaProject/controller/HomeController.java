@@ -15,9 +15,9 @@ public class HomeController {
         return "index";
     }
     
-    @GetMapping("housefinder")
+    @GetMapping("list")
     public String housefinder() {
-        return "housefinder";
+        return "list";
     }
     
     @GetMapping("viewOnMap")
@@ -28,13 +28,13 @@ public class HomeController {
     public String houseRegister() {
     	return "houseRegister";
     }
-    @GetMapping("buyhouse")
-    public String buyhouse() {
-    	return "buyhouse";
-    }
-    @GetMapping("lentalhouse")
+    @GetMapping("findHomeBuy")
     public String lentalhouse() {
-    	return "lentalhouse";
+    	return "findHomeBuy";
+    }
+    @GetMapping("details")
+    public String details() {
+    	return "details";
     }
     
     

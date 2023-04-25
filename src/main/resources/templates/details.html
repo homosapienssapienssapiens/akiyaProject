@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--font awesome file link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!--bootstrap file link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
+  <!--custom css file link-->
+  <link rel="stylesheet" href="css/style.css">
+  <title>AKIYA / エトワール・ドゥ・キハラ 40A号室</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+
+:root{
+  --orange:#ff7a00;
+}
+
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  transition: all .2s linear;
+  text-transform: capitalize;
+  font-family: 'Exo 2', sans-serif;
+}
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x:hidden;
+}
+.heading{ 
+  /* 건물 이름 들어가는 부분 */
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 1.7rem;
+  color:#444;
+  margin: 2rem 0;
+  padding-top:6rem;
+  text-decoration: underline;
+  text-decoration-style:solid;
+  text-decoration-color: var(--orange);
+  text-underline-offset: 1.4rem;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  z-index:100;
+  padding: 1rem 2rem;
+  box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5rem;
+}
+.header .logo img{
+  height: 8rem;
+}
+.header nav ul{
+  list-style-type:none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0; padding: 0;
+}
+
+.header nav ul li{
+  margin: 0 1.5rem;
+}
+.header nav ul li a{
+  font-size: 2rem;
+  color:#666;
+}
+.header nav ul li a:hover{
+  color:#000;
+  text-decoration: none;
+}
+.header .fa-bars{
+  font-size: 2.5rem;
+  color:#666;
+  cursor: pointer;
+  display: none;
+}
+
+.home .hero{
+  min-height: 60vh;
+  background: url(2022-09-05_18-25-49-49438-1662369949.jpg)no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  
+}
+.home .hero .text1{
+  position: relative;
+  margin-left: 18%;
+  font-size: rem;
+  width: 45rem;
+  padding: 1rem 2rem;
+  text-align: center;
+
+}
+.home .hero .text2{
+  font-size: 3rem;
+  width: 35rem;
+  background: var(--orange);
+  padding: 1rem 2rem;
+  text-align: center;
+  opacity: .8;
+  margin-top:1rem;
+  margin-left: 18%;
+  color:#fff;
+
+}
+
+.home .counting{
+  min-height: 40vh;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+.home .counting .box{
+  margin:2rem 4rem;
+  text-align: center;
+}
+.home .counting .box .count{
+  font-size:7rem;
+  color:#444;
+}
+
+.home .counting .box .count .h3{
+ font-size: 2rem;
+ color:var(--orange);
+
+}
+
+.about{
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+.about .image{
+  padding: 2rem;
+}
+.about .image img{
+  height: 45rem;
+  object-fit: cover;
+  box-shadow: 2.5rem 2.5rem 0 1rem var(--orange);
+}
+.about .info{
+  position: relative;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.about .info .h2{
+  color:var(--orange);
+  font-size: 3rem;
+}
+.about .info .p{
+  font-size:1.4rem;
+  color: #444;
+  margin: 2rem 0;
+}
+.about .info .icons a{
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background: #333;
+  color:#fff;
+  border-radius: .5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+
+}
+.about .info .icons a :hover{
+  background: var(--orange);
+}
+
+
+
+.fa-times{
+  transform: rotate(180deg);
+}
+
+
+
+
+/*media aueries*/
+
+@media(max-width:768px){
+  html{
+    font-size: 50%;
+  }
+  .header .fa-bars{
+    display: block;
+  }
+    .header nav{
+      position: fixed;
+     top:6rem; right:-120%;
+     height: calc(100vh -6rem);
+     width: 100vw;
+     background: rgba(0,0,0,.5);
+     z-index: 1000;
+     border-top: .1rem solid rgba(0,0,0,.3);
+    }
+    .header nav ul{
+      height: 100%;
+      width: 33rem;
+      background: #fff;
+      flex-flow: column;
+      justify-content: center;
+      float: right;
+    }
+    .header nav ul li {
+      margin: 1rem 0;
+    }
+    .header nav ul li a{
+      display: block;
+    padding: 5rem 0;
+    border-top: 1rem solid rgba(0,0,0,.3);
+    width: 25rem;
+    border-radius: 5rem;
+    text-align: center;
+  }
+  .header nav ul li a:hover{
+    background: #333;
+    color:#fff;
+  }
+  .header .nav-toggle{
+    right: 0%;
+  }
+}
+@media(max-width:400px){
+  .home .hero .text1{
+    font-size:3.5rem;
+    width:35rem;
+  }
+  .home .hero .text2{
+    font-size:1rem;
+    width:33rem;
+  }
+}
+
+ /* 포토 슬라이드 */
+ 
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+.nav label:hover { opacity: 1; }
+.nav .next { right: 0; }
+input:checked + .slide-container  .slide {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  position: absolute;
+  text-align: center;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* 포토 슬라이드 끝 */
+
+/* 매물 상세표 시작 */
+
+.data_table {
+  border-bottom: 1px solid #CCCCCC;
+  border-collapse: separate;
+  border-right: 1px solid #CCCCCC;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.data_table td, .data_table td img {
+  vertical-align: middle;
+}
+
+.data_table th, .data_table td {
+  border-left: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  line-height: 1.5;
+  padding: 10px;
+  text-align: center;
+}
+
+.data_table th {
+  background-color: #ececec;
+}
+
+/* 매물 상세표 끝 */
+
+/* 문의하기 버튼 시작 */
+
+.button-container {
+    text-align: center;
+}
+
+.myButton {
+	background-color:#ff7a00;
+	border-radius:28px;
+	border:1px solid #ff7a00;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	font-style:italic;
+	padding:16px 29px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #bb781b;
+}
+
+.myButton:hover {
+	background-color:#ff7b0096;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* 문의하기 버튼 끝 */
+
+
+</style>
+
+<title>Document</title>
+
+</head>
+
+<body>
+  <!--header section starts-->
+  <header class="header fixed-top">
+    
+    <a href="#" class="logo"><img src="스크린샷_2023-04-18_053349-removebg-preview.png" alt=""></a>   
+    <nav>
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a class="nav-link" href="#home">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
+        <li class="nav-item"><a class="nav-link" href="#project">project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#buy">buy</a></li>
+      <li class="nav-item"><a class="nav-link" href="#lental">lental</a></li>
+    </ul>
+  </nav>
+  <div class="fas fa-bars"></div>
+</header>
+
+  <!--home section section stars-->
+  <!-- <section id="home" class="home container-fluid p-0">
+
+  </section> -->
+  <!--home section end-->
+
+  <!--about section starts-->
+  <section id="about" class="about container">
+
+    <h1 class="heading">エトワール・ドゥ・キハラ 40A号室</h1>
+    <!-- 포토 슬라이드 -->
+    
+    <ul class="slides">
+      <input type="radio" name="radio-btn" id="img-1" checked />
+      <li class="slide-container">
+      <div class="slide">
+        <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_go.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-6" class="prev">&#x2039;</label>
+        <label for="img-2" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <input type="radio" name="radio-btn" id="img-2" />
+      <li class="slide-container">
+          <div class="slide">
+            <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_co.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-1" class="prev">&#x2039;</label>
+        <label for="img-3" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <input type="radio" name="radio-btn" id="img-3" />
+      <li class="slide-container">
+          <div class="slide">
+            <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_ro.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-2" class="prev">&#x2039;</label>
+        <label for="img-4" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <input type="radio" name="radio-btn" id="img-4" />
+      <li class="slide-container">
+          <div class="slide">
+            <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_2o.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-3" class="prev">&#x2039;</label>
+        <label for="img-5" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <input type="radio" name="radio-btn" id="img-5" />
+      <li class="slide-container">
+          <div class="slide">
+            <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_3o.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-4" class="prev">&#x2039;</label>
+        <label for="img-6" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <input type="radio" name="radio-btn" id="img-6" />
+      <li class="slide-container">
+          <div class="slide">
+            <img src="https://img01.suumo.com/front/gazo/fr/bukken/001/100314235001/100314235001_9o.jpg" />
+          </div>
+      <div class="nav">
+        <label for="img-5" class="prev">&#x2039;</label>
+        <label for="img-1" class="next">&#x203a;</label>
+      </div>
+      </li>
+    
+      <li class="nav-dots">
+        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+        <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+        <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+        <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+        <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+      </li>
+
+    </ul>
+    
+    <!-- 포토 슬라이드 끝 -->
+
+    <!-- 줄바꿈 -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- 매물 설명(타이틀 부분) -->
+    <div class="property_view">
+      <h3 style="border-left: 3px solid #ff7a00; color: rgba(0, 0, 0, 0.8); padding-left: 7px; ">物件概要</h3>
+      
+      <br>
+
+      <!-- 매물 상세표 시작 -->
+  
+      <table cellspacing="0" class="data_table table_gaiyou">
+       <tbody>
+        <tr>
+          <th class="data_01" scope="cols">所在地</th>
+          <td colspan="3"><ul class="inline_list">
+            <li>
+              広島県三原市木原１</li>
+          </ul>
+          </td>
+        </tr>
+        <tr>
+         <th class="data_01" scope="cols">賃料</th>
+         <td>
+          4.2万円</td>
+         <th class="data_02" scope="cols">築年月</th>
+         <td>
+          1992年3月</td>
+       </tr>
+       <tr>
+         <th class="data_01" scope="cols">専有面積</th>
+         <td>48m2</td>
+         <th class="data_02" scope="cols">間取り</th>
+         <td>2LDK</td>
+       </tr>
+       <tr>
+         <th class="data_01" scope="cols">建物種別</th>
+         <td>マンション</td>
+         <th class="data_02" scope="cols">階</th>
+         <td>4階</td>  
+  <tr>
+         <th class="data_01" scope="cols">特徴・設備</th>
+         <td colspan="3"><ul class="inline_list">
+           <li>
+            バス停, ＪＲ山陽本線/糸崎駅 歩52分, メディカル・センター, ビルトインエアコン, 
+            バストイレ別, 駐輪場, 室内洗濯置, ペット相談, ドア・ロック</li>
+         </ul>
+         </td>
+       </tr>
+  </tbody></table>
+  
+      <!-- 매물 상세표 끝 -->
+
+      <br>
+      <br>
+      <br>
+
+
+      <!-- 문의하기 버튼 -->
+      <div class="property_view">
+        <h3 style="border-left: 3px solid #ff7a00; color: rgba(0, 0, 0, 0.8); padding-left: 7px; ">この物件にお問い合わせ</h3>
+        
+        <br>
+
+        <div class="button-container">
+          <a href="#" class="myButton">メール</a>
+      </div>
+
+
+      <!-- 문의하기 버튼 끝 -->
+
+
+    </div>
+  </section>
+
+
+</body>
+</html>
