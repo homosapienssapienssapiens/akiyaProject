@@ -18,9 +18,13 @@ public class HomeController {
         return "housefinder";
     }
     
-    @GetMapping("mapmarker")
-    public String mapmarker() {
-    	return "mapmarker";
+    @GetMapping("viewOnMap")
+    public String viewOnMap() {
+    	return "viewOnMap";
+    }
+    @GetMapping("houseRegister")
+    public String houseRegister() {
+    	return "houseRegister";
     }
     @GetMapping("buyhouse")
     public String buyhouse() {
