@@ -1,7 +1,9 @@
 package com.project.akiyaProject.repository;
 
-import com.project.akiyaProject.model.HouseInfo;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.project.akiyaProject.model.HouseInfo;
+@Mapper
 public interface BoardMapper {
 
 	void mreigster();
