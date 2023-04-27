@@ -3,6 +3,8 @@
 픽토그램 from https://fontawesome.com/
 데이터 베이스 URL : 211.38.173.250:1521:xe
 프로젝트 팀 컬러 : https://colorhunt.co/palette/fef7dce6ddc6c2b8a3a19882
+erd:
+https://www.erdcloud.com/d/JsDE7KFRhaGg29uSX
 참고 부동산 사이트 :
 https://www.athome.co.jp/
 https://www.homes.co.jp/
