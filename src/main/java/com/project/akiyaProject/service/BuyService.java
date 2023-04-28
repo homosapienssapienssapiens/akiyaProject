@@ -1,5 +1,7 @@
 package com.project.akiyaProject.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,9 +19,12 @@ public class BuyService {
 
     private final BoardMapper boardMapper;
 	
-	public HouseInfo getHouseById(String house_id) {
-		
+    public List<HouseInfo> houseList(){    	
+    	return boardMapper.houseList(null);
+    }
+    
+	public HouseInfo getHouseById(String house_id) {		
 		return boardMapper.getHouseById(house_id);
-
 	}
+	
 }

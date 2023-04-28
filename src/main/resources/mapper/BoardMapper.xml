@@ -4,9 +4,8 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.project.akiyaProject.repository.BoardMapper">
-	<insert id="mregister">
-		<selectKey keyProperty="house_id" resultType="long"
-			order="BEFORE">
+	<insert id="houseRegister">
+		<selectKey keyProperty="house_id" resultType="long" order="BEFORE">
 			select house_seq from dual
 		</selectKey>
 		insert into house(
@@ -47,6 +46,23 @@
 		#{autolock}
 		)
 	</insert>
+	<select id="houseList" resultType="houseInfo">
+		select * from house
+		<where>
+			<if test="#{bus} != 'FALSE'">bus = "TRUE" and</if>
+			<if test="#{subway} != 'FALSE'">subway = "TRUE" and</if>
+			<if test="#{convini} != 'FALSE'">convini = "TRUE" and</if>
+			<if test="#{hospital} != 'FALSE'">hospital = "TRUE" and</if>
+			<if test="#{aircon} != 'FALSE'">aircon = "TRUE" and</if>
+			<if test="#{bathroom} != 'FALSE'">bathroom = "TRUE" and</if>
+			<if test="#{parking} != 'FALSE'">parking = "TRUE" and</if>
+			<if test="#{washer} != 'FALSE'">washer = "TRUE" and</if>
+			<if test="#{pet} != 'FALSE'">pet = "TRUE" and</if>
+			<if test="#{autolock} != 'FALSE'">autolock = "TRUE" and</if>
+			price between #{price_min} and #{price_max} and
+			housesize between #{houseSize_min} and #{houseSize_max}
+		</where>
+	</select>
 	<select id="getHouseById" resultType="houseInfo">
 		select * from house where house_id = #{house_id}
 	</select>
