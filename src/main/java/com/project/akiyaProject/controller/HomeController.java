@@ -36,6 +36,14 @@ public class HomeController {
     public String details() {
     	return "details";
     }
+    @GetMapping("index_dark")
+    public String index_dark() {
+    	return "index_dark";
+    }
+    @GetMapping("introduce")
+    public String introduce() {
+    	return "introduce";
+    }
     
     
 }

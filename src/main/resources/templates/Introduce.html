@@ -1,157 +1,314 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Css Flip Book</title>
-<link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-     body{
-	       margin: 0;
-	       padding: 0;
-	       height: 100vh;
-	       display: flex;
-	       justify-content: center;
-	       align-items: center;
-	       font-family: "Roboto", sans-serif;
-	       background: linear-gradient(90deg, #FEF7DC 50%, #FEF7DC 50%);
-      }
-    input{
-	       display: none;
-      }
-    img{
-	       width: 100%;
-	       height: 100%;
-       }
-    .book{
-	       display: flex;
-       }
-     #cover{
-	       width: 250px;
-	       height: 400px;
-       }
-     .flip-book{
-	       width: 250px;
-	       height: 400px;
-	       position: relative;
-	       perspective: 1500px;
+   @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+   /*빨간 원 부분*/
+   body::before
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#f00,#f0f);
+      clip-path: circle(30% at right 70%);
+         opacity: 0.1;
+    }
+      /*빨간 원 부분*/
+      /*파란 원 부분*/
+    body::after
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#2196f3,#e91e63);
+      clip-path: circle(30% at 10%  10%);
+         opacity: 0.1;
+    }
+      /*파란 원 부분*/
+      /*바디*/
+*
+{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
 }
-.flip{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transform-origin: left;
-	transform-style: preserve-3d;
-	transform: rotateY(0deg);
-	transition: .5s;
-	color: #000;
+img{
+  width: 230px;
+  height: 230px;
+   border-radius: 10px;
+   opacity: 0.6;
 }
-p{
-	font-size: 14px;
-	line-height: 24px;
+body 
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: #333;
 }
-.front{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-	box-sizing: border-box;
-	padding: 0 13px;
-	box-shadow: inset 20px 0 50px rgba(0,0,0,0.5) 0 2px 5px rgba(0,0,0,.5);
+.container 
+{
+   position: relative;
+   display: flex;
+   padding: 80px 40px;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 80px;
 }
-.back{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 99;
-	transform: rotateY(180deg);
-	backface-visibility: hidden;
-	background: #000;
+.card 
+{
+   position: relative;
+   width: 350px;
+   height: 180px;
+   background: #333;
+   transition: 0.5s;
 }
-.next-btn{
-	position: absolute;
-	bottom: 13px;
-	right: 13px;
-	cursor: pointer;
-	color: #000;
+.card:hover 
+{
+   height: 450px;
 }
-.back-btn{
-	position: absolute;
-	bottom: 13px;
-	right: 13px;
-	cursor: pointer;
-	color: #fff;
+.card .lines 
+{
+   position: absolute;
+   inset: 0;
+   background: #000;
+   overflow: hidden;
 }
-#p1{
-	z-index: 3;
+.card .lines::before 
+{
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 600px;
+   height: 120px;
+   background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+   animation: animate 4s linear infinite;
+   animation-play-state: paused;
 }
-#p2{
-	z-index: 2;
+.card:hover .lines::before 
+{
+   animation-play-state: running;
 }
-#p3{
-	z-index: 1;
+@keyframes animate 
+{
+   0%
+   {
+      transform: translate(-50%,-50%) rotate(0deg);
+   }
+   100%
+   {
+      transform: translate(-50%,-50%) rotate(360deg);
+   }
+   /*사진x,배경카드*/
 }
-#c1:checked ~ .flip-book #p1{
-	transform: rotateY(-180deg);
-	z-index: 1;
+.card .lines::after
+{
+   content: '';
+   position: absolute;
+   inset: 3px;
+   background: #292929;
+} 
+.card .imgBx 
+{
+   position: absolute;
+   top: -60px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 150px;
+   height: 150px;
+   background: #000;
+   transition: 0.5s;
+   z-index: 10;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-#c2:checked ~ .flip-book #p2{
-	transform: rotateY(-180deg);
-	z-index: 2;
+.card:hover .imgBx 
+{
+   top: 25px;
+   width: 200px;
+   height: 200px;
 }
-#c3:checked ~ .flip-book #p3{
-	transform: rotateY(-180deg);
-	z-index: 3;
+.card .imgBx::before 
+{
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 150px;
+   transform: translate(-50%,-50%);
+   animation: animate2 6s linear infinite;
+   animation-play-state: paused;
+}
+.card:hover .imgBx::before 
+{
+   animation-play-state: running;
+}
+@keyframes animate2     /*애니매이션 효과*/
+{
+   0%
+   {
+      transform: translate(-50%,-50%) rotate(360deg);
+   }
+   100%
+   {
+      transform: translate(-50%,-50%) rotate(0deg);
+   }
+}
+
+
+.card .content
+{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   overflow: hidden;
+}
+.card .content .details 
+{
+   padding: 30px 20px;
+   text-align: center;
+   width: 100%;
+   transition: 0.5s;
+   transform: translateY(145px);
+}
+.card:hover .content .details 
+{
+   transform: translateY(0px);
+}
+.card .content .details h2 
+{
+   font-size: 1.5em;
+   font-weight: 500;
+   color: #45f3ff;
+   line-height: 1.2em;
+}
+.card .content .details p 
+{
+   color: #fff;
+   opacity: 0;
+   transition: 0.5s;
+}
+.card .content .details a 
+{
+   display: inline-block;
+   padding: 8px 15px;
+   background: #45f3ff;
+   color: #292929;
+   margin-top: 10px;
+   font-weight: 500;
+   text-decoration: none;
+   opacity: 0;
+   transition: 0.5s;
+}
+.card:hover .content .details p, 
+.card:hover .content .details a 
+{
+   opacity: 1;
+}
+h1{
+   position: relative;
+      font-size:5em;
+      letter-spacing: 1px;
+      color:#0e3742;
+      text-transform: uppercase;
+      width:40%;
+      text-align: center;
+      -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+      line-height: 0.70em;
+      outline: none;
+      lighting-color: aliceblue;
+      color: whitesmoke;
+      text-shadow: #07252d;
 }
 </style>
 <body>
-  <div class="book">
-    <input type="checkbox" id="c1">
-    <input type="checkbox" id="c2">
-    <input type="checkbox" id="c3">
-<div id="cover"><img src="상위.jpg"></div>
-    <div class="flip-book">
-      <div class="flip" id="p1">
-        <div class="back">
-   <label class="back-btn" for="c1">Back</label>
-</div>
-<img src="상위.jpg">
-  <div class="front">
-<h2>Apple</h2>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet architecto nam aliquam illum voluptatibus, eius, nobis ab aspernatur, dolore praesentium nesciunt laboriosam iste officiis voluptas unde maiores numquam voluptatem provident.laboriosam iste officiis voluptas unde maiores numquam voluptatem provident.laboriosam iste officiis voluptas</p>
-<label class="next-btn" for="c1">Next</label>
-	</div>
-</div>
-   <div class="flip" id="p2">
-     <div class="back">
-<img src="KakaoTalk_20230424_142153851.jpg">
-    <label class="back-btn" for="c2">Back</label>
-</div>
-<div class="front">
-<h2>イサンウィ</h2>
-<p>초erfgdsdsfsdffsddfddf</p>
-<label class="next-btn" for="c2">Next</label>
-	</div>
-</div>
-
-<div class="flip" id="p3">
-   <div class="back">
-     <label class="back-btn" for="c3">Back</label>
+   <h1>制作者</h1>
+  <div class="container">
+      <div class="card">
+         <div class="lines"></div>
+         <div class="imgBx">
+            <img src="img3.jpg">
+         </div>
+         <div class="content">
+            <div class="details">
+               <h2>TeamLeader</h2>
+               <p>チーム総括<br>地図ページ制作<br>tryrtytr<br>trytr</p>
+          
+               <a href="#">Read More</a>
+            </div>
+         </div>
+      </div>
+      <div class="card">
+         <div class="lines"></div>
+         <div class="imgBx">
+            <img src="img2.jpg">
+         </div>
+         <div class="content">
+            <div class="details">
+               <h2>DataBase</h2>
+               <p>fdgdfgdfgdfgdfgdfgfgfgfgf<br>DataBase連結<br>화면연결<br>sdfsdfd</p>
+               <a href="#">Read More</a>
+            </div>
+         </div>
+      </div>
+      <div class="card">
+         <div class="lines"></div>
+         <div class="imgBx">
+            <img src="상위.jpg">
+         </div>
+         <div class="content">
+            <div class="details">
+               <h2>Database</h2>
+               <p>dfgdfgdfggdfgdfgdgdgfgdgfdfgggfgg</p>
+               <a href="#">Read More</a>
+            </div>
+         </div>
    </div>
-<div class="front">
-<h2>Strawberry</h2>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet architecto nam aliquam illum voluptatibus, eius, nobis ab aspernatur, dolore praesentium nesciunt laboriosam iste officiis voluptas unde maiores numquam voluptatem provident.laboriosam iste officiis voluptas unde maiores numquam voluptatem provident.laboriosam iste officiis voluptas</p>
-<label class="next-btn" for="c3">Next</label>
-	</div>
-</div>
-</div>
-</div>
+   <div class="card">
+      <div class="lines"></div>
+      <div class="imgBx">
+         <img src="design.png">
+      </div>
+      <div class="content">
+         <div class="details">
+            <h2>Design</h2>
+            <p>dfgdfgdgfggffggfgfgfgdfgfgggfg</p>
+            <a href="#">Read More</a>
+         </div>
+      </div>
+      </div>
+      <div class="card">
+         <div class="lines"></div>
+         <div class="imgBx">
+            <img src="design.png">
+         </div>
+         <div class="content">
+            <div class="details">
+               <h2></h2>
+               <p>gfdgfgggdfgfddgfgfggg</p>
+               <a href="#">Read More</a>
+            </div>
+         </div>
+         </div>
 </body>
 </html>

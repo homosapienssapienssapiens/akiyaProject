@@ -11,6 +11,7 @@
 
 :root{
     --main-color:#d3ad7f;
+    --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
 }
@@ -46,7 +47,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 body{
-    background: white;
+    background: var(--bg);
 }
 
 section{
@@ -57,7 +58,7 @@ section{
 
 .heading{
     text-align: center;
-    color:black;
+    color:#fff;
     text-transform: uppercase;
     padding-bottom: 3.5rem;
     font-size: 4rem;
@@ -73,7 +74,7 @@ section{
     display: inline-block;
     padding:.9rem 3rem;
     font-size: 1.7rem;
-    color:black;
+    color:#fff;
     background: var(--main-color);
     cursor: pointer;
 }
@@ -87,7 +88,7 @@ section{
     top:0; left: 0; right: 0;
     z-index: 1000;
     border-bottom: var(--border);
-    background: #A19882;
+    background: var(--bg);
 }
 
 .header .flex{
@@ -106,11 +107,11 @@ section{
 .header .navbar a{
     margin:0 1rem;
     font-size: 1.8rem;
-    color:black;
+    color:#fff;
 }
 
 .header .navbar a:hover{
-    color:black;
+    color:var(--main-color);
     border-bottom: .1rem solid var(--main-color);
     padding-bottom: .5rem;
 }
@@ -136,7 +137,7 @@ section{
     position: absolute;
     top:115%; right: -100%;
     width: 35rem;
-    background:black;
+    background: #fff;
     padding:1.5rem;
 }
 
@@ -157,11 +158,11 @@ section{
     top:1rem; right: 1rem;
     font-size: 2rem;
     cursor: pointer;
-    color: black;
+    color: var(--black);
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
-    color:
+    color:var(--main-color);
 }
 
 .header .cart-items-container .cart-item img{
@@ -188,7 +189,7 @@ section{
     background:url(2022-09-05_18-25-49-49438-1662369949.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 .home .hero .text1{
   position: relative;
@@ -244,7 +245,7 @@ section{
 }
 .language{
   background-color:#FEF7DC;
-  color:white;
+  color:whitesmoke;
 }
 
 /*counting box*/
@@ -262,8 +263,8 @@ section{
 .home .content h3{
     font-size: 6rem;
     text-transform: uppercase;
-    color:black;
-  
+    color:#fff;
+    animation:slide 1s ease-out;
 
 }
 
@@ -272,7 +273,7 @@ section{
     font-weight: lighter;
     line-height: 1.8;
     padding:1rem 0;
-    color:black;
+    color:#eee;
 }
 
 .about .row{
@@ -317,7 +318,7 @@ display:block;
 
 .about .row .content h3{
     font-size: 3rem;
-    color:black;
+    color:#fff;
 }
 
 .about .row .content p{
@@ -432,7 +433,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 
 .profile_purple {
-    color: black;
+    color: beige;
     height: 500px;
 }
 
@@ -451,9 +452,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     display: block;
     font-size: 30px;
 }
-/*our services글자색*/
+
 .profile-contents p {
-    color:white;
+    color: white;
     font-size: 20px;
     min-width: 140px;
     max-height: 0;
@@ -462,7 +463,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     transition: all 1s;
     opacity: 0;
 }
-/*our services글자색*/
 
 .team-item:hover .profile-contents p {
     opacity: 1;
@@ -487,12 +487,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .services .row .content h3{
     font-size: 10rem;
-    color:black;
+    color:#fff;
 }
 
 .services.row .content p{
     font-size:5rem;
-    color:black;
+    color:#ccc;
     padding:1rem 0;
     line-height: 3.8;
 }
@@ -515,7 +515,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 5rem;
     line-height: 5rem;
     font-size: 2rem;
-    color:black;
+    color:#fff;
     border:var(--border);
     margin:.3rem;
     border-radius: 50%;
@@ -535,7 +535,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .footer .links a{
     padding:.7rem 2rem;
-    color:black;
+    color:#fff;
     border:var(--border);
     font-size: 2rem;
 }
@@ -546,13 +546,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .footer .credit{
     font-size: 2rem;
-    color:black;
+    color:#fff;
     font-weight: lighter;
     padding:1.5rem;
 }
 
 .footer .credit span{
-    color:black;
+    color:var(--main-color);
 }
 
 /**/
@@ -581,7 +581,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
       align-items: center;
       border-top: 1px solid rgba(255,255,255,0.5);
       border-left: 1px solid rgba(255,255,255,0.5);
-   
+      backdrop-filter: blur(5px);
     }
     .container .card .content{
       padding: 20px;
@@ -606,12 +606,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     }
     .container .card .content h3{
       font-size: 1.8em;
-      color:black;
+      color: #fff;
       z-index: 1;
     }
     .container .card .content p{
       font-size: 1em;
-      color:black;
+      color: #fff;
       font-weight: 300;
 
     }
@@ -620,7 +620,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
       display: inline-block;
       padding: 8px 20px;
       margin-top: 15px;
-      background-attachment: #A19882;
+      background-attachment: #fff;
       color:#000;
       border-radius: 20px;
       text-decoration: none;
@@ -650,7 +650,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .we .row .content h3{
     font-size: 3rem;
-    color:black;
+    color:#fff;
 }
 
 .we .row .content p{
@@ -839,7 +839,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
             <a href="#projects">projects</a>
             <a href="#services">services</a>
             <a href="#buy">buy</a>
-            <a href="#lental">Rental</a>
         </nav>
         <nav>
          
@@ -1003,6 +1002,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <h1 class="heading"> our <span>services</span> </h1>
     </div>
     <div class="box-container">
+          
+
         <div class="wrapper">
             <ul class="team">
                 <li class="team-item">
@@ -1034,10 +1035,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                 </li>
             </ul>
         </div>
+
+        <script> </script>
     </body>
 </html>
+        
+
     </div>
+
     <!--card01-->
+
     <div class="container">
         <div class="card">
           <div class="content">
@@ -1071,6 +1078,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                   </div>
                 </div>
         </div>
+
+        <!--이모티콘-->
+        
 
 </section>
 <!--services section end-->
@@ -1117,7 +1127,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         <a href="#">projects</a>
         <a href="#">services</a>
         <a href="#">buy</a>
-        <a href="#">Rent</a>
     </div>
 
     <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>

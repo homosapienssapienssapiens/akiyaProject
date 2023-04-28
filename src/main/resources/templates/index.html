@@ -11,7 +11,6 @@
 
 :root{
     --main-color:#d3ad7f;
-    --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
 }
@@ -47,7 +46,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 body{
-    background: var(--bg);
+    background: white;
 }
 
 section{
@@ -58,7 +57,7 @@ section{
 
 .heading{
     text-align: center;
-    color:#fff;
+    color:black;
     text-transform: uppercase;
     padding-bottom: 3.5rem;
     font-size: 4rem;
@@ -74,7 +73,7 @@ section{
     display: inline-block;
     padding:.9rem 3rem;
     font-size: 1.7rem;
-    color:#fff;
+    color:black;
     background: var(--main-color);
     cursor: pointer;
 }
@@ -88,7 +87,7 @@ section{
     top:0; left: 0; right: 0;
     z-index: 1000;
     border-bottom: var(--border);
-    background: var(--bg);
+    background: #A19882;
 }
 
 .header .flex{
@@ -102,16 +101,17 @@ section{
 
 .header .logo img{
     height: 15rem;
+    
 }
 
 .header .navbar a{
     margin:0 1rem;
     font-size: 1.8rem;
-    color:#fff;
+    color:black;
 }
 
 .header .navbar a:hover{
-    color:var(--main-color);
+    color:black;
     border-bottom: .1rem solid var(--main-color);
     padding-bottom: .5rem;
 }
@@ -131,47 +131,13 @@ section{
     display: none;
 }
 
-.header .search-form{
-    position: absolute;
-    top:115%; right: 2rem;
-    background: #fff;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-}
 
-.header .search-form.active{
-    transform: scaleY(1);
-}
-
-.header .search-form input{
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color:var(--black);
-    padding:1rem;
-    text-transform: none;
-}
-
-.header .search-form label{
-    cursor: pointer;
-    font-size: 2.2rem;
-    margin-right: 1.5rem;
-    color:var(--black);
-}
-
-.header .search-form label:hover{
-    color:var(--main-color);
-}
 
 .header .cart-items-container{
     position: absolute;
     top:115%; right: -100%;
     width: 35rem;
-    background: #fff;
+    background:black;
     padding:1.5rem;
 }
 
@@ -192,11 +158,11 @@ section{
     top:1rem; right: 1rem;
     font-size: 2rem;
     cursor: pointer;
-    color: var(--black);
+    color: black;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
-    color:var(--main-color);
+    color:black;
 }
 
 .header .cart-items-container .cart-item img{
@@ -220,10 +186,10 @@ section{
 }
 
 .home-container{
-    background:url(2022-09-05_18-25-49-49438-1662369949.jpg) no-repeat;
+    background:url(img/main_container.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 .home .hero .text1{
   position: relative;
@@ -279,7 +245,7 @@ section{
 }
 .language{
   background-color:#FEF7DC;
-  color:whitesmoke;
+  color:white;
 }
 
 /*counting box*/
@@ -297,8 +263,8 @@ section{
 .home .content h3{
     font-size: 6rem;
     text-transform: uppercase;
-    color:#fff;
-    animation:slide 1s ease-out;
+    color:black;
+  
 
 }
 
@@ -307,7 +273,7 @@ section{
     font-weight: lighter;
     line-height: 1.8;
     padding:1rem 0;
-    color:#eee;
+    color:black;
 }
 
 .about .row{
@@ -352,12 +318,12 @@ display:block;
 
 .about .row .content h3{
     font-size: 3rem;
-    color:#fff;
+    color:black;
 }
 
 .about .row .content p{
     font-size: 1.6rem;
-    color:#ccc;
+    color:black;
     padding:1rem 0;
     line-height: 1.8;
 }
@@ -369,7 +335,7 @@ display:block;
 }
 
 .projects .heading{
-  color:#fff;
+  color:black;
 }
 
 .projects .box-container{
@@ -486,9 +452,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     display: block;
     font-size: 30px;
 }
-
+/*our services글자색*/
 .profile-contents p {
-    color: white;
+    color:white;
     font-size: 20px;
     min-width: 140px;
     max-height: 0;
@@ -497,6 +463,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     transition: all 1s;
     opacity: 0;
 }
+/*our services글자색*/
 
 .team-item:hover .profile-contents p {
     opacity: 1;
@@ -521,12 +488,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .services .row .content h3{
     font-size: 10rem;
-    color:#fff;
+    color:black;
 }
 
 .services.row .content p{
     font-size:5rem;
-    color:#ccc;
+    color:black;
     padding:1rem 0;
     line-height: 3.8;
 }
@@ -549,7 +516,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 5rem;
     line-height: 5rem;
     font-size: 2rem;
-    color:#fff;
+    color:black;
     border:var(--border);
     margin:.3rem;
     border-radius: 50%;
@@ -569,7 +536,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .footer .links a{
     padding:.7rem 2rem;
-    color:#fff;
+    color:black;
     border:var(--border);
     font-size: 2rem;
 }
@@ -580,13 +547,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .footer .credit{
     font-size: 2rem;
-    color:#fff;
+    color:black;
     font-weight: lighter;
     padding:1.5rem;
 }
 
 .footer .credit span{
-    color:var(--main-color);
+    color:black;
 }
 
 /**/
@@ -615,7 +582,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
       align-items: center;
       border-top: 1px solid rgba(255,255,255,0.5);
       border-left: 1px solid rgba(255,255,255,0.5);
-      backdrop-filter: blur(5px);
+   
     }
     .container .card .content{
       padding: 20px;
@@ -640,12 +607,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     }
     .container .card .content h3{
       font-size: 1.8em;
-      color: #fff;
+      color:black;
       z-index: 1;
     }
     .container .card .content p{
       font-size: 1em;
-      color: #fff;
+      color:black;
       font-weight: 300;
 
     }
@@ -654,7 +621,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
       display: inline-block;
       padding: 8px 20px;
       margin-top: 15px;
-      background-attachment: #fff;
+      background-attachment: #A19882;
       color:#000;
       border-radius: 20px;
       text-decoration: none;
@@ -684,12 +651,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .we .row .content h3{
     font-size: 3rem;
-    color:#fff;
+    color:black;
 }
 
 .we .row .content p{
     font-size: 1.6rem;
-    color:#ccc;
+    color:black;
     padding:1rem 0;
     line-height: 1.8;
 }
@@ -864,7 +831,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <section class="flex">
 
         <a href="#" class="logo">
-            <img src="KakaoTalk_20230418_134222094.png" alt="">
+            <img src="img/logo_dark.png" alt="">
         </a>
     
         <nav class="navbar">
@@ -873,14 +840,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
             <a href="#projects">projects</a>
             <a href="#services">services</a>
             <a href="#buy">buy</a>
-            <a href="#lental">Rental</a>
+           
         </nav>
         <nav>
          
           <div class="wrap">
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_Japan-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_South_Korea-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_China-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_jp.png"></button>
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_ko.png"></button>
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_cn.png"></button>
           </div>
         </nav>
     
@@ -947,7 +914,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <div class="row">
 
         <div class="image">
-            <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
+            <img src="img/about_us.jpg" alt="">
         </div>
 
         <div class="content">
@@ -971,56 +938,56 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   <div class="box-container mx-auto">
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_08.jpg" title="house">
-      <img src="KakaoTalk_20230421_075637151_08.jpg" alt="">
+    <a href="img/aboutus1.jpg" title="house">
+      <img src="img/aboutus1.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="2022-09-05_18-26-22-79090-1662369982.jpg" title="hall">
-      <img src="2022-09-05_18-26-22-79090-1662369982.jpg" alt="">
+    <a href="img/aboutus2.jpg" title="hall">
+      <img src="img/aboutus2.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_10.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_10.jpg" alt="">
+    <a href="img/aboutus3.jpg" title="garden">
+      <img src="img/aboutus3.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="다운로드.jpeg" title="kitchen">
-      <img src="다운로드.jpeg" alt="">
+    <a href="img/aboutus4.jpg" title="kitchen">
+      <img src="img/aboutus4.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_11.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
+    <a href="img/aboutus5.jpg" title="garden">
+      <img src="img/aboutus5.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
     <a href="그림1.jpg" title="home">
-      <img src="그림1.jpg" alt="">
+      <img src="img/aboutus6.jpg" alt="">
     </a>
   </div>
 
   <div class="box">
     <a href="KakaoTalk_20230421_075637151_06.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_06.jpg" alt="">
+      <img src="img/aboutus7.jpg" alt="">
     </a>
   </div>
 
   <div class="box">
     <a href="KakaoTalk_20230421_075637151_07.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_07.jpg" alt="">
+      <img src="img/aboutus8.jpg" alt="">
     </a>
   </div>
 
   <div class="box">
     <a href="2022-09-05_18-26-02-44395-1662369962.jpg" title="home">
-      <img src="2022-09-05_18-26-02-44395-1662369962.jpg" alt="">
+      <img src="img/aboutus9.jpg" alt="">
     </a>
   </div>
   
@@ -1037,8 +1004,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <h1 class="heading"> our <span>services</span> </h1>
     </div>
     <div class="box-container">
-          
-
         <div class="wrapper">
             <ul class="team">
                 <li class="team-item">
@@ -1070,16 +1035,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                 </li>
             </ul>
         </div>
-
-        <script> </script>
     </body>
 </html>
-        
-
     </div>
-
     <!--card01-->
-
     <div class="container">
         <div class="card">
           <div class="content">
@@ -1159,7 +1118,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         <a href="#">projects</a>
         <a href="#">services</a>
         <a href="#">buy</a>
-        <a href="#">Rent</a>
+       
     </div>
 
     <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>
