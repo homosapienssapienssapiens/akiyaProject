@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
-public class RentService {
+public class BuyService {
 
     private final BoardMapper boardMapper;
 	

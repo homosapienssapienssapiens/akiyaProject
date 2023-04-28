@@ -11,10 +11,11 @@
 <title></title>
 </head>
 <body>
-	<div id="search-panel">
-		<input id="address" type="text" placeholder="주소 입력" />
-		<button id="submit" type="button" value="Geocode">지도 검색</button>
-
+    <div id="searchbox">
+        <input id="address" type="text" placeholder="주소 입력" />
+        <button id="submit" value="Geocode"> 
+          <i aria-hidden="true" class="fa fa-magnifying-glass fa-lg search" title="search"></i>
+        </button>
 	</div>
 	<div id="map"></div>
 
@@ -23,7 +24,7 @@
 	<div class="popup_layer" id="popup_layer" style="display: none;">
 		<div class="popup_box">
 			<!--팝업 버튼 영역-->
-			<img src="tutorial.png" class="tutorial">
+			<img src="img/MapTutorial.png" class="tutorial">
 			<!--팝업 버튼 영역-->
 		</div>
 		<div class="popup_exit_btn">

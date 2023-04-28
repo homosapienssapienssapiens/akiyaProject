@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.akiyaProject.model.HouseInfo;
 import com.project.akiyaProject.model.HouseRegForm;
-import com.project.akiyaProject.service.RentService;
+import com.project.akiyaProject.service.BuyService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class BuyController {
 	
-    private final RentService rentService;
+    private final BuyService rentService;
 
 	@GetMapping("registration")
 	public String registrationForm(Model model) {

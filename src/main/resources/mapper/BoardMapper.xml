@@ -28,7 +28,7 @@
 		pet,
 		autolock
 		) values(
-		'm' || to_char(#{house_id}),
+		#{house_id},
 		#{city},
 		#{address},
 		#{price},

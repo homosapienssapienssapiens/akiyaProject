@@ -1,238 +1,270 @@
-html, body, #map {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0
-}
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+ 
+        #searchbox {
+            position: absolute;
+            border-radius: 5px;
+            top: 10px;
+            left: 180px;
+            z-index: 5;
+            padding: 5px;
+            text-align: center;
+            padding: left 10px;
+            background-color: #FFFFFF;
+            height: 30px;         
+            
+        }
 
-#search-panel {
-	position: absolute;
-	top: 10px;
-	left: 25%;
-	z-index: 5;
-	background-color: #FFFFFF;
-	padding: 5px;
-	border: 1px solid black;
-	text-align: center;
-	padding: left 10px;
-}
+        #searchbox #address{
+          margin-right: 0;
+          border: #FFFFFF;
+          height: 100%;
+          font-size: large;
+        }
 
-:root { 
-	--rent-color: #FF9800; 
-	--buy-color: #0288D1;
-}
+        #searchbox #submit{
+          margin-left: 0;
+          height: 100%;
+          font-size: large;
+          border: #FFFFFF;
+          background-color: #FFFFFF;
+          cursor : pointer;
+        }
 
-/*
+        :root {
+            --rent-color: #FF9800;
+            --buy-color: #0288D1;
+        }
+
+        /*
          * Property styles in unhighlighted state.
          */
-.property {
-	align-items: center;
-	background-color: #FFFFFF;
-	border-radius: 50%;
-	color: #263238;
-	display: flex;
-	font-size: 14px;
-	gap: 15px;
-	height: 30px;
-	justify-content: center;
-	padding: 4px;
-	position: relative;
-	position: relative;
-	transition: all 0.3s ease-out;
-	width: 30px;
-}
+        .property {
+          align-items: center;
+          background-color: #FFFFFF;
+          border-radius: 50%;
+          color: #263238;
+          display: flex;
+          font-size: 14px;
+          gap: 15px;
+          height: 30px;
+          justify-content: center;
+          padding: 4px;
+          position: relative;
+          position: relative;
+          transition: all 0.3s ease-out;
+          width: 30px;
+        }
 
-.property::after {
-	border-left: 9px solid transparent;
-	border-right: 9px solid transparent;
-	border-top: 9px solid #FFFFFF;
-	content: "";
-	height: 0;
-	left: 50%;
-	position: absolute;
-	top: 95%;
-	transform: translate(-50%, 0);
-	transition: all 0.3s ease-out;
-	width: 0;
-	z-index: 1;
-}
+        .property::after {
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 9px solid #FFFFFF;
+          content: "";
+          height: 0;
+          left: 50%;
+          position: absolute;
+          top: 95%;
+          transform: translate(-50%, 0);
+          transition: all 0.3s ease-out;
+          width: 0;
+          z-index: 1;
+        }
 
-.property .icon {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	color: #FFFFFF;
-}
+        .property .icon {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          color: #FFFFFF;
+        }
 
-.property .icon svg {
-	height: 20px;
-	width: auto;
-}
+        .property .icon svg {
+          height: 20px;
+          width: auto;
+        }
 
-.property .details {
-	display: none;
-	flex-direction: column;
-	flex: 1;
-}
+        .property .details {
+          display: none;
+          flex-direction: column;
+          flex: 1;
+        }
 
-.property .address {
-	color: #9E9E9E;
-	font-size: 10px;
-	margin-bottom: 10px;
-	margin-top: 5px;
-}
+        .property .address {
+          color: #9E9E9E;
+          font-size: 10px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+        }
 
-.property .features {
-	align-items: flex-end;
-	display: flex;
-	flex-direction: row;
-	gap: 10px;
-}
+        .property .features {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+        }
 
-.property .features>div {
-	align-items: center;
-	background: #F5F5F5;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	display: flex;
-	font-size: 10px;
-	gap: 5px;
-	padding: 5px;
-}
+        .property .features > div {
+          align-items: center;
+          background: #F5F5F5;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          display: flex;
+          font-size: 10px;
+          gap: 5px;
+          padding: 5px;
+        }
 
-.property .condition {
-	align-items: center;
-	display: flex;
-	justify-content: left;
-	color: #FFFFFF;
-	margin-top: 5px;
-}
+        
+        .property .condition {
+          align-items: center;
+          display: flex;
+          justify-content: left;
+          color: #FFFFFF;
+          margin-top: 5px;
+        }
 
-.property .convenience {
-	align-items: center;
-	display: flex;
-	justify-content: left;
-	color: #FFFFFF;
-	margin-top: 5px;
-}
+        .property .convenience {
+          align-items: center;
+          display: flex;
+          justify-content: left;
+          color: #FFFFFF;
+          margin-top: 5px;
+        }
 
-/*
+
+
+
+
+        /*
          * Property styles in highlighted state.
          */
-.property.highlight {
-	background-color: #FFFFFF;
-	border-radius: 8px;
-	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-	height: 120px;
-	padding: 8px 15px;
-	width: auto;
-}
+        .property.highlight {
+          background-color: #FFFFFF;
+          border-radius: 8px;
+          box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+          height: 120px;
+          padding: 8px 15px;
+          width: auto;
+        }
 
-.property.highlight::after {
-	border-top: 9px solid #FFFFFF;
-}
+        .property.highlight::after {
+          border-top: 9px solid #FFFFFF;
+        }
 
-.property.highlight .details {
-	display: flex;
-}
+        .property.highlight .details {
+          display: flex;
+        }
 
-.property.highlight .icon {
-	width: 0px;
-	height: 0px;
-}
+        .property.highlight .icon {
+          width: 0px;
+          height: 0px;
+        }
 
-.property .structure {
-	color: #FFA000;
-}
+        .property .structure {
+          color: #FFA000;
+        }
 
-.property .size {
-	color: #388E3C;
-}
+        .property .size {
+          color: #388E3C;
+        }
 
-.property .bathroom {
-	color: #03A9F4;
-}
+        .property .bathroom {
+          color: #03A9F4;
+        }
 
-.property .over2f {
-	color: brown;
-}
 
-.property .parking {
-	color: red;
-}
 
-.property .washer {
-	color: #388E3C;
-}
+        .property .over2f {
+          color: brown;
+        }
 
-.property .aircon {
-	color: skyblue;
-}
+        .property .parking {
+          color: red;
+        }
 
-.property .pet {
-	color: burlywood;
-}
+        .property .washer {
+          color: #388E3C;
+        }
 
-.property .autolock {
-	color: grey;
-}
+        .property .aircon {
+          color: skyblue;
+        }
 
-.property .bus {
-	color: lightgreen;
-}
+        .property .pet {
+          color: burlywood;
+        }
 
-.property .subway {
-	color: orange;
-}
+        .property .autolock {
+          color: grey;
+        }
 
-.property .hospital {
-	color: green;
-}
+        .property .bus {
+          color: lightgreen;
+        }
 
-.property .convini {
-	color: purple;
-}
+        .property .subway {
+          color: orange;
+        }
 
-#condition {
-	margin-top: 5px;
-	margin-left: 5px;
-}
+        .property .hospital {
+          color: green;
+        }
 
-#convenience {
-	margin-top: 5px;
-	margin-left: 5px;
-}
+        .property .convini {
+          color: purple;
+        }
 
-/*
+
+        #condition {
+          margin-top: 5px;
+          margin-left: 5px;
+        }
+
+        #convenience {
+          margin-top: 5px;
+          margin-left: 5px;
+        }
+
+
+
+        /*
          * buy icon colors.
          */
-.property.highlight:has(.buy) .icon {
-	display: none;
-}
+        .property.highlight:has(.buy) .icon {
+          display: none;
+                   
+        }
 
-.property:not(.highlight):has(.buy) {
-	background-color: var(- -buy-color);
-}
+        .property:not(.highlight):has(.buy) {
+          background-color: var(--buy-color);
+        }
 
-.property:not(.highlight):has(.buy)::after {
-	border-top: 9px solid var(- -buy-color);
-}
+        .property:not(.highlight):has(.buy)::after {
+          border-top: 9px solid var(--buy-color);
+        }
 
-/*
+        /*
          * rent icon colors.
          */
-.property.highlight:has(.rent) .icon {
-	display: none;
-}
+        .property.highlight:has(.rent) .icon {
+          display: none;
+        }
 
-.property:not(.highlight):has(.rent) {
-	background-color: var(- -rent-color);
-}
+        .property:not(.highlight):has(.rent) {
+          background-color: var(--rent-color);
+        }
 
-.property:not(.highlight):has(.rent)::after {
-	border-top: 9px solid var(- -rent-color);
-}
+        .property:not(.highlight):has(.rent)::after {
+          border-top: 9px solid var(--rent-color);
+        }
 
+        
 /*popup*/
 .popup_layer {
 	position: fixed;
@@ -242,7 +274,7 @@ html, body, #map {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-}
+}   
 /*팝업 박스*/
 .popup_box {
 	position: absolute;
@@ -254,14 +286,38 @@ html, body, #map {
 }
 
 .popup_box .img {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
+
 }
+
 
 /*버튼영역*/
 .popup_exit_btn {
 	position: absolute;
-	right: 5%;
-	bottom: 2%;
-	z-index: 1003;
+    right: 5%;
+    bottom: 2%;
+    z-index: 1003;
+}
+
+#toList {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 5;
+  background-color: #FEF7DC;
+  padding: 8px;
+  border: 1px solid #FEF7DC;
+  text-align: center;
+  padding: left 10px;
+  font-size: large;
+  font-weight: bold;
+  color: #A19882;
+  border-radius: 10px;
+}
+
+#toList:hover {
+  background-color: #A19882;
+  border: #A19882;
+  color: #FEF7DC;
 }
