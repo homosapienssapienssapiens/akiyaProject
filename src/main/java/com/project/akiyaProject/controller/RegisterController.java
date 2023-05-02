@@ -31,6 +31,10 @@ public class RegisterController {
     public String registration(@ModelAttribute("regForm") HouseRegForm regForm, 
     						BindingResult result, Model model,
     						@RequestParam(required = false) MultipartFile file) {
+        if (result.hasErrors()) {
+            return "houseRegister";
+        }
+        
     						
     	log.info("regForm:{}", regForm);
     	return "houseRegister";

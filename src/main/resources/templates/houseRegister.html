@@ -186,13 +186,15 @@ body {
           
           <input type="radio" name="location" id="sapporo" value="sapporo">
           <label for="sapporo">삿포로</label>
+          <div class="error" th:errors="*{location}"></div>
         </td>
     </tr>
     <tr>
         <th>가 격</th>
         <td>
-        <label for="amount">판매 가격:</label>
-        <input type="number" id="amount">￥/月
+        <label for="price">판매 가격:</label>
+        <input type="number" id="price">￥/月
+        <div class="error" th:errors="*{price}"></div>
 </td>
     </tr>
     <tr>
@@ -245,6 +247,7 @@ body {
       id="address"
       placeholder="ㅇㅇ市ㅁㅁ區"
       required>
+      <div class="error" th:errors="*{address}"></div>
     </labal>
       <input type="submit" value="저장"> 
       <input type="reset" value="불러오기">

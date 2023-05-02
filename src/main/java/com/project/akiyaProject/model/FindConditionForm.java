@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class FindConditionForm {
 	@NotNull
-	List<String> location;
+	List<String> city;
 	@Min(value=1)
 	@Max(value=300)
 	private Long price_min;

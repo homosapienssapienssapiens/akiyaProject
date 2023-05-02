@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.project.akiyaProject.model.HouseInfo;
-import com.project.akiyaProject.repository.BoardMapper;
+import com.project.akiyaProject.repository.HouseMapper;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class BuyService {
 
-    private final BoardMapper boardMapper;
+    private final HouseMapper boardMapper;
 	
     public List<HouseInfo> houseList(){    	
     	return boardMapper.houseList(null);
