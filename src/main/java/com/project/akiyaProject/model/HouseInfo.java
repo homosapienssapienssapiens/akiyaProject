@@ -1,12 +1,13 @@
 package com.project.akiyaProject.model;
 
 import com.project.akiyaProject.model.Enum.BooleanEnum;
+import com.project.akiyaProject.model.Enum.CityEnum;
 
 import lombok.Data;
 @Data
 public class HouseInfo {
 	private String house_id;
-	private String city;
+	private CityEnum city;
 	private String address;
 	private Long price;
 	private String completed;

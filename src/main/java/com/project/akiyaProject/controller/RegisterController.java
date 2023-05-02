@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.project.akiyaProject.model.HouseRegForm;
-import com.project.akiyaProject.service.RentService;
+import com.project.akiyaProject.service.BuyService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
