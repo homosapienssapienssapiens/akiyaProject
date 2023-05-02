@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class FindConditionForm {
 	@NotNull
-	List<String> citys;
+	List<String> location;
 	@Min(value=1)
 	@Max(value=300)
 	private Long price_min;
@@ -25,24 +25,5 @@ public class FindConditionForm {
 	@Min(value=1)
 	@Max(value=300)
 	private Long houseSize_max;
-	@NotNull
-	private BooleanEnum bus;
-	@NotNull
-	private BooleanEnum subway; 
-	@NotNull
-	private BooleanEnum convini;
-	@NotNull
-	private BooleanEnum hospital;
-	@NotNull
-	private BooleanEnum aircon;
-	@NotNull
-	private BooleanEnum bathroom;
-	@NotNull
-	private BooleanEnum parking;
-	@NotNull
-	private BooleanEnum washer;
-	@NotNull
-	private BooleanEnum pet;
-	@NotNull
-	private BooleanEnum autolock;
+	private List<String> condition;
 }

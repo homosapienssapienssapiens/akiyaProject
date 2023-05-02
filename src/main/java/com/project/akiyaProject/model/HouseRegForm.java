@@ -12,7 +12,7 @@ import lombok.Data;
 public class HouseRegForm {
 	private String house_id;
 	@NotNull
-	private CityEnum city;
+	private List<CityEnum> location;
 	@NotNull
 	private String address;
 	@NotNull
