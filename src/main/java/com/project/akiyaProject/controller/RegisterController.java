@@ -24,7 +24,7 @@ public class RegisterController {
     @GetMapping("register")
     public String registrationForm(Model model) {
     	model.addAttribute("regForm", new HouseRegForm());
-        return "houseregister";
+        return "houseRegister";
     }
     
     @PostMapping("register")
@@ -33,7 +33,7 @@ public class RegisterController {
     						@RequestParam(required = false) MultipartFile file) {
     						
     	log.info("regForm:{}", regForm);
-    	return "houseregister";
+    	return "houseRegister";
     }
     
 
