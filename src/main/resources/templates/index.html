@@ -5,854 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>complete responsive coffee shop website design</title>
-    <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-:root{
-    --main-color:#d3ad7f;
-    --black:#13131a;
-    --bg:#010103;
-    --border:.1rem solid rgba(255,255,255,.3);
-}
-
-*{
-    font-family: 'Roboto', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar{
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 5rem;
-}
-
-body{
-    background: var(--bg);
-}
-
-section{
-    padding:3rem 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.heading{
-    text-align: center;
-    color:#fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-}
-
-.heading span{
-    color:var(--main-color);
-    text-transform: uppercase;
-}
-
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:.9rem 3rem;
-    font-size: 1.7rem;
-    color:#fff;
-    background: var(--main-color);
-    cursor: pointer;
-}
-
-.btn:hover{
-    letter-spacing: .2rem;
-}
-
-.header{
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 1000;
-    border-bottom: var(--border);
-    background: var(--bg);
-}
-
-.header .flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.header .logo img{
-    height: 15rem;
-}
-
-.header .navbar a{
-    margin:0 1rem;
-    font-size: 1.8rem;
-    color:#fff;
-}
-
-.header .navbar a:hover{
-    color:var(--main-color);
-    border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .5rem;
-}
-
-.header .icons div{
-    color:#fff;
-    cursor: pointer;
-    font-size: 2.5rem;
-    margin-left: 2rem;
-}
-
-.header .icons div:hover{
-    color:var(--main-color);
-}
-
-#menu-btn{
-    display: none;
-}
-
-.header .search-form{
-    position: absolute;
-    top:115%; right: 2rem;
-    background: #fff;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-}
-
-.header .search-form.active{
-    transform: scaleY(1);
-}
-
-.header .search-form input{
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color:var(--black);
-    padding:1rem;
-    text-transform: none;
-}
-
-.header .search-form label{
-    cursor: pointer;
-    font-size: 2.2rem;
-    margin-right: 1.5rem;
-    color:var(--black);
-}
-
-.header .search-form label:hover{
-    color:var(--main-color);
-}
-
-.header .cart-items-container{
-    position: absolute;
-    top:115%; right: -100%;
-    width: 35rem;
-    background: #fff;
-    padding:1.5rem;
-}
-
-.header .cart-items-container.active{
-    right: 0;
-}
-
-.header .cart-items-container .cart-item{
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap:1.5rem;
-    margin-bottom: 2rem;
-}
-
-.header .cart-items-container .cart-item .fa-times{
-    position: absolute;
-    top:1rem; right: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--black);
-}
-
-.header .cart-items-container .cart-item .fa-times:hover{
-    color:var(--main-color);
-}
-
-.header .cart-items-container .cart-item img{
-    height: 7rem;
-}
-
-.header .cart-items-container .cart-item .content h3{
-    font-size: 2rem;
-    color:var(--black);
-    padding-bottom: .5rem;
-}
-
-.header .cart-items-container .cart-item .content .price{
-    font-size: 1.5rem;
-    color:var(--main-color);
-}
-
-.header .cart-items-container .btn{
-    width: 100%;
-    text-align: center;
-}
-
-.home-container{
-    background:url(2022-09-05_18-25-49-49438-1662369949.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.5;
-}
-.home .hero .text1{
-  position: relative;
-  margin-left: 18%;
-  font-size: 5rem;
-  width: 45rem;
-  padding: 1rem 2rem;
-  text-align: center;
-  animation: slide 2s ease-out;
-  color:white;
-  z-index: 2;
-}
-/*counting box*/
-.home .counting{
-  min-height: 40vh;
-  padding:2rem 0;
-  display: list-item;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 60%;
-  
-}
-
-.home .counting .box{
-  margin: 2rem 4rem;
-  text-align: center;
-
-}
-
-.home .counting .box .count{
-  font-size: 7rem;
-  color:whitesmoke;
-}
-
-.home .counting .box h3{
-  font-size: 2rem;
-  color:whitesmoke;
-}
-
-
-.language,ul{
-  margin: 0;
-  padding:0;
-
-}
-.language li{
-  list-style: none;
-}
-.language a{
-  color: inherit;
-  text-decoration: none;
-}
-.language{
-  background-color:#FEF7DC;
-  color:whitesmoke;
-}
-
-/*counting box*/
-/*about us*/
-.home{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-.home .content{
-    max-width: 60rem;
-}
-
-.home .content h3{
-    font-size: 6rem;
-    text-transform: uppercase;
-    color:#fff;
-    animation:slide 1s ease-out;
-
-}
-
-.home .content p{
-    font-size: 2rem;
-    font-weight: lighter;
-    line-height: 1.8;
-    padding:1rem 0;
-    color:#eee;
-}
-
-.about .row{
-    display: flex;
-    align-items: center;
-    background:var(--black);
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-/*국기 버튼*/
-.btm_image{
-margin-top: 1rem;
-display: inline-block;
-font-size: 1.7rem;
-color:#fff;
-background: var(--main-color);
-cursor: pointer;
-width:50px;
-box-sizing:border-box;
-border-radius: 100%;
-
-}
-
-.btm_image img{
-width:100%;
-display:block;
-
-}
-/*국기 버튼 끝*/
-
-.about .row .image{
-    flex:1 1 45rem;
-}
-
-.about .row .image img{
-    width: 100%;
-}
-.about .row .content{
-    flex:1 1 45rem;
-    padding:2rem;
-}
-
-.about .row .content h3{
-    font-size: 3rem;
-    color:#fff;
-}
-
-.about .row .content p{
-    font-size: 1.6rem;
-    color:#ccc;
-    padding:1rem 0;
-    line-height: 1.8;
-}
-/*about us*/
-/*projects*/
-.projects{
-  min-height:100vh;
-  background:black;
-}
-
-.projects .heading{
-  color:#fff;
-}
-
-.projects .box-container{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.projects .box-container .box{
-  height:20rem;
-  width:30rem;
-  border-radius: .5rem;
-  margin:2rem;
-  overflow: hidden;
-  box-shadow: 0 .3rem .5rem black;
-}
-
-.projects .box-container .box img{
-  height:100%;
-  width:100%;
-  object-fit: cover;
-}
-
-.projects .box-container .box:hover img{
-  transform: scale(1.3);
-}
-/*projects*/
-/*services*/
-.wrapper {
-    display: grid;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.team {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.team-item {
-    flex-basis: 500px;
-    flex-shrink: 0;
-    margin: 0 4px;
-    opacity: 0.4;
-    transition: all .4s;
-    height: 500px;
- 
-}
-
-.team-item:hover {
-    opacity: 1;
-    flex-basis: 560px;
-    margin: 0 20px;
-}
-
-.team-item img {
-    width: 100%;
-}
-
-.profile {
-    background-color: #222;
-    position: relative;
-    overflow: hidden;
-}
-
-.profile:before {
-    content: ' ';
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.95+100 */
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.95) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.95) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#f2000000',GradientType=0 ); /* IE6-9 */
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 200px;
-}
-
-.profile_red {
-    color: beige;
-    height:500px;
-}
-
-.profile_beige {
-    color: beige;
-    height: 500px;
-    width: 500px;
-}
-
-
-
-.profile_purple {
-    color: beige;
-    height: 500px;
-}
-
-.profile-contents {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 10px;
-}
-
-.profile-contents h2 {
-    font-size: 17px;
-}
-
-.profile-contents h2 span {
-    display: block;
-    font-size: 30px;
-}
-
-.profile-contents p {
-    color: white;
-    font-size: 20px;
-    min-width: 140px;
-    max-height: 0;
-    overflow: hidden;
-    line-height: 1.2;
-    transition: all 1s;
-    opacity: 0;
-}
-
-.team-item:hover .profile-contents p {
-    opacity: 1;
-    transition-delay: .4s;
-    max-height: 6em;
-    margin-top: 0.4em;
-}
-
-/*services*/
-
-.services .row .image{
-    flex:1 1 45rem;
-}
-
-.services .row .image img{
-    width: 100%;
-}
-.services .row .content{
-    flex:1 1 45rem;
-    padding:5rem;
-}
-
-.services .row .content h3{
-    font-size: 10rem;
-    color:#fff;
-}
-
-.services.row .content p{
-    font-size:5rem;
-    color:#ccc;
-    padding:1rem 0;
-    line-height: 3.8;
-}
-/*services*/
-
-
-/*services*/
-
-.footer{
-    /* background:var(--black); */
-    text-align: center;
-}
-
-.footer .share{
-    padding:1rem 0;
-}
-
-.footer .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    color:#fff;
-    border:var(--border);
-    margin:.3rem;
-    border-radius: 50%;
-}
-
-.footer .share a:hover{
-    background-color: var(--main-color);
-}
-
-.footer .links{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:2rem 0;
-    gap:1rem;
-}
-
-.footer .links a{
-    padding:.7rem 2rem;
-    color:#fff;
-    border:var(--border);
-    font-size: 2rem;
-}
-
-.footer .links a:hover{
-    background:var(--main-color);
-}
-
-.footer .credit{
-    font-size: 2rem;
-    color:#fff;
-    font-weight: lighter;
-    padding:1.5rem;
-}
-
-.footer .credit span{
-    color:var(--main-color);
-}
-
-/**/
-.container
-    {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 1200px;
-      flex-wrap: wrap;
-      z-index: 1;
-    }
-    .container .card
-    {
-      position: relative;
-      width: 280px;
-      height: 400px;
-      margin: 30px;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-      border-radius: 15px;
-      background: rgba(255,255,255,0.1);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.5);
-      border-left: 1px solid rgba(255,255,255,0.5);
-      backdrop-filter: blur(5px);
-    }
-    .container .card .content{
-      padding: 20px;
-      text-align: center;
-      transition: 0.5s;
-      transform: translateY(100px);
-      opacity: 0;
-    }
-    .container .card:hover .content{
-
-      transform: translateY(0px);
-      opacity: 1;
-    }
-    .container  .card .content h2{
-      position: absolute;
-      top: -80px;
-      right: 30px;
-      font-size: 8em;
-      color: rgba(255,255,255,0.05);
-      pointer-events: none;
-
-    }
-    .container .card .content h3{
-      font-size: 1.8em;
-      color: #fff;
-      z-index: 1;
-    }
-    .container .card .content p{
-      font-size: 1em;
-      color: #fff;
-      font-weight: 300;
-
-    }
-    .container .card .content a{
-      position: relative;
-      display: inline-block;
-      padding: 8px 20px;
-      margin-top: 15px;
-      background-attachment: #fff;
-      color:#000;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: 500px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-  
-/**/
-.we .row{
-    display: flex;
-    align-items: center;
-    background:var(--black);
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-.we .row .image{
-    flex:1 1 45rem;
-}
-
-.we .row .image img{
-    width: 100%;
-}
-.we .row .content{
-    flex:1 1 45rem;
-    padding:2rem;
-}
-
-.we .row .content h3{
-    font-size: 3rem;
-    color:#fff;
-}
-
-.we .row .content p{
-    font-size: 1.6rem;
-    color:#ccc;
-    padding:1rem 0;
-    line-height: 1.8;
-}
-/*button*/
-.colorbutton a{
-      position: relative;
-      background:#444;
-      color:#fff;
-      text-decoration:none;
-      text-transform: uppercase;
-      font-size: 1.5em;
-      letter-spacing: 0.1em;
-      padding: 20px 30px;
-      transition: 0.5s;
-      top:115px
-      
-     
-    }
-    .colorbutton   a:hover{
-      letter-spacing:0.25em;
-      background:var(--clr);
-      color:var(--clr);
-      box-shadow: 0 0 35px var(--clr);
-    }
-    .colorbutton a::before{
-      content:'';
-      position: absolute;
-      inset:2px;
-      background: #27282c;
-    }
-    .colorbutton  a span{
-      position: relative;
-      z-index:1;
-    }
-   .colorbutton a i{
-      position: absolute;
-      inset: 0;
-      display: block;
-    }
-    .colorbutton    a i::before{
-      content: '';
-      position: absolute;
-      top:-3.5px;
-      left: 80%;
-      width:10px;
-      height: 5px;
-      border:2px solid var(--clr);
-      background: #27282c;
-      transform: translateX(-50%);
-      transition: 0.5s;
-    }
-    .colorbutton    a:hover i::before{
-      width: 20px;
-      left:20%;
-    }
-  
-    .colorbutton   a i::after{
-      bottom:-3.5px;
-      left: 20%;
-      width:10px;
-      content: '';
-      position: absolute;
-      height: 5px;
-      border:2px solid var(--clr);
-      background: #27282c;
-      transition: 0.5s;
-    }
-    .colorbutton   a:hover i::after{
-      width: 20px;
-      left:80%;
-    }
-
-
-
-
-/* media queries  */
-@media (max-width:991px){
-
-    html{
-        font-size: 55%;
-    }
-
-    .header{
-        padding:1.5rem 2rem;
-    }
-
-    section{
-        padding:2rem;
-    }
-
-}
-
-@media (max-width:768px){
-
-    #menu-btn{
-        display: inline-block;
-    }
-
-    .header .navbar{
-        position: absolute;
-        top:100%; right: -100%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-
-    .header .navbar.active{
-        right:0;
-    }
-
-    .header .navbar a{
-        color:var(--black);
-        display: block;
-        margin:1.5rem;
-        padding:.5rem;
-        font-size: 2rem;
-    }
-
-    .header .search-form{
-        width: 90%;
-        right: 2rem;
-    }
-
-    .home{
-        background-position: left;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .home .content h3{
-        font-size: 4.5rem;
-    }
-
-    .home .content p{
-        font-size: 1.5rem;
-    }
-
-}
-
-@media (max-width:450px){
-
-    html{
-        font-size: 50%;
-    }
-
-}
-
-@keyframes slider{
-  from{
-    left:-100px;
-  }
-  to{
-    left:400px;
-  }
-}
-    </style>
-
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/default.css">
 </head>
 <body>
     
@@ -864,7 +18,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <section class="flex">
 
         <a href="#" class="logo">
-            <img src="KakaoTalk_20230418_134222094.png" alt="">
+            <img src="스크린샷_2023-04-18_053349-removebg-preview.png" alt="">
         </a>
     
         <nav class="navbar">
@@ -872,8 +26,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
             <a href="#about">about</a>
             <a href="#projects">projects</a>
             <a href="#services">services</a>
-            <a href="#buy">buy</a>
-            <a href="#lental">Rental</a>
+            <a href="${buy}">buy</a>
+           
         </nav>
         <nav>
          
@@ -907,7 +61,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
         <div class="content">
             <h3>様々な方と家を繋ぎます。</h3>
-            <p>弊社では日本の空き家をリモデリングし暖かい塒を<br>必要な方に安く分譲しております。</p>
+            <p>弊社では日本の空き家をリモデリングし暖かい塒を必要な方に安く分譲しております。</p>
         </div>
 
         <div class="counting">
@@ -947,7 +101,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <div class="row">
 
         <div class="image">
-            <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
+            <img src="Main.jpg" alt="">
         </div>
 
         <div class="content">
@@ -971,56 +125,56 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   <div class="box-container mx-auto">
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_08.jpg" title="house">
-      <img src="KakaoTalk_20230421_075637151_08.jpg" alt="">
+    <a href="aboutus1.jpeg" title="house">
+      <img src="aboutus1.jpeg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="2022-09-05_18-26-22-79090-1662369982.jpg" title="hall">
-      <img src="2022-09-05_18-26-22-79090-1662369982.jpg" alt="">
+    <a href="aboutus2.jpg" title="hall">
+      <img src="aboutus2.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_10.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_10.jpg" alt="">
+    <a href="aboutus3.jpg" title="garden">
+      <img src="aboutus3.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="다운로드.jpeg" title="kitchen">
-      <img src="다운로드.jpeg" alt="">
+    <a href="aboutus4.jpg" title="kitchen">
+      <img src="aboutus4.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_11.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
+    <a href="aboutus5.jpg" title="garden">
+      <img src="aboutus5.jpg" alt="">
     </a>
   </div>
   
   <div class="box">
-    <a href="그림1.jpg" title="home">
-      <img src="그림1.jpg" alt="">
+    <a href="aboutus6.jpeg" title="home">
+      <img src="aboutus6.jpeg" alt="">
     </a>
   </div>
 
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_06.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_06.jpg" alt="">
+    <a href="aboutus7.jpg" title="home">
+      <img src="aboutus7.jpg" alt="">
     </a>
   </div>
 
   <div class="box">
-    <a href="KakaoTalk_20230421_075637151_07.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_07.jpg" alt="">
+    <a href="aboutus8.jpeg" title="home">
+      <img src="aboutus8.jpeg" alt="">
     </a>
   </div>
 
   <div class="box">
-    <a href="2022-09-05_18-26-02-44395-1662369962.jpg" title="home">
-      <img src="2022-09-05_18-26-02-44395-1662369962.jpg" alt="">
+    <a href="aboutus9.jpg" title="home">
+      <img src="aboutus9.jpg" alt="">
     </a>
   </div>
   
@@ -1037,13 +191,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <h1 class="heading"> our <span>services</span> </h1>
     </div>
     <div class="box-container">
-          
-
         <div class="wrapper">
             <ul class="team">
                 <li class="team-item">
                     <div class="profile profile_red">
-                        <img src="インテリア.jpg">
+                        <img src="services.jpg">
                         <div class="profile-contents">
                             <h2>事業 <span>リモデリング</span></h2>
                             <p>弊社ではお客様のお好みにより空き家のリモデリングをしております。それでお客様へ幸せさを伝えます。</p>
@@ -1052,7 +204,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                 </li>
                 <li class="team-item">
                     <div class="profile profile_beige">
-                        <img src="素材.jpg">
+                        <img src="services2.jpg">
                         <div class="profile-contents">
                             <h2>素材<span>環境</span></h2>
                             <p>弊社ではリモデリングやインテリア工事を行う以前資材の検査を通して有害成分0%を目標しております。</p>
@@ -1061,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                 </li>
                 <li class="team-item">
                     <div class="profile profile_purple">
-                        <img src="a0002727_parts_5bea39afbf327.webp">
+                        <img src="services3.jpg">
                         <div class="profile-contents">
                             <h2>地域<span>貢献</span></h2>
                             <p>弊社では外国人や様々な方に空き家を分譲し家と人を繋ぐ事業で地域産業活性化にも寄与しております。</p>
@@ -1070,16 +222,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
                 </li>
             </ul>
         </div>
-
-        <script> </script>
     </body>
 </html>
-        
-
     </div>
-
     <!--card01-->
-
     <div class="container">
         <div class="card">
           <div class="content">
@@ -1123,7 +269,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     <div class="row">
 
         <div class="image">
-            <img src="야간모드.jpeg" alt="">
+            <img src="services4.jpeg" alt="">
         </div>
 
         <div class="content">
@@ -1159,7 +305,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         <a href="#">projects</a>
         <a href="#">services</a>
         <a href="#">buy</a>
-        <a href="#">Rent</a>
+       
     </div>
 
     <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>
@@ -1185,7 +331,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 
 <!-- custom js file link  -->
+<!--메인글씨 효과-->
+<script>
+ let mainText = document.querySelector("h3")
+ window.addEventListener('scroll',function(){
+  let value =window.scrollY;
+  console.log(scrollY,value);
+
+  if(value>400){
+    mainText.style.animation ='disappear 1s ease-out forwards';
+  }else{
+    mainText.style.animation = 'slide 1s ease-out';
+  }
+ });
+ 
+</script>
+<!--메인 글씨 나타났다 사라지는 효과-->
 <script src="js/script.js"></script>
+<!--nav상단 바 움직이는 효과-->
 <script>
   let navbar = document.querySelector('.navbar');
 

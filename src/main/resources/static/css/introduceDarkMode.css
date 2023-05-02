@@ -1,0 +1,294 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+	/*빨간 원 부분*/
+	body::before
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#f00,#f0f);
+      clip-path: circle(30% at right 70%);
+			opacity: 0.1;
+    }
+		/*빨간 원 부분*/
+		/*파란 원 부분*/
+    body::after
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#2196f3,#e91e63);
+      clip-path: circle(30% at 10%  10%);
+			opacity: 0.1;
+    }
+		/*파란 원 부분*/
+		/*바디*/
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+img{
+  width: 230px;
+  height: 230px;
+	border-radius: 10px;
+	opacity: 0.6;
+}
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #333;
+}
+.container 
+{
+	position: relative;
+	display: flex;
+	padding: 80px 40px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 80px;
+}
+.card 
+{
+	position: relative;
+	width: 350px;
+	height: 180px;
+	background: #333;
+	transition: 0.5s;
+}
+.card:hover 
+{
+	height: 450px;
+}
+.card .lines 
+{
+	position: absolute;
+	inset: 0;
+	background: #000;
+	overflow: hidden;
+}
+.card .lines::before 
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 120px;
+	background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+	animation: animate 4s linear infinite;
+	animation-play-state: paused;
+}
+.card:hover .lines::before 
+{
+	animation-play-state: running;
+}
+@keyframes animate 
+{
+	0%
+	{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100%
+	{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+	/*사진x,배경카드*/
+}
+.card .lines::after
+{
+	content: '';
+	position: absolute;
+	inset: 3px;
+	background: #292929;
+} 
+.card .imgBx 
+{
+	position: absolute;
+	top: -60px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 150px;
+	height: 150px;
+	background: #000;
+	transition: 0.5s;
+	z-index: 10;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card:hover .imgBx 
+{
+	top: 25px;
+	width: 200px;
+	height: 200px;
+}
+.card .imgBx::before 
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 150px;
+	transform: translate(-50%,-50%);
+	animation: animate2 6s linear infinite;
+	animation-play-state: paused;
+}
+.card:hover .imgBx::before 
+{
+	animation-play-state: running;
+}
+@keyframes animate2     /*애니매이션 효과*/
+{
+	0%
+	{
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+	100%
+	{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+}
+
+
+.card .content
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	overflow: hidden;
+}
+.card .content .details 
+{
+	padding: 30px 20px;
+	text-align: center;
+	width: 100%;
+	transition: 0.5s;
+	transform: translateY(145px);
+}
+.card:hover .content .details 
+{
+	transform: translateY(0px);
+}
+.card .content .details h2 
+{
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #45f3ff;
+	line-height: 1.2em;
+}
+.card .content .details p 
+{
+	color: #fff;
+	opacity: 0;
+	transition: 0.5s;
+}
+.card .content .details a 
+{
+	display: inline-block;
+	padding: 8px 15px;
+	background: #45f3ff;
+	color: #292929;
+	margin-top: 10px;
+	font-weight: 500;
+	text-decoration: none;
+	opacity: 0;
+	transition: 0.5s;
+}
+.card:hover .content .details p, 
+.card:hover .content .details a 
+{
+	opacity: 1;
+}
+h1{
+	position: relative;
+      font-size:5em;
+      letter-spacing: 1px;
+      color:#0e3742;
+      text-transform: uppercase;
+      width:40%;
+      text-align: center;
+      -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+      line-height: 0.70em;
+      outline: none;
+      lighting-color: aliceblue;
+      color: whitesmoke;
+      text-shadow: #07252d;
+}
+/*버튼*/
+.btn 
+{
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  letter-spacing: 2px;
+  border-top: 0.5px solid rgba(255,255,255,0.35);
+  border-left: 0.5px solid rgba(255,255,255,0.35);
+  padding-left: 40px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.btn:hover 
+{
+  padding-left: 0px;
+  padding-right: 40px;
+  color: rgba(255,255,255,1);
+}
+.btn span 
+{
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #04fe4d;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a191d;
+  font-size: 1.5em;
+}
+.btn:hover span 
+{
+  left: calc(100% - 55px);
+}
+.btn:after 
+{
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  z-index: 1;
+  background: rgba(255,255,255,0.25);
+  transform: translateX(-170px) skewX(30deg);
+  transition: 0.75s ease-in-out;
+}
+.btn:hover:after 
+{
+  transform: translateX(170px) skewX(30deg);
+}

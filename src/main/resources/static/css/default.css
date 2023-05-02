@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive coffee shop website design</title>
-    <style>
-
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
@@ -100,7 +92,8 @@ section{
 }
 
 .header .logo img{
-    height: 15rem;
+    height: 5rem;
+    
 }
 
 .header .navbar a{
@@ -161,7 +154,7 @@ section{
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
-    color:
+    color:black;
 }
 
 .header .cart-items-container .cart-item img{
@@ -203,14 +196,12 @@ section{
 }
 /*counting box*/
 .home .counting{
+  width: 1000px;
   min-height: 40vh;
-  padding:2rem 0;
-  display: list-item;
+  display:flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 60%;
-  
 }
 
 .home .counting .box{
@@ -251,29 +242,60 @@ section{
 /*about us*/
 .home{
     min-height: 100vh;
-    display: flex;
     align-items: center;
 }
 
 .home .content{
     max-width: 60rem;
+    padding-top: 300px;
 }
-
+/*홈 컨테이너 메인 부분 글씨*/
 .home .content h3{
     font-size: 6rem;
     text-transform: uppercase;
-    color:black;
+    color:whitesmoke;
+    margin-top: 20%;
+    animation:slide 2s;
   
 
 }
 
 .home .content p{
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: lighter;
-    line-height: 1.8;
+    line-height: 1.3;
     padding:1rem 0;
-    color:black;
+    color:whitesmoke;
+    animation: slide 3s;
 }
+@keyframes slide{
+  from{
+    left:-100px;
+    opacity: 0;
+  }
+  to{
+    left:400px;
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  from{
+    left:400px;
+    opacity: 1;
+  }
+  to{
+    left: -100px;
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+/*홈 컨테이너 메인부분 글씨*/
 
 .about .row{
     display: flex;
@@ -322,7 +344,7 @@ display:block;
 
 .about .row .content p{
     font-size: 1.6rem;
-    color:#ccc;
+    color:black;
     padding:1rem 0;
     line-height: 1.8;
 }
@@ -334,7 +356,7 @@ display:block;
 }
 
 .projects .heading{
-  color:#fff;
+  color:black;
 }
 
 .projects .box-container{
@@ -432,7 +454,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 
 .profile_purple {
-    color: black;
+    color: beige;
     height: 500px;
 }
 
@@ -655,7 +677,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 .we .row .content p{
     font-size: 1.6rem;
-    color:#ccc;
+    color:black;
     padding:1rem 0;
     line-height: 1.8;
 }
@@ -774,11 +796,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         font-size: 2rem;
     }
 
-    .header .search-form{
-        width: 90%;
-        right: 2rem;
-    }
-
+   
     .home{
         background-position: left;
         justify-content: center;
@@ -802,426 +820,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     }
 
 }
-
-@keyframes slider{
-  from{
-    left:-100px;
-  }
-  to{
-    left:400px;
-  }
-}
-    </style>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
-    
-<!-- header section starts  -->
-
-
-<header class="header">
-
-    <section class="flex">
-
-        <a href="#" class="logo">
-            <img src="KakaoTalk_20230418_134222094.png" alt="">
-        </a>
-    
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#services">services</a>
-            <a href="#buy">buy</a>
-            <a href="#lental">Rental</a>
-        </nav>
-        <nav>
-         
-          <div class="wrap">
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_Japan-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_South_Korea-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_China-removebg-preview.png"></button>
-          </div>
-        </nav>
-    
-        <div class="icons">
-           
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-    
-        
-    
-        
-
-    </section>
-
-</header>
-
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
-<div class="home-container">
-
-    <section class="home" id="home">
-
-        <div class="content">
-            <h3>様々な方と家を繋ぎます。</h3>
-            <p>弊社では日本の空き家をリモデリングし暖かい塒を<br>必要な方に安く分譲しております。</p>
-        </div>
-
-        <div class="counting">
-
-          <div class="box">
-            <h1 class="count" data-count="1200">1200+</h1>
-            <h3>working hours</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="15">15+</h1>
-            <h3>awards</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="1000">1000+</h1>
-            <h3>clients</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="840">840+</h1>
-            <h3>projects</h3>
-          </div>
-    
-    </section>
-
-</div>
-
-<!-- home section ends -->
-
-<!-- about section starts  -->
-
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>about</span> us </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>AKIYAPLUSとは</h3>
-            <p>空き家PLUS機関は最近日本で増えている空き家をリモデリングして外国人のかたや日本の方に安い値段で分譲したり賃貸したりします。</p>
-            <p>それで空き家所有者方の税金負担を減らし社会問題にも大きく解決になり役に立ちます。将来にも皆様と一緒に未来を描く機関になるため努力しております。</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- about section ends -->
-
-<!-- project section starts   -->
-
-<section id="projects" class="projects">
-
-  <div class="heading">our projects</div>
-  
-  <div class="box-container mx-auto">
-  
-  <div class="box">
-    <a href="KakaoTalk_20230421_075637151_08.jpg" title="house">
-      <img src="KakaoTalk_20230421_075637151_08.jpg" alt="">
-    </a>
-  </div>
-  
-  <div class="box">
-    <a href="2022-09-05_18-26-22-79090-1662369982.jpg" title="hall">
-      <img src="2022-09-05_18-26-22-79090-1662369982.jpg" alt="">
-    </a>
-  </div>
-  
-  <div class="box">
-    <a href="KakaoTalk_20230421_075637151_10.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_10.jpg" alt="">
-    </a>
-  </div>
-  
-  <div class="box">
-    <a href="다운로드.jpeg" title="kitchen">
-      <img src="다운로드.jpeg" alt="">
-    </a>
-  </div>
-  
-  <div class="box">
-    <a href="KakaoTalk_20230421_075637151_11.jpg" title="garden">
-      <img src="KakaoTalk_20230421_075637151_11.jpg" alt="">
-    </a>
-  </div>
-  
-  <div class="box">
-    <a href="그림1.jpg" title="home">
-      <img src="그림1.jpg" alt="">
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="KakaoTalk_20230421_075637151_06.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_06.jpg" alt="">
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="KakaoTalk_20230421_075637151_07.jpg" title="home">
-      <img src="KakaoTalk_20230421_075637151_07.jpg" alt="">
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="2022-09-05_18-26-02-44395-1662369962.jpg" title="home">
-      <img src="2022-09-05_18-26-02-44395-1662369962.jpg" alt="">
-    </a>
-  </div>
-  
-  </div>
-  
-  </section>
-
-<!-- project section ends -->
-<!--services section start-->
-
-<section class="services" id="services">
-
-   
-    <h1 class="heading"> our <span>services</span> </h1>
-    </div>
-    <div class="box-container">
-        <div class="wrapper">
-            <ul class="team">
-                <li class="team-item">
-                    <div class="profile profile_red">
-                        <img src="インテリア.jpg">
-                        <div class="profile-contents">
-                            <h2>事業 <span>リモデリング</span></h2>
-                            <p>弊社ではお客様のお好みにより空き家のリモデリングをしております。それでお客様へ幸せさを伝えます。</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <div class="profile profile_beige">
-                        <img src="素材.jpg">
-                        <div class="profile-contents">
-                            <h2>素材<span>環境</span></h2>
-                            <p>弊社ではリモデリングやインテリア工事を行う以前資材の検査を通して有害成分0%を目標しております。</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <div class="profile profile_purple">
-                        <img src="a0002727_parts_5bea39afbf327.webp">
-                        <div class="profile-contents">
-                            <h2>地域<span>貢献</span></h2>
-                            <p>弊社では外国人や様々な方に空き家を分譲し家と人を繋ぐ事業で地域産業活性化にも寄与しております。</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </body>
-</html>
-    </div>
-    <!--card01-->
-    <div class="container">
-        <div class="card">
-          <div class="content">
-            <h2>01</h2>
-            <h3>HELP</h3>
-            <p>私たちはお客様にきっと合わせるものを
-              提供するためインテリア好みの調査や
-              ASサービスを提供しております。
-              .</p>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="content">
-              <h2>02</h2>
-              <h3>芸術と家</h3>
-              <p>弊社では家も一つの芸術だと思います。
-                それで最上のインテリアサービスを提供しております。
-               </p>
-                <a href="#">Read More</a>
-              </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                  <h2>03</h2>
-                  <h3>家族の心</h3>
-                  <p>家族の心掛けで事業を行っております.
-                    いつも最善のサービスを提供します。
-                  </p>
-                    <a href="#">Read More</a>
-                  </div>
-                </div>
-        </div>
-
-</section>
-<!--services section end-->
-
-
-<section class="we" id="we">
-
-    <div class="row">
-
-        <div class="image">
-            <img src="야간모드.jpeg" alt="">
-        </div>
-
-        <div class="content">
-            <h3></h3>
-            <p>成功した既存のデザイナーたちが警戒すべきことは、引き続き同じ作業を繰り返すことであり、若いデザイナーたちにとって最も危険なのは模倣だ。 最初にデザインを始める時、ある程度の良い作品の模倣が必要かもしれないが、</p>
-            <p>模倣を捨てて自分だけの視覚的言語を発見し、絶えず新しいイメージと新しい物を見る視覚を開発する努力が必要だ</p>
-        </div>
-
-    </div>
-    <div class="colorbutton" id="colorbutton">
-    <a href="#" style="--clr:#1e9bff"><span>画面転換</span><i></i></a>
-    
-    <a href="#" style="--clr:#ff1867"><span>制作紹介</span><i></i></a>
-    
-  </div>
-</section>
-
-<!-- footer section starts  -->
-
-<section class="footer">
-    
-    <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <div class="links">
-        <a href="#">home</a>
-        <a href="#">about</a>
-        <a href="#">projects</a>
-        <a href="#">services</a>
-        <a href="#">buy</a>
-        <a href="#">Rent</a>
-    </div>
-
-    <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>
-
-</section>
-
-<!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-<script>
-  let navbar = document.querySelector('.navbar');
-
-document.querySelector('#menu-btn').onclick = () =>{
-    navbar.classList.toggle('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
-let searchForm = document.querySelector('.search-form');
-
-document.querySelector('#search-btn').onclick = () =>{
-    searchForm.classList.toggle('active');
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
-let cartItem = document.querySelector('.cart-items-container');
-
-document.querySelector('#cart-btn').onclick = () =>{
-    cartItem.classList.toggle('active');
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-}
-
-window.onscroll = () =>{
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-</script>
-<!--counting box-->
-<!-- jquery file link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- magnific popup link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-  
-  $(document).ready(function(){
-
-$('.fa-bars').click(function(){
-  $(this).toggleClass('fa-times');
-  $('nav').toggleClass('nav-toggle');
-});
-
-$(window).on('scroll load',function(){
-  $('.fa-bars').removeClass('fa-times');
-  $('nav').removeClass('nav-toggle');
-});
-
-$('.count').each(function() {
-  var $this = $(this),
-      countTo = $this.attr('data-count');
-  $({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },
-  {
-    duration: 5000,
-    step: function() {
-      $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-      $this.text(this.countNum + '+');
-    }
-  });
-});
-
-$('.project').magnificPopup({
-  delegate:'a',
-  type:'image',
-  gallery:{
-    enabled:true
-  }
-});
-
-});
-</script>
-</body>
-</html>
