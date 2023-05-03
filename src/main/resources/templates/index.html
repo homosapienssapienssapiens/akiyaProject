@@ -1054,9 +1054,9 @@ display:block;
 
 
           <div class="wrap">
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_Japan-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_South_Korea-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_China-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn" th:onclick="location.href='?lang=ja'"><img src="Flag_of_Japan-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn" th:onclick="location.href='?lang=ko'"><img src="Flag_of_South_Korea-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn" th:onclick="location.href='?lang=zh'"><img src="Flag_of_China-removebg-preview.png"></button>
 
            
           </div>
@@ -1109,8 +1109,8 @@ display:block;
     
 
         <div class="content">
-            <h3>様々な方と家を繋ぎます。</h3>
-            <p>弊社では日本の空き家をリモデリングし暖かい塒を必要な方に安く分譲しております。</p>
+            <h3>[[#{app.title}]]</h3>
+            <p>[[#{app.subtitle}]]</p>
         </div>
 
         <div class="counting">
@@ -1154,9 +1154,9 @@ display:block;
         </div>
 
         <div class="content">
-            <h3>AKIYAPLUSとは</h3>
-            <p>空き家PLUS機関は最近日本で増えている空き家をリモデリングして外国人のかたや日本の方に安い値段で分譲したり賃貸したりします。</p>
-            <p>それで空き家所有者方の税金負担を減らし社会問題にも大きく解決になり役に立ちます。将来にも皆様と一緒に未来を描く機関になるため努力しております。</p>
+            <h3>[[#{content.title}]]</h3>
+            <p>[[#{content.subtitle}]]</p>
+            <p>[[#{content.text}]]</p>
         </div>
 
     </div>
