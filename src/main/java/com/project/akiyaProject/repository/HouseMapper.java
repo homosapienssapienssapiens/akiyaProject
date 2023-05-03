@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.project.akiyaProject.model.FindConditionForm;
 import com.project.akiyaProject.model.HouseInfo;
 @Mapper
-public interface BoardMapper {
+public interface HouseMapper {
 
 	void houseReigster();
 	List<HouseInfo> houseList(FindConditionForm con);

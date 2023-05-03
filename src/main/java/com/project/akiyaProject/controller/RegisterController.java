@@ -24,16 +24,20 @@ public class RegisterController {
     @GetMapping("register")
     public String registrationForm(Model model) {
     	model.addAttribute("regForm", new HouseRegForm());
-        return "houseregister";
+        return "houseRegister";
     }
     
     @PostMapping("register")
     public String registration(@ModelAttribute("regForm") HouseRegForm regForm, 
     						BindingResult result, Model model,
     						@RequestParam(required = false) MultipartFile file) {
+        if (result.hasErrors()) {
+            return "houseRegister";
+        }
+        
     						
     	log.info("regForm:{}", regForm);
-    	return "houseregister";
+    	return "houseRegister";
     }
     
 
