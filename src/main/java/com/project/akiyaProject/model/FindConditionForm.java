@@ -6,7 +6,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import com.project.akiyaProject.model.Enum.BooleanEnum;
+import com.project.akiyaProject.model.Enum.ConditionEnum;
 
 import lombok.Data;
 @Data

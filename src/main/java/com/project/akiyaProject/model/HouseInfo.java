@@ -1,6 +1,6 @@
 package com.project.akiyaProject.model;
 
-import com.project.akiyaProject.model.Enum.BooleanEnum;
+import com.project.akiyaProject.model.Enum.ConditionEnum;
 import com.project.akiyaProject.model.Enum.CityEnum;
 
 import lombok.Data;
@@ -13,14 +13,14 @@ public class HouseInfo {
 	private String completed;
 	private Long floor;
 	private Long housesize;
-	private BooleanEnum bus;
-	private BooleanEnum subway; 
-	private BooleanEnum convini;
-	private BooleanEnum hospital;
-	private BooleanEnum aircon;
-	private BooleanEnum bathroom;
-	private BooleanEnum parking;
-	private BooleanEnum washer;
-	private BooleanEnum pet;
-	private BooleanEnum autolock;
+	private ConditionEnum bus;
+	private ConditionEnum subway; 
+	private ConditionEnum convini;
+	private ConditionEnum hospital;
+	private ConditionEnum aircon;
+	private ConditionEnum bathroom;
+	private ConditionEnum parking;
+	private ConditionEnum washer;
+	private ConditionEnum pet;
+	private ConditionEnum autolock;
 }

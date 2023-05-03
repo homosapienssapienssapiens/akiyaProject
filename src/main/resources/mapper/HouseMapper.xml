@@ -49,7 +49,7 @@
 	<select id="houseList" resultType="houseInfo">
 		select * from house
 		<where>
-			<if test="#{bus} != 'FALSE'">bus = "TRUE" and</if>
+			<if test="#{bus} != null">bus = "TRUE" and</if>
 			<if test="#{subway} != 'FALSE'">subway = "TRUE" and</if>
 			<if test="#{convini} != 'FALSE'">convini = "TRUE" and</if>
 			<if test="#{hospital} != 'FALSE'">hospital = "TRUE" and</if>
