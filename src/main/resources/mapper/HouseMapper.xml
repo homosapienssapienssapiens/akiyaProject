@@ -5,8 +5,8 @@
 <mapper
 	namespace="com.project.akiyaProject.repository.HouseMapper">
 	<insert id="saveHouseInfo">
-		<selectKey keyProperty="house_ids" resultType="long" order="BEFORE">
-			select house_seq from dual
+		<selectKey keyProperty="house_id" resultType="long" order="BEFORE">
+			select house_seq.nextval from dual
 		</selectKey>
 		insert into house(
 		house_id,
@@ -27,7 +27,7 @@
 		pet,
 		autolock
 		) values(
-		#{house_ids},
+		#{house_id},
 		#{city},
 		#{address},
 		#{price},

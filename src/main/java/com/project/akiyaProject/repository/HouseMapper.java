@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.project.akiyaProject.model.FindConditionForm;
 import com.project.akiyaProject.model.HouseInfo;
-import com.project.akiyaProject.model.Member;
 @Mapper
 public interface HouseMapper {
 

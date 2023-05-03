@@ -6,7 +6,7 @@ import com.project.akiyaProject.model.Enum.CityEnum;
 import lombok.Data;
 @Data
 public class HouseInfo {
-	private String house_id;
+	private Long house_id;
 	private CityEnum city;
 	private String address;
 	private Long price;

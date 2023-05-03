@@ -58,5 +58,6 @@ public class HouseRegForm {
 		}
 		return houseInfo;
 	}
+	
 }
 
