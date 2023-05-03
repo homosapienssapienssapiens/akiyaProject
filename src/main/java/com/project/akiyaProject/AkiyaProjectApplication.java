@@ -19,9 +19,9 @@ public class AkiyaProjectApplication {
 		SpringApplication.run(AkiyaProjectApplication.class, args);
 	}
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void sendEmail() {
-		senderService.sendEmail("dltkddnl0141@gmail.com", "부동산 매물 소개",
-				"매물 소개 입니다.");
-	}
+	//@EventListener(ApplicationReadyEvent.class)
+	//public void sendEmail() {
+	//	senderService.sendEmail("dltkddnl0141@gmail.com", "부동산 매물 소개",
+	//			"매물 소개 입니다.");
+	//}
 }
