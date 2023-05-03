@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
-	namespace="com.project.akiyaProject.repository.BoardMapper">
-	<insert id="houseRegister">
-		<selectKey keyProperty="house_id" resultType="long" order="BEFORE">
+	namespace="com.project.akiyaProject.repository.HouseMapper">
+	<insert id="saveHouseInfo">
+		<selectKey keyProperty="house_ids" resultType="long" order="BEFORE">
 			select house_seq from dual
 		</selectKey>
 		insert into house(
@@ -27,7 +27,7 @@
 		pet,
 		autolock
 		) values(
-		#{house_id},
+		#{house_ids},
 		#{city},
 		#{address},
 		#{price},
@@ -46,19 +46,19 @@
 		#{autolock}
 		)
 	</insert>
-	<select id="houseList" resultType="houseInfo">
+	<select id="gethouseByCondition" resultType="houseInfo">
 		select * from house
 		<where>
-			<if test="#{bus} != null">bus = "TRUE" and</if>
-			<if test="#{subway} != 'FALSE'">subway = "TRUE" and</if>
-			<if test="#{convini} != 'FALSE'">convini = "TRUE" and</if>
-			<if test="#{hospital} != 'FALSE'">hospital = "TRUE" and</if>
-			<if test="#{aircon} != 'FALSE'">aircon = "TRUE" and</if>
-			<if test="#{bathroom} != 'FALSE'">bathroom = "TRUE" and</if>
-			<if test="#{parking} != 'FALSE'">parking = "TRUE" and</if>
-			<if test="#{washer} != 'FALSE'">washer = "TRUE" and</if>
-			<if test="#{pet} != 'FALSE'">pet = "TRUE" and</if>
-			<if test="#{autolock} != 'FALSE'">autolock = "TRUE" and</if>
+			<if test="#{bus} != 'Unnecessary'">bus = "TRUE" and</if>
+			<if test="#{subway} != 'Unnecessary'">subway = "TRUE" and</if>
+			<if test="#{convini} != 'Unnecessary'">convini = "TRUE" and</if>
+			<if test="#{hospital} != 'Unnecessary'">hospital = "TRUE" and</if>
+			<if test="#{aircon} != 'Unnecessary'">aircon = "TRUE" and</if>
+			<if test="#{bathroom} != 'Unnecessary'">bathroom = "TRUE" and</if>
+			<if test="#{parking} != 'Unnecessary'">parking = "TRUE" and</if>
+			<if test="#{washer} != 'Unnecessary'">washer = "TRUE" and</if>
+			<if test="#{pet} != 'Unnecessary'">pet = "TRUE" and</if>
+			<if test="#{autolock} != 'Unnecessary'">autolock = "TRUE" and</if>
 			price between #{price_min} and #{price_max} and
 			housesize between #{houseSize_min} and #{houseSize_max}
 		</where>

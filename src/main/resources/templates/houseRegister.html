@@ -1,261 +1,255 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!--font awesome file link-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <!--bootstrap file link-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
-  <!--custom css file link-->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AKIYAMAIN</title>
+<!--font awesome file link-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!--bootstrap file link-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
+<!--custom css file link-->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<title>AKIYAMAIN</title>
 <script type="text/javascript">
-  function formCheck() {
-    /* 필수항목 체크(이메일) */
+	function formCheck() {
+		/* 필수항목 체크(이메일) */
 		var address = document.getElementById("address");
 		if (address.value.length < 1) {
 			alert("주소는 필수 입력 사항입니다.");
 			email.focus();
 			return false;
 		}
-  }
-
+	}
 </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap')
+	;
 
-
-
-:root{
-  --orange:#ff7a00;
-}
-
-*{
-  margin:0; padding:0;
-  box-sizing: border-box;
-  transition: all .2s linear;
-  text-transform: capitalize;
-  font-family: 'Exo 2', sans-serif;
-}
-html{
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-body{
-  overflow-x:hidden;
-}
-.heading{
-  font-size: 4rem;
-  text-align: center;
-  letter-spacing: 1.7rem;
-  color:#444;
-  margin: 2rem 0;
-  padding-top:6rem;
-  text-decoration: underline;
-  text-decoration-style:solid;
-  text-decoration-color: var(--orange);
-  text-underline-offset: 1.4rem;
-}
-.header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background: #fff;
-  z-index:100;
-  padding: 1rem 2rem;
-  box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5rem;
-}
-.header .logo img{
-  height: 8rem;
-}
-.header nav ul{
-  list-style-type:none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0; padding: 0;
+:root { 
+	--orange: #ff7a00;
 }
 
-.header nav ul li{
-  margin: 0 1.5rem;
-}
-.header nav ul li a{
-  font-size: 2rem;
-  color:#666;
-}
-.header nav ul li a:hover{
-  color:#000;
-  text-decoration: none;
-}
-.header .fa-bars{
-  font-size: 2.5rem;
-  color:#666;
-  cursor: pointer;
-  display: none;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all .2s linear;
+	text-transform: capitalize;
+	font-family: 'Exo 2', sans-serif;
 }
 
-.title{
-  font-size: 3rem;
-  color: #000;
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
 
+body {
+	overflow-x: hidden;
+}
+
+.heading {
+	font-size: 4rem;
+	text-align: center;
+	letter-spacing: 1.7rem;
+	color: #444;
+	margin: 2rem 0;
+	padding-top: 6rem;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-color: var(- -orange);
+	text-underline-offset: 1.4rem;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background: #fff;
+	z-index: 100;
+	padding: 1rem 2rem;
+	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 5rem;
+}
+
+.header .logo img {
+	height: 8rem;
+}
+
+.header nav ul {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+}
+
+.header nav ul li {
+	margin: 0 1.5rem;
+}
+
+.header nav ul li a {
+	font-size: 2rem;
+	color: #666;
+}
+
+.header nav ul li a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+.header .fa-bars {
+	font-size: 2.5rem;
+	color: #666;
+	cursor: pointer;
+	display: none;
+}
+
+.title {
+	font-size: 3rem;
+	color: #000;
 }
 
 /*  그냥 값을 넣으면 상단 메뉴바에 가려서 내용이 나오지 않음
     바디에 패딩으로 값을 줘서 메뉴바 아래에서 내용이 시작하게 적용
 */
-body{
-  padding-top: 7rem;
+body {
+	padding-top: 7rem;
 }
 
-table{
-                width: 800px;
-                margin-left:auto; 
-                margin-right:auto;
-            }
-            table,
-            td,
-            th {
-                border: 1px solid black;
-                border-collapse: collapse;
-                font-size: 2rem;
-            }
+table {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	font-size: 2rem;
+}
 
 /* 타이틀 부분 설정. 하단 테두리만 빼고 다 숨겨서 좌상단에 고정되게 보이게 만듦.*/
 #title {
-    font-size: 5rem;
-		border-top: hidden;
-		border-left: hidden;
-		border-right: hidden;
-	}
+	font-size: 5rem;
+	border-top: hidden;
+	border-left: hidden;
+	border-right: hidden;
+}
 /* 왜 라벨 좌우 바뀌면 적용이 안될까?*/
-label{ display:inline-block; width:120px; line-height:50px; }
+label {
+	display: inline-block;
+	width: 120px;
+	line-height: 50px;
+}
 
 body {
-    margin: 0 auto;
-    width: 50%;
+	margin: 0 auto;
+	width: 50%;
 }
 
 #address {
-  border-style: solid;
-}
-#address:valid {
-  border-color: green;
-}
-#address:invalid {
-  border-color: red;
+	border-style: solid;
 }
 
-  </style>
+#address:valid {
+	border-color: green;
+}
+
+#address:invalid {
+	border-color: red;
+}
+</style>
 
 </head>
 <body>
 
-  <!-- buy 버튼 클릭 시 표현해줄 페이지 -->
-  <table>
-    <tr>
-			<td colspan="2" id="title">등록</td>
-		</tr>
-    <tr>
-        <th>지 역</th>
-        <td>
-          
-          <input type="radio" name="location" id="tokyo" value="tokyo">
-          <label for="tokyo">도쿄</label>
-          
-          <input type="radio" name="location" id="osaka" value="osaka">
-          <label for="osaka">오사카</label>
-          
-          <input type="radio" name="location" id="nagoya" value="nagoya">
-          <label for="nagoya">나고야</label>
-          
-          <input type="radio" name="location" id="fukuoka" value="fukuoka">
-          <label for="fukuoka">후쿠오카</label>
-          
-          <input type="radio" name="location" id="sapporo" value="sapporo">
-          <label for="sapporo">삿포로</label>
-          <div class="error" th:errors="*{location}"></div>
-        </td>
-    </tr>
-    <tr>
-        <th>가 격</th>
-        <td>
-        <label for="price">판매 가격:</label>
-        <input type="number" id="price">￥/月
-        <div class="error" th:errors="*{price}"></div>
-</td>
-    </tr>
-    <tr>
-        <th>조 건</th>
-        <td>
-         
-          <input type="checkbox" name="condition" id="bus_stop" value="bus_stop">
-          <label for="bus_stop">버스 정류소</label>
-          
-          <input type="checkbox" name="condition" id="subway_station" value="subway_station">
-          <label for="subway_station">지하철역</label>
-          
-          <input type="checkbox" name="condition" id="convenience_store" value="convenience_store">
-          <label for="convenience_store">편의점</label>
-         
-          <input type="checkbox" name="condition" id="hospital" value="hospital">
-          <label for="hospital">병원</label><br>
+	<form action="register" method="post" enctype="multipart/form-data"
+		th:object="${regForm}">
+		<table>
+			<tr>
+				<td colspan="2" id="title">등록</td>
+			</tr>
+			<tr>
+				<th>지 역</th>
+				<td><th:block th:each="city : ${T(com.project.akiyaProject.model.Enum.CityEnum).values()}">
+            		<input type="radio" th:field="*{city}" th:value="${city}">
+            		<label th:for="${#ids.prev('city')}" th:text="${city.cname_jp}"></label>
+          			</th:block>
+          			<div class="error" th:errors="*{city}"></div>
+					</td>
+			</tr>
+			<tr>
+				<th>가 격</th>
+				<td><label for="price">판매 가격:</label> <input type="number"
+					th:field="*{price}">￥/月
+					<div class="error" th:errors="*{price}"></div></td>
+			</tr>
+			<tr>
+				<th>준공 년월</th>
+				<td><label for="completed">준공 년월:</label> <input type="date"
+					th:field="*{completed}">
+					<div class="error" th:errors="*{completed}"></div></td>
+			</tr>
+			<tr>
+				<th>층 수</th>
+				<td><label for="floor">층 수:</label> <input type="number"
+					th:field="*{floor}">층
+					<div class="error" th:errors="*{floor}"></div></td>
+			</tr>
+			<tr>
+				<th>평 수</th>
+				<td><label for="housesize">평 수:</label> <input type="number"
+					th:field="*{housesize}">㎡
+					<div class="error" th:errors="*{housesize}"></div></td>
+			</tr>
+			<tr>
+				<th>주 소</th>
+				<td><label for="address">주 소:</label> <input type="text"
+					th:field="*{address}">
+					<div class="error" th:errors="*{address}" placeholder="ㅇㅇ市ㅁㅁ区"></div></td>
+			</tr>
+			<tr>
+				<th>조 건</th>
+				<td><input type="checkbox" name="condition" id="bus"
+					value="bus"> <label for="bus">버스 정류소</label> <input
+					type="checkbox" name="condition" id="subway" value="subway">
+					<label for="subway">지하철역</label> <input type="checkbox"
+					name="condition" id="convini" value="convini"> <label
+					for="convini">편의점</label> <input type="checkbox" name="condition"
+					id="hospital" value="hospital"> <label for="hospital">병원</label><br>
 
-          
-          <input type="checkbox" name="condition" id="air_conditioner" value="air_conditioner">
-          <label for="air_conditioner">에어컨</label>
-          
-          <input type="checkbox" name="condition" id="toilet_separation" value="toilet_separation">
-          <label for="toilet_separation">화장실 별도</label>
+					<input type="checkbox" name="condition" id="aircon"
+					value="aircon"> <label for="aircon">에어컨</label> <input
+					type="checkbox" name="condition" id="bathroom"
+					value="bathroom"> <label for="bathroom">화장실
+						별도</label> <input type="checkbox" name="condition" id="parking"
+					value="parking"> <label for="parking">주차장</label><br>
 
-          
-          <input type="checkbox" name="condition" id="second_floor" value="second_floor">
-          <label for="second_floor">2층이상</label>
-         
-          <input type="checkbox" name="condition" id="parking_lot" value="parking_lot">
-          <label for="parking_lot">주차장</label><br>
-          
-          <input type="checkbox" name="condition" id="washing_machine" value="washing_machine">
-          <label for="washing_machine">세탁기</label>
-          
-          <input type="checkbox" name="condition" id="	animal" value="	animal">
-          <label for="animal">동물</label>
-          
-          <input type="checkbox" name="condition" id="door_lock" value="door_lock">
-          <label for="door_lock">도어락</label>
-        </td>
-    </tr>
-    
-</table>
-<table>
-  <tr>
-    <td>
-    <labal for="text">Gmail 주소를 입력하세요:
-      <input type="text"
-      id="address"
-      placeholder="ㅇㅇ市ㅁㅁ區"
-      required>
-      <div class="error" th:errors="*{address}"></div>
-    </labal>
-      <input type="submit" value="저장"> 
-      <input type="reset" value="불러오기">
-  </td>
-  </tr>
-  <td>
-    <input type="submit" value="검색"> 
-  </td>
-</table>
+					<input type="checkbox" name="condition" id="washer"
+					value="washer"> <label for="washer">세탁기</label> <input
+					type="checkbox" name="condition" id="pet" value="pet">
+					<label for="pet">동물</label> <input type="checkbox" name="condition"
+					id="autolock" value="autolock"> <label for="autolock">도어락</label>
+				</td>
+			</tr>
+		</table>
+			<input type="submit" value="등록">
+	</form>
 </body>
 </html>

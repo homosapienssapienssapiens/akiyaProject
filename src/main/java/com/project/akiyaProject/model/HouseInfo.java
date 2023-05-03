@@ -23,4 +23,13 @@ public class HouseInfo {
 	private ConditionEnum washer;
 	private ConditionEnum pet;
 	private ConditionEnum autolock;
+	@Override
+	public String toString() {
+		return "HouseInfo [house_id=" + house_id + ", city=" + city + ", address=" + address + ", price=" + price
+				+ ", completed=" + completed + ", floor=" + floor + ", housesize=" + housesize + ", bus=" + bus
+				+ ", subway=" + subway + ", convini=" + convini + ", hospital=" + hospital + ", aircon=" + aircon
+				+ ", bathroom=" + bathroom + ", parking=" + parking + ", washer=" + washer + ", pet=" + pet
+				+ ", autolock=" + autolock + "]";
+	}
+	
 }

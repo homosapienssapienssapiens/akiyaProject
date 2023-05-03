@@ -51,22 +51,11 @@ public class HouseRegForm {
 			try {
 				Field field = houseInfo.getClass().getDeclaredField((String) iterator.next()); 
 				field.setAccessible(true);
-				field.set(houseInfo,ConditionEnum.Prefer);
-			} catch(Exception e) {
-				System.out.println(e.getStackTrace());
-			}
-		}
-		for (Iterator iterator = regForm.getMust().iterator(); iterator.hasNext();) {
-			try {
-				Field field = houseInfo.getClass().getDeclaredField((String) iterator.next()); 
-				field.setAccessible(true);
 				field.set(houseInfo,ConditionEnum.Must);
 			} catch(Exception e) {
 				System.out.println(e.getStackTrace());
 			}
 		}
-		
-		
 		return houseInfo;
 	}
 }

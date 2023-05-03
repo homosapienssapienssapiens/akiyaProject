@@ -6,10 +6,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.project.akiyaProject.model.FindConditionForm;
 import com.project.akiyaProject.model.HouseInfo;
+import com.project.akiyaProject.model.Member;
 @Mapper
 public interface HouseMapper {
 
-	void houseReigster();
-	List<HouseInfo> houseList(FindConditionForm con);
+	void saveHouseInfo(HouseInfo houseInfo);
+	List<HouseInfo> gethouseByCondition(FindConditionForm con);
 	HouseInfo getHouseById(String house_id);
+
 }

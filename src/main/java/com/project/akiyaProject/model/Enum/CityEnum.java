@@ -9,21 +9,21 @@ public enum CityEnum {
 	
 	private String cname_ko;
 	private String cname_jp;
-	private String cname_cn;
+	private String cname_zh;
 	
-	private CityEnum(String cname_ko, String cname_jp, String cname_cn) {
+	private CityEnum(String cname_ko, String cname_jp, String cname_zh) {
 		this.cname_ko = cname_ko;
 		this.cname_jp = cname_jp;
-		this.cname_cn = cname_cn;
+		this.cname_zh = cname_zh;
 	}
 	
-	public String getCityko() {
+	public String getCname_ko() {
 		return cname_ko;
 	}
-	public String getCityjp() {
+	public String getCname_jp() {
 		return cname_jp;
 	}
-	public String getCitycn() {
-		return cname_cn;
+	public String getCname_zh() {
+		return cname_zh;
 	}
 }
