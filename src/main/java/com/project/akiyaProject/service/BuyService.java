@@ -20,7 +20,7 @@ public class BuyService {
     private final HouseMapper boardMapper;
 	
     public List<HouseInfo> houseList(){    	
-    	return boardMapper.gethouseByCondition(null);
+    	return boardMapper.getHouseByCondition(null);
     }
     
 	public HouseInfo getHouseById(String house_id) {		
