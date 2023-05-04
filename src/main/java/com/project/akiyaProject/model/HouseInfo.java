@@ -23,6 +23,8 @@ public class HouseInfo {
 	private ConditionEnum washer;
 	private ConditionEnum pet;
 	private ConditionEnum autolock;
+	private double latitude;
+	private double longitude;
 	@Override
 	public String toString() {
 		return "HouseInfo [house_id=" + house_id + ", city=" + city + ", address=" + address + ", price=" + price

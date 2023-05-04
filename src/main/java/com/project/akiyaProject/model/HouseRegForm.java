@@ -27,6 +27,8 @@ public class HouseRegForm {
 	private Long housesize;
 	private List<String> condition;
 	private List<String> must;
+	private double latitude;
+	private double longitude;
 	
 	public static HouseInfo toHouseInfo(HouseRegForm regForm) {
 		HouseInfo houseInfo = new HouseInfo();
@@ -36,6 +38,8 @@ public class HouseRegForm {
 		houseInfo.setCompleted(regForm.getCompleted());
 		houseInfo.setFloor(regForm.getFloor());
 		houseInfo.setHousesize(regForm.getHousesize());
+		houseInfo.setLongitude(regForm.getLongitude());
+		houseInfo.setLatitude(regForm.getLatitude());
 		String[] conditionList = {"bus", "subway", "convini", "hospital", "aircon", "bathroom", "parking", "washer", "pet", "autolock"};
 		for (int i = 0; i< conditionList.length; i++) {
 			try {

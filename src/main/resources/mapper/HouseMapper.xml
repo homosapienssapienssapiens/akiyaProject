@@ -25,7 +25,9 @@
 		parking,
 		washer,
 		pet,
-		autolock
+		autolock,
+		latitude,
+		longitude
 		) values(
 		#{house_id},
 		#{city},
@@ -43,7 +45,9 @@
 		#{parking},
 		#{washer},
 		#{pet},
-		#{autolock}
+		#{autolock},
+		#{latitude},
+		#{longitude}
 		)
 	</insert>
 	<select id="gethouseByCondition" resultType="houseInfo">
@@ -65,5 +69,8 @@
 	</select>
 	<select id="getHouseById" resultType="houseInfo">
 		select * from house where house_id = #{house_id}
+	</select>
+	<select id="getAllHouseList" resultType="houseInfo">
+		select * from house
 	</select>
 </mapper>

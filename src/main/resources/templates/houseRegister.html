@@ -5,9 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--font awesome file link-->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <!--bootstrap file link-->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
@@ -19,117 +16,23 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<title>AKIYAMAIN</title>
-<script type="text/javascript">
-	function formCheck() {
-		/* 필수항목 체크(이메일) */
-		var address = document.getElementById("address");
-		if (address.value.length < 1) {
-			alert("주소는 필수 입력 사항입니다.");
-			email.focus();
-			return false;
-		}
-	}
-</script>
+<title>HouseRegister</title>
 <style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap')
-	;
-
-:root { 
-	--orange: #ff7a00;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	transition: all .2s linear;
-	text-transform: capitalize;
-	font-family: 'Exo 2', sans-serif;
-}
 
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
 
-body {
+form {
 	overflow-x: hidden;
-}
-
-.heading {
-	font-size: 4rem;
-	text-align: center;
-	letter-spacing: 1.7rem;
-	color: #444;
-	margin: 2rem 0;
-	padding-top: 6rem;
-	text-decoration: underline;
-	text-decoration-style: solid;
-	text-decoration-color: var(- -orange);
-	text-underline-offset: 1.4rem;
-}
-
-.header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	background: #fff;
-	z-index: 100;
-	padding: 1rem 2rem;
-	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 5rem;
-}
-
-.header .logo img {
-	height: 8rem;
-}
-
-.header nav ul {
-	list-style-type: none;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	margin: 0;
-	padding: 0;
-}
-
-.header nav ul li {
-	margin: 0 1.5rem;
-}
-
-.header nav ul li a {
-	font-size: 2rem;
-	color: #666;
-}
-
-.header nav ul li a:hover {
-	color: #000;
-	text-decoration: none;
-}
-
-.header .fa-bars {
-	font-size: 2.5rem;
-	color: #666;
-	cursor: pointer;
-	display: none;
+	margin: 0 auto;
+	width: 50%;
 }
 
 .title {
 	font-size: 3rem;
 	color: #000;
-}
-
-/*  그냥 값을 넣으면 상단 메뉴바에 가려서 내용이 나오지 않음
-    바디에 패딩으로 값을 줘서 메뉴바 아래에서 내용이 시작하게 적용
-*/
-body {
-	padding-top: 7rem;
 }
 
 table {
@@ -158,11 +61,6 @@ label {
 	line-height: 50px;
 }
 
-body {
-	margin: 0 auto;
-	width: 50%;
-}
-
 #address {
 	border-style: solid;
 }
@@ -174,11 +72,48 @@ body {
 #address:invalid {
 	border-color: red;
 }
+
+#map {
+	width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translate(-50%);
+}
+
+#searchbox {
+    position: absolute;
+    border-radius: 5px;
+    top: 100%;
+    left: 25%;
+    z-index: 5;
+    padding: 5px;
+    text-align: center;
+    padding: left 10px;
+    background-color: #FFFFFF;
+    height: 30px;         
+    
+}
+#searchbox #address{
+  margin-right: 0;
+  border: 2px solid #000000;
+  height: 100%;
+  font-size: large;
+}
+#searchbox #submit{
+  margin-left: 0;
+  height: 100%;
+  font-size: large;
+  border: #000;
+  background-color: #FFFFFF;
+  cursor : pointer;
+}
 </style>
 
 </head>
 <body>
-
+	
 	<form action="register" method="post" enctype="multipart/form-data"
 		th:object="${regForm}">
 		<table>
@@ -249,7 +184,98 @@ body {
 				</td>
 			</tr>
 		</table>
-			<input type="submit" value="등록">
+		<input type="hidden" name="latitude" id="latitude">
+		<input type="hidden" name="longitude" id="longitude">
+		<input type="submit" value="등록">
 	</form>
+	
+	<div id="searchbox">
+        <input id="searchaddress" type="text" placeholder="주소 입력" />
+        <button id="search" value="Geocode">검색</button>
+		<button id="coordinate" value="Geocode">좌표읽기</button>
+	</div>
+	<p>
+	<div id="map"></div>
+	
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwox5DsRd4pzJg_bDQbRISMi_1J5inSI0&v=beta&libraries=marker&callback=initMap">
+    </script>
+	<script>
+	initMap();
+	function initMap() {
+		  const center = {
+		    lat: 35.6812,
+		    lng: 139.7671,
+		  };
+		  
+			const map = new google.maps.Map(document.getElementById("map"), {
+			    zoom: 11,
+			    center,
+			    mapId: "DEMO_MAP_ID",
+			  });
+			
+			//Google Geocoding. Google Map API에 포함되어 있다.
+			var geocoder = new google.maps.Geocoder();
+			 
+			 // 검색 이벤트 실행
+			document.getElementById('search').addEventListener('click', function() {
+			     geocodeAddress(geocoder, map);
+			 });
+			document.getElementById('searchaddress').addEventListener('keypress', function(e) {
+			     if (e.key === 'Enter') {
+			     geocodeAddress(geocoder, map);
+			     }
+			 });
+			    makeMarkers(map);
+
+		}
+	
+	function geocodeAddress(geocoder, resultMap) {
+		console.log('geocodeAddress 함수 실행');
+
+		// 주소 설정
+		var address = document.getElementById('searchaddress').value;
+
+	     /**
+	      * 입력받은 주소로 좌표에 맵 마커를 찍는다.
+	      * 1번째 파라미터 : 주소 등 여러가지. 
+	      *      ㄴ 참고 : https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingRequests
+	      * 
+	      * 2번째 파라미터의 함수
+	      *      ㄴ result : 결과값
+	      *      ㄴ status : 상태. OK가 나오면 정상.
+	      */
+	     geocoder.geocode({'address': address}, function(result, status) {
+	         console.log(result);
+	         console.log(status);
+
+	         if (status === 'OK') {
+	             // 맵의 중심 좌표를 설정한다.
+	             resultMap.setCenter(result[0].geometry.location);
+	             // 맵의 확대 정도를 설정한다.
+	             resultMap.setZoom(18);
+	             // 맵 마커
+	             var marker = new google.maps.Marker({
+	                 map: resultMap,
+	                 position: result[0].geometry.location
+	             });
+
+	             // 위도
+	             console.log('위도(latitude) : ' + marker.position.lat());
+	             // 경도
+	             console.log('경도(longitude) : ' + marker.position.lng());
+				 document.getElementById('coordinate').addEventListener('click', function() {
+					document.getElementById('latitude').value = marker.position.lat();
+					document.getElementById('longitude').value = marker.position.lng();
+					
+				 });
+	             makeMarkers(map);
+	         } else {
+	             alert('지오코드가 다음의 이유로 성공하지 못했습니다 : ' + status);
+	         }
+	     });
+	 }
+	
+	</script>
 </body>
 </html>
