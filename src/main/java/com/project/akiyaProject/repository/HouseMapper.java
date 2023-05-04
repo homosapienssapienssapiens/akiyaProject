@@ -10,7 +10,8 @@ import com.project.akiyaProject.model.HouseInfo;
 public interface HouseMapper {
 
 	void saveHouseInfo(HouseInfo houseInfo);
-	List<HouseInfo> gethouseByCondition(FindConditionForm con);
+	List<HouseInfo> getHouseByCondition(FindConditionForm con);
+	List<HouseInfo> getAllHouseList();
 	HouseInfo getHouseById(String house_id);
 
 }
