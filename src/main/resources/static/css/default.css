@@ -1,248 +1,1031 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-	/*빨간 원 부분*/
-	body::before
-    {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(#f00,#f0f);
-      clip-path: circle(30% at right 70%);
-			opacity: 0.1;
-    }
-		/*빨간 원 부분*/
-		/*파란 원 부분*/
-    body::after
-    {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(#2196f3,#e91e63);
-      clip-path: circle(30% at 10%  10%);
-			opacity: 0.1;
-    }
-		/*파란 원 부분*/
-		/*바디*/
-*
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: white;
+}
+
+section{
+    padding:3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.heading{
+    text-align: center;
+    color:black;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+
+
+.header{
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    border-bottom: var(--border);
+    background: #A19882;
+}
+
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.header .logo img{
+    height: 5rem;
+    
+}
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.8rem;
+    color:black;
+}
+
+.header .navbar a:hover{
+    color:black;
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+
+
+.header .cart-items-container{
+    position: absolute;
+    top:115%; right: -100%;
+    width: 35rem;
+    background:black;
+    padding:1.5rem;
+}
+
+.header .cart-items-container.active{
+    right: 0;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    margin-bottom: 2rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color:black;
+}
+
+.header .cart-items-container .cart-item img{
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 2rem;
+    color:var(--black);
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
+
+.home-container{
+    background:url(img/Home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+   
+}
+.home .hero .text1{
+  position: relative;
+  margin-left: 18%;
+  font-size: 5rem;
+  width: 45rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  animation: slide 2s ease-out;
+  color:white;
+  z-index: 2;
+}
+/*counting box*/
+.home .counting{
+  width: 1000px;
+  min-height: 40vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home .counting .box{
+  margin: 2rem 4rem;
+  text-align: center;
+
+}
+
+.home .counting .box .count{
+  font-size: 7rem;
+  color:whitesmoke;
+}
+
+.home .counting .box h3{
+  font-size: 2rem;
+  color:whitesmoke;
+}
+
+
+.language,ul{
+  margin: 0;
+  padding:0;
+
+}
+.language li{
+  list-style: none;
+}
+.language a{
+  color: inherit;
+  text-decoration: none;
+}
+.language{
+  background-color:#FEF7DC;
+  color:white;
+}
+
+/*counting box*/
+/*about us*/
+.home{
+    min-height: 100vh;
+    align-items: center;
+}
+
+.home .content{
+    max-width: 60rem;
+    padding-top: 300px;
+}
+/*홈 컨테이너 메인 부분 글씨*/
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color:whitesmoke;
+    margin-top: 20%;
+    animation:slide 2s;
+  
+
+}
+
+.home .content p{
+    font-size: 3rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    padding:1rem 0;
+    color:whitesmoke;
+    animation: slide 3s;
+}
+@keyframes slide{
+  from{
+    left:-100px;
+    opacity: 0;
+  }
+  to{
+    left:400px;
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  from{
+    left:400px;
+    opacity: 1;
+  }
+  to{
+    left: -100px;
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+/*홈 컨테이너 메인부분 글씨*/
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+/*국기 버튼*/
+.btm_image{
+margin-top: 1rem;
+display: inline-block;
+font-size: 1.7rem;
+color:#fff;
+background: var(--main-color);
+cursor: pointer;
+width:50px;
+box-sizing:border-box;
+border-radius: 100%;
+
+}
+
+.btm_image img{
+width:100%;
+display:block;
+
+}
+/*
+로그인 버튼
+*/
+.btn
 {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+    position:absolute;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: #363636;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    margin-left: 300px;
+    margin-top: -45px;
 }
-img{
-  width: 230px;
-  height: 230px;
-	border-radius: 10px;
-	opacity: 0.6;
+.btn span
+{
+    position: relative;
+    z-index: 1;
 }
-body 
+.btn::before
+{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #2196f3;
+    transition: width 0.5s, height 0.5s;
+}
+.btn:hover::before
+{
+    width: 300px;
+    height: 300px;
+}
+/*로그인 버튼*/
+.about .row .image{
+    flex:1 1 45rem;
+}
+
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color:black;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color:black;
+    padding:1rem 0;
+    line-height: 1.8;
+    
+}
+/*about us*/
+/*projects*/
+.projects .section010
 {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background: #333;
-}
-.container 
-{
-	position: relative;
-	display: flex;
-	padding: 80px 40px;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 80px;
+	transform-style: preserve-3d;
+	width: 1100px;
+  margin-left: 50px;
+  scroll-behavior: auto;
+  margin-top: 50px;
+  
 }
-.card 
+.projects .section010 .card010
 {
 	position: relative;
-	width: 350px;
-	height: 180px;
+	width: 320px;
+	height: 320px;
+	margin: 20px;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+
+}
+.projects .section010 .card010 .box010
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s ease;
+ 
+}
+.projects .section010 .card010:hover .box010
+{
+	transform: rotateY(180deg);
+}
+.projects .section010 .card010 .imgBx010
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.projects .section010 .card010 .imgBx010 img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.projects.section010 .card010 .contentBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: #333;
-	transition: 0.5s;
-}
-.card:hover 
-{
-	height: 450px;
-}
-.card .lines 
-{
-	position: absolute;
-	inset: 0;
-	background: #000;
-	overflow: hidden;
-}
-.card .lines::before 
-{
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 600px;
-	height: 120px;
-	background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
-	animation: animate 4s linear infinite;
-	animation-play-state: paused;
-}
-.card:hover .lines::before 
-{
-	animation-play-state: running;
-}
-@keyframes animate 
-{
-	0%
-	{
-		transform: translate(-50%,-50%) rotate(0deg);
-	}
-	100%
-	{
-		transform: translate(-50%,-50%) rotate(360deg);
-	}
-	/*사진x,배경카드*/
-}
-.card .lines::after
-{
-	content: '';
-	position: absolute;
-	inset: 3px;
-	background: #292929;
-} 
-.card .imgBx 
-{
-	position: absolute;
-	top: -60px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 150px;
-	height: 150px;
-	background: #000;
-	transition: 0.5s;
-	z-index: 10;
-	overflow: hidden;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transform-style: preserve-3d;
 }
-.card:hover .imgBx 
+.projects .section010 .card010 .contentBx div
 {
-	top: 25px;
-	width: 200px;
-	height: 200px;
+	transform-style: preserve-3d;
+	transform: translateZ(100px);
+	background: beige;
+	padding: 20PX;
 }
-.card .imgBx::before 
+.projects.section010 .card010 .contentBx div h2
 {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 500px;
-	height: 150px;
-	transform: translate(-50%,-50%);
-	animation: animate2 6s linear infinite;
-	animation-play-state: paused;
+	font-size: 20px;
+	color: black;
+	letter-spacing: 1px;
+	backface-visibility: hidden;
 }
-.card:hover .imgBx::before 
+.projects.section010 .card010 .contentBx div p
 {
-	animation-play-state: running;
+	font-size: 16px;
+	color:black;
+	backface-visibility: hidden;
 }
-@keyframes animate2     /*애니매이션 효과*/
+/*projects*/
+/*services 첫 단*/
+.container45
 {
-	0%
-	{
-		transform: translate(-50%,-50%) rotate(360deg);
-	}
-	100%
-	{
-		transform: translate(-50%,-50%) rotate(0deg);
-	}
+    position: relative;
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin-top: 50px;
+    margin-left: 30px;
+   
+}
+.container45 .box45
+{
+    position: relative;
+    width: 275px;
+    height: 380px;
+    background: #ccc;
+    overflow: hidden;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    justify-content: center;
+    display: flex;
+    margin: 40px;
+    margin-left: 50px;
+   
+   
+    
+}
+.container45:hover .box45
+{
+    transform: rotateY(25deg);
+}
+.container45 .box45:hover ~ .box
+{
+    transform: rotateY(-25deg);
+}
+.container45 .box45:hover
+{
+    transform: scale(1.25) rotateY(0deg);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+.container45 .box45 .imgBx
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 10px, 20px, 10px, 5px;
+}
+.container45 .box45 .imgBx45:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#A19882,#A19882);
+    z-index: 1;
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container45 .box45:hover .imgBx45:before
+{
+    opacity: 1;
+}
+.container45 .box45 .imgBx45 img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container45 .box45 .content
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+}
+.container45 .box45 .content h2
+{
+    color: white;
+    transform: translateY(200px);
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.container45 .box45 .content p
+{
+    color: white;
+    transform: translateY(200px);
+    transition: 0.5s;
+    font-size: 14px;
+}
+.container45 .box45:hover .content h2
+{
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+.container45 .box45:hover .content p
+{
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+/*services사진 4장 끝 단*/
+
+/*our services글자색*/
+.profile-contents p {
+    color:white;
+    font-size: 20px;
+    min-width: 140px;
+    max-height: 0;
+    overflow: hidden;
+    line-height: 1.2;
+    transition: all 1s;
+    opacity: 0;
+}
+/*our services글자색*/
+
+.team-item:hover .profile-contents p {
+    opacity: 0.3;
+    transition-delay: .4s;
+    max-height: 6em;
+    margin-top: 0.4em;
 }
 
+/*services*/
 
-.card .content
+.services .row .image{
+    flex:1 1 45rem;
+}
+
+.services .row .image img{
+    width: 100%;
+}
+.services .row .content{
+    flex:1 1 45rem;
+    padding:5rem;
+}
+
+.services .row .content h3{
+    font-size: 10rem;
+    color:black;
+}
+
+.services.row .content p{
+    font-size:5rem;
+    color:black;
+    padding:1rem 0;
+    line-height: 3.8;
+}
+/*services*/
+/**/
+.we .row{
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    
+  
+}
+.we .row .image{
+    flex:1 1 45rem;
+}
+
+.we .row .image img{
+    width: 100%;
+}
+.we .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.we .row .content h3{
+    font-size: 3rem;
+    color:black;
+}
+
+.we .row .content p{
+    font-size: 1.6rem;
+    color:black;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+/*services*/
+
+.footer{
+    /* background:var(--black); */
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem 0;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:black;
+    border:var(--border);
+    margin:.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+
+.footer .links a{
+    padding:.7rem 2rem;
+    color:black;
+    border:var(--border);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background:var(--main-color);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color:black;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color:black;
+}
+
+/*services하단부 카드3장*/
+.container
 {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  
 }
-.card .content .details 
-{
-	padding: 30px 20px;
-	text-align: center;
-	width: 100%;
-	transition: 0.5s;
-	transform: translateY(145px);
-}
-.card:hover .content .details 
-{
-	transform: translateY(0px);
-}
-.card .content .details h2 
-{
-	font-size: 1.5em;
-	font-weight: 500;
-	color: #45f3ff;
-	line-height: 1.2em;
-}
-.card .content .details p 
-{
-	color: #fff;
-	opacity: 0;
-	transition: 0.5s;
-}
-.card .content .details a 
-{
-	display: inline-block;
-	padding: 8px 15px;
-	background: #45f3ff;
-	color: #292929;
-	margin-top: 10px;
-	font-weight: 500;
-	text-decoration: none;
-	opacity: 0;
-	transition: 0.5s;
-}
-.card:hover .content .details p, 
-.card:hover .content .details a 
-{
-	opacity: 1;
-}
-h1{
-	    position: relative;
-      font-size:5em;
-      letter-spacing: 1px;
-      color:#0e3742;
-      width:40%;
-      text-align: center;
-      -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
-      line-height: 0.70em;
-      outline: none;
-      lighting-color: aliceblue;
-      color: whitesmoke;
-      text-shadow: #07252d;
-			
-}
-/*버튼*/
-.btn 
+.container .card
 {
   position: relative;
+  min-width: 290px;
+  height: 390px;
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+              inset -5px -5px 5px rgba(255,255,255,0.5),
+              5px 5px 5px rgba(0,0,0,0.05),
+              -5px -5px 5px rgba(255,255,255,0.5);
+  border-radius: 15px;
+  margin: 30px;
+  margin-top: 200px;
+}
+.container .card .box
+{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #ebf5fc;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  
+}
+.container .card:hover .box
+{
+  transform: translateY(-50px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  background: linear-gradient(45deg,#b95ce4,#e91e63);
+  background: linear-gradient(45deg,#b95ce4,#4f29cd);
+}
+.container .card .box:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+  background: rgba(255,255,255,0.02);
+}
+.container .card .box .content
+{
+  padding: 20px;
+  text-align: center;
+}
+.container .card .box .content h2
+{
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(0,0,0,0.02);
+  transition: 0.5s;
+}
+.container .card:hover .box .content h2
+{
+  color: rgba(0,0,0,0.05);
+}
+.container .card .box .content h3
+{
+  font-size: 1.8em;
+  color: #777;
+  z-index: 1;
+  transition: 0.4s;
+}
+.container .card .box .content p
+{
+  font-size: 16px;
+  font-weight: 300 !important;
+  color: #777;
+  z-index: 1;
+  transition: 0.4s;
+}
+.container .card:hover .box .content h3,
+.container .card:hover .box .content p
+{
+  color: rgba(255,255,255,1);
+}
+.container .card .box .content a
+{
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #03a9f4;
+  margin-top: 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  
+}
+.container .card:hover .box .content a
+{
+  background: #ff568f;
+}
+/*services하단부 카드3장*/
+/*project부분*/
+
+.section010
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	transform-style: preserve-3d;
+	width: 1100px;
+  margin-top: 200px;
+  margin-left: 50px;
+}
+.section010 .card010
+{
+	position: relative;
+	width: 320px;
+	height: 320px;
+	margin: 20px;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+.section010 .card010 .box010
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s ease;
+}
+.section010 .card010:hover .box010
+{
+	transform: rotateY(180deg);
+}
+.section010 .card010 .imgBx010
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.section010 .card010 .imgBx010 img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.section010 .card010 .contentBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-style: preserve-3d;
+}
+.section010 .card010 .contentBx div
+{
+	transform-style: preserve-3d;
+	transform: translateZ(100px);
+	background: beige;
+	padding: 20PX;
+}
+.section010 .card010 .contentBx div h2
+{
+	font-size: 20px;
+	color: black;
+	letter-spacing: 1px;
+	backface-visibility: hidden;
+}
+.section010 .card010 .contentBx div p
+{
+	font-size: 16px;
+	color: black;
+	backface-visibility: hidden;
+}
+/*services제일 하단부 끝*/
+
+
+/* media queries  */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active{
+        right:0;
+    }
+
+    .header .navbar a{
+        color:var(--black);
+        display: block;
+        margin:1.5rem;
+        padding:.5rem;
+        font-size: 2rem;
+    }
+
+   
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+    .home .content p{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+@keyframes animate 
+{
+	0% 
+	{
+		width: 0;
+		height: 0;
+	}
+	100% 
+	{
+		width: 350px;
+		height: 350px;
+	}
+}
+
+/*버튼 스티키-제작소개*/
+.btn12 
+{
+  position: fixed;
   width: 200px;
   height: 60px;
-  background: rgba(255,255,255,0.1);
+  background: #A19882;
   border-radius: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255,255,255,0.5);
+  color: black;
   text-decoration: none;
   letter-spacing: 2px;
   border-top: 0.5px solid rgba(255,255,255,0.35);
@@ -250,20 +1033,24 @@ h1{
   padding-left: 40px;
   transition: 0.5s;
   overflow: hidden;
+  bottom: 20px;
+  right: 50px;
+  margin-top: 150px;
+  font-size: 2.5rem;
 }
-.btn:hover 
+.btn12:hover 
 {
   padding-left: 0px;
   padding-right: 40px;
-  color: rgba(255,255,255,1);
+  color: black;
 }
-.btn span 
+.btn12 span 
 {
   position: absolute;
   left: 5px;
   width: 50px;
   height: 50px;
-  background: #04fe4d;
+  background:  rgba(255,255,255,0.35);
   border-radius: 50%;
   transition: 0.5s ease-in-out;
   display: flex;
@@ -272,11 +1059,11 @@ h1{
   color: #1a191d;
   font-size: 1.5em;
 }
-.btn:hover span 
+.btn12:hover span 
 {
   left: calc(100% - 55px);
 }
-.btn:after 
+.btn12:after 
 {
   content: '';
   position: absolute;
@@ -287,7 +1074,59 @@ h1{
   transform: translateX(-170px) skewX(30deg);
   transition: 0.75s ease-in-out;
 }
-.btn:hover:after 
+.btn12:hover:after 
 {
   transform: translateX(170px) skewX(30deg);
+}
+/*다크모드 버튼*/
+
+
+/*다크모드*/
+.abcd .btn12345
+{
+	
+	padding: 12px 40px;
+	font-size: 1.05em;
+	border-radius: 40px;
+	background: #2f2f2f;
+	color:white;
+	letter-spacing: 0.15em;
+	text-decoration: none;
+	text-transform: uppercase;
+	user-select: none;
+	transition: 0.5s;
+	overflow: hidden;
+  margin-top: 780px;
+  margin-left: 1660px;
+  position: fixed;
+  height: 50px;
+  width: 200px;
+  font-size: 1.6rem;
+}
+.btn12345:hover 
+{
+	color: #fff;
+}
+.btn12345 span 
+{
+	position: absolute;
+	border: 2px solid #fff;
+	transform: translate(-50%,-50%);
+	pointer-events: none;
+	border-radius: 50%;
+	filter: brightness(2);
+	animation: animate 2s linear infinite;
+}
+@keyframes animate 
+{
+	0% 
+	{
+		width: 0;
+		height: 0;
+	}
+	100% 
+	{
+		width: 350px;
+		height: 350px;
+	}
 }

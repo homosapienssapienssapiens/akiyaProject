@@ -1,26 +1,35 @@
 package com.project.akiyaProject.model;
 
-import com.project.akiyaProject.model.Enum.BooleanEnum;
+import com.project.akiyaProject.model.Enum.ConditionEnum;
 import com.project.akiyaProject.model.Enum.CityEnum;
 
 import lombok.Data;
 @Data
 public class HouseInfo {
-	private String house_id;
+	private Long house_id;
 	private CityEnum city;
 	private String address;
 	private Long price;
 	private String completed;
 	private Long floor;
 	private Long housesize;
-	private BooleanEnum bus;
-	private BooleanEnum subway; 
-	private BooleanEnum convini;
-	private BooleanEnum hospital;
-	private BooleanEnum aircon;
-	private BooleanEnum bathroom;
-	private BooleanEnum parking;
-	private BooleanEnum washer;
-	private BooleanEnum pet;
-	private BooleanEnum autolock;
+	private ConditionEnum bus;
+	private ConditionEnum subway; 
+	private ConditionEnum convini;
+	private ConditionEnum hospital;
+	private ConditionEnum aircon;
+	private ConditionEnum bathroom;
+	private ConditionEnum parking;
+	private ConditionEnum washer;
+	private ConditionEnum pet;
+	private ConditionEnum autolock;
+	@Override
+	public String toString() {
+		return "HouseInfo [house_id=" + house_id + ", city=" + city + ", address=" + address + ", price=" + price
+				+ ", completed=" + completed + ", floor=" + floor + ", housesize=" + housesize + ", bus=" + bus
+				+ ", subway=" + subway + ", convini=" + convini + ", hospital=" + hospital + ", aircon=" + aircon
+				+ ", bathroom=" + bathroom + ", parking=" + parking + ", washer=" + washer + ", pet=" + pet
+				+ ", autolock=" + autolock + "]";
+	}
+	
 }

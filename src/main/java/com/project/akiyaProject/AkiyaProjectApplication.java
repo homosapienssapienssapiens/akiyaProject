@@ -24,4 +24,5 @@ public class AkiyaProjectApplication {
 	//	senderService.sendEmail("dltkddnl0141@gmail.com", "부동산 매물 소개",
 	//			"매물 소개 입니다.");
 	//}
+
 }

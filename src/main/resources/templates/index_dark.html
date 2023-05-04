@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive coffee shop website design</title>
+  
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/index_dark.css">
+    
+  </head>
+  <body>
+    
+<!-- header section starts  -->
+
+<div class="abc">
+  <a href="#" class="btn12">制作紹介<span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </div>
+<div class="abcd">
+  <a href="#" class="btn12345">明るい画面</a>
+		<script>
+			let btn12345 = document.querySelectorAll('.btn');
+			btn.forEach(btn => {
+				btn.onclick = function(e){
+					let x = e.pageX - e.target.offsetLeft;
+					let y = e.pageY - e.target.offsetTop;
+
+					let color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+
+					let ripples = document.createElement('span');
+					ripples.style.left = x + 'px';
+					ripples.style.top = y + 'px';
+					ripples.style.borderColor = color;
+					this.appendChild(ripples);
+				
+					setTimeout(() => {
+						ripples.remove()
+					},2000);
+				}
+			})
+		</script>
+</div>
+<header class="header">
+    <section class="flex">
+
+        <a href="#" class="logo">
+            <img src="AKiyaLogo.png" alt="">
+        </a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#services">services</a>
+            <a href="#buy">buy</a>
+        </nav>
+        <nav>
+          
+          <div class="wrap">
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/Flag_of_Japan-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/Flag_of_South_Korea-removebg-preview.png"></button>
+            <button type="button" class="btm_image" id="img_btn"><img  src="img/Flag_of_China-removebg-preview.png"></button>
+          </div>
+          <a href="#" class="btn"><span>Login</span></a>
+          <script>
+            const btn = document.querySelector('.btn');
+            btn.onmousemove = function(e){
+              const x = e.pageX - btn.offsetLeft;
+              const y = e.pageY - btn.offsetTop;
+              
+              btn.style.setProperty('--x', x + 'px');
+              btn.style.setProperty('--y', y + 'px');
+            }
+            </script>
+        </nav>
+        
+        <div class="icons">
+          
+          <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+      </header>
+      
+      <!-- header section ends -->
+     
+      
+      <!-- home section starts  -->
+      
+      <div class="home-container">
+        
+        <section class="home" id="home">
+          
+          
+         
+
+        <div class="content">
+            <h3>様々な方と家を繋ぎます。</h3>
+            <p>弊社では日本の空き家をリモデリングし暖かい塒を必要な方に安く分譲しております。</p>
+        </div>
+
+        <div class="counting">
+
+          <div class="box">
+            <h1 class="count" data-count="1200">1200+</h1>
+            <h3>working hours</h3>
+          </div>
+          
+          <div class="box">
+            <h1 class="count" data-count="15">15+</h1>
+            <h3>awards</h3>
+          </div>
+          
+          <div class="box">
+            <h1 class="count" data-count="1000">1000+</h1>
+            <h3>clients</h3>
+          </div>
+          
+          <div class="box">
+            <h1 class="count" data-count="840">840+</h1>
+            <h3>projects</h3>
+          </div>
+    
+    </section>
+
+</div>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="img/Main.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>AKIYAPLUSとは</h3>
+            <p>空き家PLUS機関は最近日本で増えている空き家をリモデリングして外国人のかたや日本の方に安い値段で分譲したり賃貸したりします。</p>
+            <p>それで空き家所有者方の税金負担を減らし社会問題にも大きく解決になり役に立ちます。将来にも皆様と一緒に未来を描く機関になるため努力しております。</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- project section starts   -->
+<section class="projects" id="projects">
+
+   
+  <h1 class="heading"> our <span>projects</span> </h1>
+<div class="section010">
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects01.jpeg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2010.05.06</h2>
+          <p>約5年間放置された大阪市生野区の住宅。AKIYAPLUSを通してリモデリングされ2010年5月末分譲完了</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects02.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2015.03.02</h2>
+          <p>約3年間放置された東京都品川区の住宅。AKIYAPLUSを通して居室工事完了。2015年3月分譲完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects03.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2016.02.05</h2>
+          <p>群馬県で1年間放置された住宅。AKIYAPLUSを通して居室工事完了。2016年2月分譲完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects04.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2017.04.05</h2>
+          <p>沖縄県で3年間放置された空き家。新築リモデリング工事完了。2017年4月分譲完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects05.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2019.06.28</h2>
+          <p>岩手県で3年間放置された空き家。AKIYAPLUSを通して居室工事完了。2019年6月分譲完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects06.jpeg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2020.03.04</h2>
+          <p>徳島で1年間ほうちされた空き家。AKIYAPLUSを通して居室工事と庭の工事完了。2020年3月工事完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects07.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2021.02.03</h2>
+          <p>大阪市で3年間放置された空き家。AKIYAPLUSを通して居室工事完了。2021年2月工事完了。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects08.jpeg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2021.04.05</h2>
+          <p>大阪市で3年間放置された空き家。AKIYAPLUSを通して2021年4月台所月工事完了。分譲中。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card010">
+    <div class="box010">
+      <div class="imgBx010">
+        <img src="img/projects09.jpg">
+      </div>
+      <div class="contentBx">
+        <div>
+          <h2>2022.03.05</h2>
+          <p>京都で3年間放置された空き家。AKIYAPLUSを通して2022年3月工事完了。分譲中。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- project section ends -->
+<!--services section start-->
+
+<section class="services" id="services">
+
+   
+    <h1 class="heading"> our <span>services</span> </h1>
+    <div class="container45">
+      <div class="box45">
+        <div class="imgBx45">
+          <img src="img/services.jpg">
+        </div>
+        <div class="content">
+          <div>
+            <h2>リモデリング</h2>
+            <p>弊社ではお客様のお好みにより空き家のリモデリングをしております。それでお客様へ幸せさを伝えます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="box45">
+        <div class="imgBx45">
+          <img src="img/services2.jpg">
+        </div>
+        <div class="content">
+          <div>
+            <h2>環境</h2>
+            <p>弊社ではリモデリングやインテリア工事を行う以前資材の検査を通して有害成分0%を目標しております。</p>
+          </div>
+        </div>
+      </div>
+      <div class="box45">
+        <div class="imgBx45">
+          <img src="img/services.webp">
+        </div>
+        <div class="content">
+          <div>
+            <h2>地域貢献</h2>
+            <p>弊社では外国人や様々な方に空き家を分譲し家と人を繋ぐ事業で地域産業活性化にも寄与しております。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--card01-->
+    <!-- Inspired By This : CSS Dark Neumorphism Cards Using Html & CSS with Hover Effects | CSS UI Design Tutorial -->
+	<!-- Watch This : https://youtu.be/tBAH2PmzM8M -->
+	<div class="container">
+		<div class="card">
+			<div class="box">
+				<div class="content">
+					<h2>01</h2>
+					<h3>HELP</h3>
+					<p>私たちはお客様にきっと合わせるものを
+            提供するためインテリア好みの調査や
+            ASサービスを提供しております。</p>
+					<a href="#">Read More</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="box">
+				<div class="content">
+					<h2>02</h2>
+					<h3>芸術と家</h3>
+					<p>弊社では家も一つの芸術だと思います。
+            それで最上のインテリアサービスを提供しております。</p>
+					<a href="#">Read More</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="box">
+				<div class="content">
+					<h2>03</h2>
+					<h3>家族の心</h3>
+					<p>家族の心掛けで事業を行っております.
+            いつも最善のサービスを提供します。</p>
+					<a href="#">Read More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- footer section starts  -->
+<section class="we" id="we">
+
+  <div class="row">
+
+      <div class="image">
+          <img src="img/services4.jpeg" alt="">
+      </div>
+
+      <div class="content">
+          <h3></h3>
+          <p>成功した既存のデザイナーたちが警戒すべきことは、引き続き同じ作業を繰り返すことであり、若いデザイナーたちにとって最も危険なのは模倣だ。 最初にデザインを始める時、ある程度の良い作品の模倣が必要かもしれないが、</p>
+          <p>模倣を捨てて自分だけの視覚的言語を発見し、絶えず新しいイメージと新しい物を見る視覚を開発する努力が必要だ</p>
+      </div>
+
+  </div>
+<section class="footer">
+    
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+ <nav>
+    <div class="links">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">projects</a>
+        <a href="#">services</a>
+        <a href="#">buy</a>
+       
+    </div>
+    </nav>
+
+    <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>
+
+</section>
+
+<!-- footer section ends -->
+
+</div>
+
+
+<!-- custom js file link  -->
+<!--메인글씨 효과-->
+<script>
+ let mainText = document.querySelector("h3")
+ window.addEventListener('scroll',function(){
+  let value =window.scrollY;
+  console.log(scrollY,value);
+
+  if(value>400){
+    mainText.style.animation ='disappear 1s ease-out forwards';
+  }else{
+    mainText.style.animation = 'slide 1s ease-out';
+  }
+ });
+ 
+</script>
+<!--메인 글씨 나타났다 사라지는 효과-->
+<script src="js/script.js"></script>
+<!--nav상단 바 움직이는 효과-->
+<script>
+  let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem = document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick = () =>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+</script>
+<!--counting box-->
+<!-- jquery file link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  
+  $(document).ready(function(){
+
+$('.fa-bars').click(function(){
+  $(this).toggleClass('fa-times');
+  $('nav').toggleClass('nav-toggle');
+});
+
+$(window).on('scroll load',function(){
+  $('.fa-bars').removeClass('fa-times');
+  $('nav').removeClass('nav-toggle');
+});
+
+$('.count').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+  {
+    duration: 5000,
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum + '+');
+    }
+  });
+});
+
+});
+</script>
+</body>
+</html>

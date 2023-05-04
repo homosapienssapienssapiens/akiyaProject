@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive coffee shop website design</title>
-    <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
@@ -54,7 +45,7 @@ section{
     margin: 0 auto;
     max-width: 1200px;
 }
-
+/*큰 주제 글자*/
 .heading{
     text-align: center;
     color:white;
@@ -68,20 +59,7 @@ section{
     text-transform: uppercase;
 }
 
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:.9rem 3rem;
-    font-size: 1.7rem;
-    color:black;
-    background: var(--main-color);
-    cursor: pointer;
-    
-}
 
-.btn:hover{
-    letter-spacing: .2rem;
-}
 
 .header{
     position: fixed;
@@ -159,11 +137,11 @@ section{
     top:1rem; right: 1rem;
     font-size: 2rem;
     cursor: pointer;
-    color:white;
+    color: black;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
-    color:white;
+    color:black;
 }
 
 .header .cart-items-container .cart-item img{
@@ -187,10 +165,11 @@ section{
 }
 
 .home-container{
-    background:url(Home.jpg) no-repeat;
+    background:url(img/Home.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     opacity: 0.9;
+   
 }
 .home .hero .text1{
   position: relative;
@@ -332,8 +311,46 @@ width:100%;
 display:block;
 
 }
-/*국기 버튼 끝*/
-
+/*
+로그인 버튼
+*/
+.btn
+{
+    position:absolute;
+    display: inline-flex;
+    padding: 10px 30px;
+    background: #363636;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    margin-left: 300px;
+    margin-top: -45px;
+}
+.btn span
+{
+    position: relative;
+    z-index: 1;
+}
+.btn::before
+{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #2196f3;
+    transition: width 0.5s, height 0.5s;
+}
+.btn:hover::before
+{
+    width: 300px;
+    height: 300px;
+}
+/*로그인 버튼*/
 .about .row .image{
     flex:1 1 45rem;
 }
@@ -356,6 +373,7 @@ display:block;
     color:white;
     padding:1rem 0;
     line-height: 1.8;
+    
 }
 /*about us*/
 /*projects*/
@@ -368,6 +386,9 @@ display:block;
 	transform-style: preserve-3d;
 	width: 1100px;
   margin-left: 50px;
+  scroll-behavior: auto;
+  margin-top: 50px;
+  
 }
 .projects .section010 .card010
 {
@@ -377,6 +398,7 @@ display:block;
 	margin: 20px;
 	transform-style: preserve-3d;
 	perspective: 1000px;
+
 }
 .projects .section010 .card010 .box010
 {
@@ -387,6 +409,7 @@ display:block;
 	height: 100%;
 	transform-style: preserve-3d;
 	transition: 1s ease;
+ 
 }
 .projects .section010 .card010:hover .box010
 {
@@ -442,7 +465,7 @@ display:block;
 .projects.section010 .card010 .contentBx div p
 {
 	font-size: 16px;
-	color: black;
+	color:black;
 	backface-visibility: hidden;
 }
 /*projects*/
@@ -455,7 +478,7 @@ display:block;
     flex-wrap: wrap;
     transform-style: preserve-3d;
     perspective: 500px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 30px;
    
 }
@@ -619,6 +642,8 @@ display:block;
     background:var(--black);
     flex-wrap: wrap;
     gap: 1.5rem;
+    
+  
 }
 .we .row .image{
     flex:1 1 45rem;
@@ -806,7 +831,7 @@ display:block;
   border-radius: 20px;
   text-decoration: none;
   font-weight: 400;
-  color: #fff;
+  color:white;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   
 }
@@ -894,14 +919,14 @@ display:block;
 .section010 .card010 .contentBx div h2
 {
 	font-size: 20px;
-	color: black;
+	color:black;
 	letter-spacing: 1px;
 	backface-visibility: hidden;
 }
 .section010 .card010 .contentBx div p
 {
 	font-size: 16px;
-	color: black;
+	color:black;
 	backface-visibility: hidden;
 }
 /*services제일 하단부 끝*/
@@ -974,29 +999,115 @@ display:block;
     }
 
 }
-/*다크모드버튼*/
-.btn 
-{
 
-  margin-right: 40px;
-	position: relative;
+@keyframes animate 
+{
+	0% 
+	{
+		width: 0;
+		height: 0;
+	}
+	100% 
+	{
+		width: 350px;
+		height: 350px;
+	}
+}
+
+/*버튼 스티키-제작소개*/
+.btn12 
+{
+  position: fixed;
+  width: 200px;
+  height: 60px;
+  background: #A19882;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border-top: 0.5px solid rgba(255,255,255,0.35);
+  border-left: 0.5px solid rgba(255,255,255,0.35);
+  padding-left: 40px;
+  transition: 0.5s;
+  overflow: hidden;
+  bottom: 20px;
+  right: 50px;
+  margin-top: 150px;
+  font-size: 2.5rem;
+}
+.btn12:hover 
+{
+  padding-left: 0px;
+  padding-right: 40px;
+  color: black;
+}
+.btn12 span 
+{
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background:  rgba(255,255,255,0.35);
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a191d;
+  font-size: 1.5em;
+}
+.btn12:hover span 
+{
+  left: calc(100% - 55px);
+}
+.btn12:after 
+{
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  z-index: 1;
+  background: rgba(255,255,255,0.25);
+  transform: translateX(-170px) skewX(30deg);
+  transition: 0.75s ease-in-out;
+}
+.btn12:hover:after 
+{
+  transform: translateX(170px) skewX(30deg);
+}
+/*제작소개버튼*/
+
+
+/*다크모드*/
+.abcd .btn12345
+{
+	
 	padding: 12px 40px;
 	font-size: 1.05em;
 	border-radius: 40px;
 	background: #2f2f2f;
-	color: #bbb;
+	color:white;
 	letter-spacing: 0.15em;
 	text-decoration: none;
 	text-transform: uppercase;
 	user-select: none;
 	transition: 0.5s;
 	overflow: hidden;
+  margin-top: 780px;
+  margin-left: 1660px;
+  position:fixed;
+  height: 50px;
+  width: 200px;
+  font-size: 1.6rem;
 }
-.btn:hover 
+.btn12345:hover 
 {
 	color: #fff;
 }
-.btn span 
+.btn12345 span 
 {
 	position: absolute;
 	border: 2px solid #fff;
@@ -1020,505 +1131,4 @@ display:block;
 	}
 }
 
-    </style>
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body>
-    
-<!-- header section starts  -->
-
-
-<header class="header">
-
-    <section class="flex">
-
-        <a href="#" class="logo">
-            <img src="AKiyaLogo.png" alt="">
-        </a>
-    
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#services">services</a>
-            <a href="#buy">buy</a>
-           
-           
-        </nav>
-        <nav>
-           
-
-
-          <div class="wrap">
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_Japan-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_South_Korea-removebg-preview.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="Flag_of_China-removebg-preview.png"></button>
-
-           
-          </div>
-        </nav>
-    
-        <div class="icons">
-           
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-          
-           <!--다크모드 버튼-->
-        
-        <a href="#" class="btn">ダークモード</a>
-        <a href="#" class="btn">制作者</a>
-        <script>
-          let btn = document.querySelectorAll('.btn');
-          btn.forEach(btn => {
-            btn.onclick = function(e){
-              let x = e.pageX - e.target.offsetLeft;
-              let y = e.pageY - e.target.offsetTop;
-    
-              let color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-    
-              let ripples = document.createElement('span');
-              ripples.style.left = x + 'px';
-              ripples.style.top = y + 'px';
-              ripples.style.borderColor = color;
-              this.appendChild(ripples);
-            
-              setTimeout(() => {
-                ripples.remove()
-              },2000);
-            }
-          })
-        </script>
-        
-         <!--다크모드 버튼-->
-    </section>
-
-</header>
-
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
-<div class="home-container">
-
-    <section class="home" id="home">
-
-    
-
-        <div class="content">
-            <h3>様々な方と家を繋ぎます。</h3>
-            <p>弊社では日本の空き家をリモデリングし暖かい塒を必要な方に安く分譲しております。</p>
-        </div>
-
-        <div class="counting">
-
-          <div class="box">
-            <h1 class="count" data-count="1200">1200+</h1>
-            <h3>working hours</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="15">15+</h1>
-            <h3>awards</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="1000">1000+</h1>
-            <h3>clients</h3>
-          </div>
-          
-          <div class="box">
-            <h1 class="count" data-count="840">840+</h1>
-            <h3>projects</h3>
-          </div>
-    
-    </section>
-
-</div>
-
-<!-- home section ends -->
-
-<!-- about section starts  -->
-
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>about</span> us </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="Main.jpg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>AKIYAPLUSとは</h3>
-            <p>空き家PLUS機関は最近日本で増えている空き家をリモデリングして外国人のかたや日本の方に安い値段で分譲したり賃貸したりします。</p>
-            <p>それで空き家所有者方の税金負担を減らし社会問題にも大きく解決になり役に立ちます。将来にも皆様と一緒に未来を描く機関になるため努力しております。</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- about section ends -->
-
-<!-- project section starts   -->
-<section class="Projects" id="Projets">
-
-   
-  <h1 class="heading"> our <span>Projects</span> </h1>
-<div class="section010">
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects01.jpeg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2010.05.06</h2>
-          <p>約5年間放置された大阪市生野区の住宅。AKIYAPLUSを通してリモデリングされ2010年5月末分譲完了</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects02.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2015.03.02</h2>
-          <p>約3年間放置された東京都品川区の住宅。AKIYAPLUSを通して居室工事完了。2015年3月分譲完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects03.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2016.02.05</h2>
-          <p>群馬県で1年間放置された住宅。AKIYAPLUSを通して居室工事完了。2016年2月分譲完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects04.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2017.04.05</h2>
-          <p>沖縄県で3年間放置された空き家。新築リモデリング工事完了。2017年4月分譲完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects05.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2019.06.28</h2>
-          <p>岩手県で3年間放置された空き家。AKIYAPLUSを通して居室工事完了。2019年6月分譲完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects06.jpeg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2020.03.04</h2>
-          <p>徳島で1年間ほうちされた空き家。AKIYAPLUSを通して居室工事と庭の工事完了。2020年3月工事完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects07.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2021.02.03</h2>
-          <p>大阪市で3年間放置された空き家。AKIYAPLUSを通して居室工事完了。2021年2月工事完了。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects08.jpeg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2021.04.05</h2>
-          <p>大阪市で3年間放置された空き家。AKIYAPLUSを通して2021年4月台所月工事完了。分譲中。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card010">
-    <div class="box010">
-      <div class="imgBx010">
-        <img src="projects09.jpg">
-      </div>
-      <div class="contentBx">
-        <div>
-          <h2>2022.03.05</h2>
-          <p>京都で3年間放置された空き家。AKIYAPLUSを通して2022年3月工事完了。分譲中。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-<!-- project section ends -->
-<!--services section start-->
-
-<section class="services" id="services">
-
-   
-    <h1 class="heading"> our <span>services</span> </h1>
-    <div class="container45">
-      <div class="box45">
-        <div class="imgBx45">
-          <img src="services.jpg">
-        </div>
-        <div class="content">
-          <div>
-            <h2>リモデリング</h2>
-            <p>弊社ではお客様のお好みにより空き家のリモデリングをしております。それでお客様へ幸せさを伝えます。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box45">
-        <div class="imgBx45">
-          <img src="services2.jpg">
-        </div>
-        <div class="content">
-          <div>
-            <h2>環境</h2>
-            <p>弊社ではリモデリングやインテリア工事を行う以前資材の検査を通して有害成分0%を目標しております。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box45">
-        <div class="imgBx45">
-          <img src="services.webp">
-        </div>
-        <div class="content">
-          <div>
-            <h2>地域貢献</h2>
-            <p>弊社では外国人や様々な方に空き家を分譲し家と人を繋ぐ事業で地域産業活性化にも寄与しております。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--card01-->
-    <!-- Inspired By This : CSS Dark Neumorphism Cards Using Html & CSS with Hover Effects | CSS UI Design Tutorial -->
-	<!-- Watch This : https://youtu.be/tBAH2PmzM8M -->
-	<div class="container">
-		<div class="card">
-			<div class="box">
-				<div class="content">
-					<h2>01</h2>
-					<h3>HELP</h3>
-					<p>私たちはお客様にきっと合わせるものを
-            提供するためインテリア好みの調査や
-            ASサービスを提供しております。</p>
-					<a href="#">Read More</a>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<div class="box">
-				<div class="content">
-					<h2>02</h2>
-					<h3>芸術と家</h3>
-					<p>弊社では家も一つの芸術だと思います。
-            それで最上のインテリアサービスを提供しております。</p>
-					<a href="#">Read More</a>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<div class="box">
-				<div class="content">
-					<h2>03</h2>
-					<h3>家族の心</h3>
-					<p>家族の心掛けで事業を行っております.
-            いつも最善のサービスを提供します。</p>
-					<a href="#">Read More</a>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- footer section starts  -->
-<section class="we" id="we">
-
-  <div class="row">
-
-      <div class="image">
-          <img src="services4.jpeg" alt="">
-      </div>
-
-      <div class="content">
-          <h3></h3>
-          <p>成功した既存のデザイナーたちが警戒すべきことは、引き続き同じ作業を繰り返すことであり、若いデザイナーたちにとって最も危険なのは模倣だ。 最初にデザインを始める時、ある程度の良い作品の模倣が必要かもしれないが、</p>
-          <p>模倣を捨てて自分だけの視覚的言語を発見し、絶えず新しいイメージと新しい物を見る視覚を開発する努力が必要だ</p>
-      </div>
-
-  </div>
-<section class="footer">
-    
-    <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <div class="links">
-        <a href="#">home</a>
-        <a href="#">about</a>
-        <a href="#">projects</a>
-        <a href="#">services</a>
-        <a href="#">buy</a>
-       
-    </div>
-
-    <div class="credit">created by <span>mr. web designer</span> | all rights reserved</div>
-
-</section>
-
-<!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
-<!--메인글씨 효과-->
-<script>
- let mainText = document.querySelector("h3")
- window.addEventListener('scroll',function(){
-  let value =window.scrollY;
-  console.log(scrollY,value);
-
-  if(value>400){
-    mainText.style.animation ='disappear 1s ease-out forwards';
-  }else{
-    mainText.style.animation = 'slide 1s ease-out';
-  }
- });
- 
-</script>
-<!--메인 글씨 나타났다 사라지는 효과-->
-<script src="js/script.js"></script>
-<!--nav상단 바 움직이는 효과-->
-<script>
-  let navbar = document.querySelector('.navbar');
-
-document.querySelector('#menu-btn').onclick = () =>{
-    navbar.classList.toggle('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
-let searchForm = document.querySelector('.search-form');
-
-document.querySelector('#search-btn').onclick = () =>{
-    searchForm.classList.toggle('active');
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
-let cartItem = document.querySelector('.cart-items-container');
-
-document.querySelector('#cart-btn').onclick = () =>{
-    cartItem.classList.toggle('active');
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-}
-
-window.onscroll = () =>{
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-</script>
-<!--counting box-->
-<!-- jquery file link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- magnific popup link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-  
-  $(document).ready(function(){
-
-$('.fa-bars').click(function(){
-  $(this).toggleClass('fa-times');
-  $('nav').toggleClass('nav-toggle');
-});
-
-$(window).on('scroll load',function(){
-  $('.fa-bars').removeClass('fa-times');
-  $('nav').removeClass('nav-toggle');
-});
-
-$('.count').each(function() {
-  var $this = $(this),
-      countTo = $this.attr('data-count');
-  $({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },
-  {
-    duration: 5000,
-    step: function() {
-      $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-      $this.text(this.countNum + '+');
-    }
-  });
-});
-
-});
-</script>
-</body>
-</html>
+/*다크모드 수정*/
