@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive coffee shop website design</title>
+    <title>空き家PLUS</title>
     <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
@@ -168,7 +168,7 @@ section{
     color:var(--main-color);
 }
 
-.header .cart-items-container .btn{
+.header .cart-items-container .btn_login{
     width: 100%;
     text-align: center;
 }
@@ -302,7 +302,7 @@ section{
     gap: 1.5rem;
 }
 /*국기 버튼*/
-.btm_image{
+.btn_lang{
 margin-top: 1rem;
 display: inline-block;
 font-size: 1.7rem;
@@ -315,7 +315,7 @@ border-radius: 100%;
 
 }
 
-.btm_image img{
+.btn_lang img{
 width:100%;
 display:block;
 
@@ -323,7 +323,7 @@ display:block;
 /*
 로그인 버튼
 */
-.btn
+.btn_login
 {
     position:absolute;
     display: inline-flex;
@@ -336,12 +336,12 @@ display:block;
     margin-left: 300px;
     margin-top: -45px;
 }
-.btn span
+.btn_login span
 {
     position: relative;
     z-index: 1;
 }
-.btn::before
+.btn_login::before
 {
     content: '';
     position: absolute;
@@ -354,7 +354,7 @@ display:block;
     background: #2196f3;
     transition: width 0.5s, height 0.5s;
 }
-.btn:hover::before
+.btn_login:hover::before
 {
     width: 300px;
     height: 300px;
@@ -1024,11 +1024,11 @@ display:block;
 }
 
 /*버튼 스티키-제작소개*/
-.btn12 
+.btn_seisaku 
 {
   position: fixed;
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 40px;
   background: #A19882;
   border-radius: 60px;
   display: flex;
@@ -1042,21 +1042,21 @@ display:block;
   padding-left: 40px;
   transition: 0.5s;
   overflow: hidden;
-  bottom: 20px;
-  right: 50px;
-  margin-top: 150px;
-  font-size: 2.5rem;
+  bottom: 3%;
+  right: 3%;
+  font-size: 1.6rem;
+  z-index: 100;
 }
-.btn12:hover 
+.btn_seisaku:hover 
 {
   padding-left: 0px;
   padding-right: 40px;
   color: black;
 }
-.btn12 span 
+.btn_seisaku span 
 {
   position: absolute;
-  left: 5px;
+  left: 2px;
   width: 50px;
   height: 50px;
   background:  rgba(255,255,255,0.35);
@@ -1068,11 +1068,11 @@ display:block;
   color: #1a191d;
   font-size: 1.5em;
 }
-.btn12:hover span 
+.btn_seisaku:hover span 
 {
   left: calc(100% - 55px);
 }
-.btn12:after 
+.btn_seisaku:after 
 {
   content: '';
   position: absolute;
@@ -1083,7 +1083,7 @@ display:block;
   transform: translateX(-170px) skewX(30deg);
   transition: 0.75s ease-in-out;
 }
-.btn12:hover:after 
+.btn_seisaku:hover:after 
 {
   transform: translateX(170px) skewX(30deg);
 }
@@ -1091,32 +1091,27 @@ display:block;
 
 
 /*다크모드*/
-.abcd .btn12345
+.btn_dark
 {
-	
-	padding: 12px 40px;
-	font-size: 1.05em;
+	text-align: center;
+	line-height: 40px;
+	font-size: 1.6em;
 	border-radius: 40px;
 	background: #2f2f2f;
 	color:white;
 	letter-spacing: 0.15em;
-	text-decoration: none;
-	text-transform: uppercase;
-	user-select: none;
 	transition: 0.5s;
-	overflow: hidden;
-  margin-top: 780px;
-  margin-left: 1660px;
-  position: fixed;
-  height: 50px;
-  width: 200px;
-  font-size: 1.6rem;
+	right: 3%;
+	bottom: 10%;
+	position: fixed;
+	height: 40px;
+	width: 150px;
 }
-.btn12345:hover 
+.btn_dark:hover 
 {
 	color: #fff;
 }
-.btn12345 span 
+.btn_dark span 
 {
 	position: absolute;
 	border: 2px solid #fff;
@@ -1151,37 +1146,16 @@ display:block;
   </head>
   <body>
     
-<!-- header section starts  -->
 
+<!-- 우하단 고정 버튼 -->
 <div class="abc">
-  <a href="#" class="btn12">制作紹介<span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+  <a href="#" class="btn_seisaku">制作紹介<span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </div>
-<div class="abcd">
-  <a href="#" class="btn12345">ダークモード</a>
-		<script>
-			let btn12345 = document.querySelectorAll('.btn');
-			btn.forEach(btn => {
-				btn.onclick = function(e){
-					let x = e.pageX - e.target.offsetLeft;
-					let y = e.pageY - e.target.offsetTop;
-
-					let color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-
-					let ripples = document.createElement('span');
-					ripples.style.left = x + 'px';
-					ripples.style.top = y + 'px';
-					ripples.style.borderColor = color;
-					this.appendChild(ripples);
-				
-					setTimeout(() => {
-						ripples.remove()
-					},2000);
-				}
-			})
-		</script>
+  <a href="#" class="btn_dark">ダークモード</a>
 </div>
+
+<!-- header section starts  -->
 <header class="header">
     <section class="flex">
 
@@ -1198,21 +1172,12 @@ display:block;
         <nav>
           
           <div class="wrap">
-            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_jp.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_Ko.png"></button>
-            <button type="button" class="btm_image" id="img_btn"><img  src="img/flag_cn.png"></button>
+            <button type="button" class="btn_lang" id="img_btn"><img  src="img/flag_jp.png"></button>
+            <button type="button" class="btn_lang" id="img_btn"><img  src="img/flag_Ko.png"></button>
+            <button type="button" class="btn_lang" id="img_btn"><img  src="img/flag_cn.png"></button>
           </div>
-          <a href="#" class="btn"><span>Login</span></a>
-          <script>
-            const btn = document.querySelector('.btn');
-            btn.onmousemove = function(e){
-              const x = e.pageX - btn.offsetLeft;
-              const y = e.pageY - btn.offsetTop;
-              
-              btn.style.setProperty('--x', x + 'px');
-              btn.style.setProperty('--y', y + 'px');
-            }
-            </script>
+          <a href="#" class="btn_login"><span>Login</span></a>
+
         </nav>
         
         <div class="icons">
@@ -1538,8 +1503,29 @@ display:block;
 </section>
 
 <!-- footer section ends -->
-
 </div>
+
+<script>
+	let btn12345 = document.querySelectorAll('.btn_login');
+	btn.forEach(btn => {
+		btn.onclick = function(e){
+			let x = e.pageX - e.target.offsetLeft;
+			let y = e.pageY - e.target.offsetTop;
+
+			let color = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+
+			let ripples = document.createElement('span');
+			ripples.style.left = x + 'px';
+			ripples.style.top = y + 'px';
+			ripples.style.borderColor = color;
+			this.appendChild(ripples);
+		
+			setTimeout(() => {
+				ripples.remove()
+			},2000);
+		}
+	})
+</script>
 
 
 <!-- custom js file link  -->
