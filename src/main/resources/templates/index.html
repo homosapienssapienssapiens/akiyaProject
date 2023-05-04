@@ -1039,26 +1039,26 @@ display:block;
   letter-spacing: 2px;
   border-top: 0.5px solid rgba(255,255,255,0.35);
   border-left: 0.5px solid rgba(255,255,255,0.35);
-  padding-left: 40px;
+  padding-left: 30px;
   transition: 0.5s;
   overflow: hidden;
   bottom: 3%;
   right: 3%;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   z-index: 100;
 }
 .btn_seisaku:hover 
 {
   padding-left: 0px;
-  padding-right: 40px;
+  padding-right: 30px;
   color: black;
 }
 .btn_seisaku span 
 {
   position: absolute;
-  left: 2px;
-  width: 50px;
-  height: 50px;
+  left: 1px;
+  width: 40px;
+  height: 40px;
   background:  rgba(255,255,255,0.35);
   border-radius: 50%;
   transition: 0.5s ease-in-out;
@@ -1070,7 +1070,7 @@ display:block;
 }
 .btn_seisaku:hover span 
 {
-  left: calc(100% - 55px);
+  left: calc(100% - 40px);
 }
 .btn_seisaku:after 
 {
@@ -1106,21 +1106,13 @@ display:block;
 	position: fixed;
 	height: 40px;
 	width: 150px;
+	z-index: 100;
 }
 .btn_dark:hover 
 {
 	color: #fff;
 }
-.btn_dark span 
-{
-	position: absolute;
-	border: 2px solid #fff;
-	transform: translate(-50%,-50%);
-	pointer-events: none;
-	border-radius: 50%;
-	filter: brightness(2);
-	animation: animate 2s linear infinite;
-}
+
 @keyframes animate 
 {
 	0% 
