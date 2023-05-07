@@ -1,4 +1,4 @@
-	@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 	/*빨간 원 부분*/
 	body::before
     {
@@ -47,7 +47,7 @@ body
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #333;
+	background:#FEF7DC;
 }
 .container 
 {
@@ -64,7 +64,7 @@ body
 	position: relative;
 	width: 350px;
 	height: 180px;
-	background: #333;
+	background:#A19882;
 	transition: 0.5s;
 }
 .card:hover 
@@ -86,7 +86,7 @@ body
 	left: 50%;
 	width: 600px;
 	height: 120px;
-	background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+	background: linear-gradient(transparent,white,white,white,transparent);
 	animation: animate 4s linear infinite;
 	animation-play-state: paused;
 }
@@ -111,7 +111,7 @@ body
 	content: '';
 	position: absolute;
 	inset: 3px;
-	background: #292929;
+	background: #A19882;
 } 
 .card .imgBx 
 {
@@ -190,7 +190,7 @@ body
 {
 	font-size: 1.5em;
 	font-weight: 500;
-	color: #45f3ff;
+	color: #A19882;
 	line-height: 1.2em;
 }
 .card .content .details p 
@@ -203,7 +203,7 @@ body
 {
 	display: inline-block;
 	padding: 8px 15px;
-	background: #45f3ff;
+	background: #C2B8A3;
 	color: #292929;
 	margin-top: 10px;
 	font-weight: 500;
@@ -217,32 +217,34 @@ body
 	opacity: 1;
 }
 h1{
-	    position: relative;
+	position: relative;
       font-size:5em;
       letter-spacing: 1px;
       color:#0e3742;
+      text-transform: uppercase;
       width:40%;
       text-align: center;
       -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
       line-height: 0.70em;
       outline: none;
       lighting-color: aliceblue;
-      color: whitesmoke;
+      color: black;
       text-shadow: #07252d;
-			
 }
-/*버튼*/
+
+
+/*메인화면 이동 버튼*/
 .btn 
 {
   position: relative;
   width: 200px;
   height: 60px;
-  background: rgba(255,255,255,0.1);
+  background: #A19882;
   border-radius: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255,255,255,0.5);
+  color: black;
   text-decoration: none;
   letter-spacing: 2px;
   border-top: 0.5px solid rgba(255,255,255,0.35);
@@ -250,12 +252,13 @@ h1{
   padding-left: 40px;
   transition: 0.5s;
   overflow: hidden;
+	
 }
 .btn:hover 
 {
   padding-left: 0px;
   padding-right: 40px;
-  color: rgba(255,255,255,1);
+  color: black;
 }
 .btn span 
 {
@@ -263,7 +266,7 @@ h1{
   left: 5px;
   width: 50px;
   height: 50px;
-  background: #04fe4d;
+  background: #FEF7DC;
   border-radius: 50%;
   transition: 0.5s ease-in-out;
   display: flex;
@@ -290,4 +293,65 @@ h1{
 .btn:hover:after 
 {
   transform: translateX(170px) skewX(30deg);
+}
+/*메인버튼*/
+.container01
+{
+	width: 580px;
+	display: absolute;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.container01 a
+{
+	position: relative;
+	display: inline-block;
+	padding: 10px 30px;
+	margin: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	color: #fff;
+	transition: 0.5s;
+}
+.container01 a:nth-child(1)
+{
+	background: linear-gradient(to right, #a18cd1, #fbc2eb, #a18cd1);
+	background-size: 200%;
+}
+.container01 a:hover
+{
+	background-position-x: 100%;
+	transform: translateY(-15px);
+}
+.container01 a:after
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: rgba(255,255,255,.2);
+}
+.container01 a:before
+{
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 5%;
+	width: 90%;
+	height: 4px;
+	background: rgba(0,0,0,0.2);
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 0.5s;
+	filter: blur(5px);
+	z-index: -1;
+}
+.container01 a:hover:before
+{
+	transform: scale(1);
+	bottom: -15px;
 }
